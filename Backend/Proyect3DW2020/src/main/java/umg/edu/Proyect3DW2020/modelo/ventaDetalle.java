@@ -20,6 +20,9 @@ public class ventaDetalle {
     private int cantidad;
     private int preciounitario;
     private int estado;
+    private int idventa_venta;
+    private int idproductofinal_productosfinal;
+    private int estado_estados;
 
     @Override
     public String toString() {
@@ -31,6 +34,9 @@ public class ventaDetalle {
                 ", cantidad='" + cantidad + '\'' +
                 ", preciounitario='" + preciounitario + '\'' +
                 ", estado='" + estado + '\'' +
+                ", idventa_venta='" + idventa_venta + '\'' +
+                ", idproductofinal_productosfinal='" + idproductofinal_productosfinal + '\'' +
+                ", estado_estados='" + estado_estados + '\'' +
                 '}';
     }
 }

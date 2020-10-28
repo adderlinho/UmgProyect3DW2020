@@ -22,6 +22,11 @@ public class kardexProductos {
     private String documento;
     private Date fechadocumento;
     private Date fechavence;
+    private int idtipomov_tipomomvimiento;
+    private int idingrediente_ingredientes;
+    private int usuario_crea;
+    private int idusuario_usuarios;
+    private int idtienda;
 
     @Override
     public String toString() {
@@ -35,6 +40,11 @@ public class kardexProductos {
                 ", documento='" + ingreso + '\'' +
                 ", fechadocumento='" + ingreso + '\'' +
                 ", fechavence='" + ingreso + '\'' +
+                ", idtipomov_tipomomvimiento='" + idtipomov_tipomomvimiento + '\'' +
+                ", idingrediente_ingredientes='" + idingrediente_ingredientes + '\'' +
+                ", usuario_crea='" + usuario_crea + '\'' +
+                ", idusuario_usuarios='" + idusuario_usuarios + '\'' +
+                ", idtienda='" + idtienda + '\'' +
                 '}';
     }
 }

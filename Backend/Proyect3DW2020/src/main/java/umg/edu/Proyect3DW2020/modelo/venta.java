@@ -17,6 +17,10 @@ public class venta {
     private String nombrecliente;
     private Date fechapedido;
     private int estado;
+    private int idEstado_estadoventa;
+    private int usuario_crea;
+    private int idusuario_usuarios;
+    private int idtienda;
 
     @Override
     public String toString() {
@@ -25,6 +29,10 @@ public class venta {
                 ", nombrecliente='" + nombrecliente + '\'' +
                 ", fechapedido='" + fechapedido + '\'' +
                 ", estado='" + estado + '\'' +
+                ", idEstado_estadoventa='" + idEstado_estadoventa + '\'' +
+                ", usuario_crea='" + usuario_crea + '\'' +
+                ", idusuario_usuarios='" + idusuario_usuarios + '\'' +
+                ", idtienda='" + idtienda + '\'' +
                 '}';
     }
 }
