@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
     <link rel="stylesheet" href="assets/css/lib/datatable/dataTables.bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/alertify.min.css">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 </head>
@@ -220,28 +221,28 @@
                         <div class="row form-group">
                             <div class="col-md-12">
                                 <label for="fname">Nombre:</label>
-                                <input type="text" id="nombreEdit" class="form-control" placeholder="Nombre del empleado">
+                                <input type="text" id="nombreEdit" class="form-control" placeholder="Nombre de la tienda">
                             </div>
                         </div>
 
                         <div class="row form-group">
                             <div class="col-md-12">
                                 <label for="email">Dirección:</label>
-                                <input type="text" id="direccionEdit" class="form-control" placeholder="Dirección del empleado">
+                                <input type="text" id="direccionEdit" class="form-control" placeholder="Dirección de la tienda">
                             </div>
                         </div>
 
                         <div class="row form-group">
                             <div class="col-md-12">
                                 <label for="subject">Teléfono:</label>
-                                <input type="tel" id="telefonoEdit" class="form-control" placeholder="Teléfono del empleado">
+                                <input type="tel" id="telefonoEdit" class="form-control" placeholder="Teléfono de la tienda">
                             </div>
                         </div>
 
                         <div class="row form-group">
                             <div class="col-md-12">
                                 <label for="subject">Nit:</label>
-                                <input type="tel" id="nitEdit" class="form-control" placeholder="Teléfono del empleado">
+                                <input type="tel" id="nitEdit" class="form-control" placeholder="Teléfono de la tienda">
                             </div>
                         </div>
                     </form>	
@@ -249,6 +250,107 @@
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                   <button id="btnModificar" type="button" class="btn btn-primary" data-dismiss="modal">Guardar cambios</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="tiendaDeleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="fname">Id:</label>
+                                <input type="text" id="id_tiendaDel" class="form-control" disabled>
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="fname">Nombre:</label>
+                                <input type="text" id="nombreDel" class="form-control" disabled>
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="email">Dirección:</label>
+                                <input type="text" id="direccionDel" class="form-control" disabled>
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="subject">Teléfono:</label>
+                                <input type="tel" id="telefonoDel" class="form-control" disabled>
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="subject">Nit:</label>
+                                <input type="tel" id="nitDel" class="form-control" disabled>
+                            </div>
+                        </div>
+                    </form>	
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                  <button id="btnEliminar" type="button" class="btn btn-danger" data-dismiss="modal">Eliminar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="tiendaAgregarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="fname">Nombre:</label>
+                                <input type="text" id="nombreAdd" class="form-control" placeholder="Nombre de la tienda">
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="email">Dirección:</label>
+                                <input type="text" id="direccionAdd" class="form-control" placeholder="Dirección de la tienda">
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="subject">Teléfono:</label>
+                                <input type="tel" id="telefonoAdd" class="form-control" placeholder="Teléfono de la tienda">
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="subject">Nit:</label>
+                                <input type="tel" id="nitAdd" class="form-control" placeholder="Teléfono de la tienda">
+                            </div>
+                        </div>
+                    </form>	
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                  <button id="btnAgregar" type="button" class="btn btn-primary" data-dismiss="modal">Guardar cambios</button>
                 </div>
               </div>
             </div>
@@ -265,6 +367,7 @@
                     <div class="col col-lg-12">
                         <section class="card">
                             <div class="card-body text-secondary" id="app">  
+                                <div><button id="btnModalAgregar" class="col-md-2 offset-10 col-sm-2 fa fa-plus-circle btn btn-secondary" data-toggle="modal" data-target="#tiendaAgregarModal" data-title="Agregar tienda"> Agregar Tienda </button></div>
                                 <div id="data"></div>
                             </div>
                         </section>
@@ -317,9 +420,10 @@
     <script src="assets/js/lib/data-table/buttons.html5.min.js"></script>
     <script src="assets/js/lib/data-table/buttons.print.min.js"></script>
     <script src="assets/js/lib/data-table/buttons.colVis.min.js"></script>
-
+    <script src="assets/js/alertify.min.js"></script>
     <script type="text/javascript">
         $(function() { 
+            alertify.set('notifier', 'position', 'top-center')
             ListarTiendas();
             $('#tiendaModal').on('show.bs.modal', function (event) {
 				var button = $(event.relatedTarget) // Button that triggered the modal
@@ -338,6 +442,28 @@
                 modal.find('.modal-body input[id="direccionEdit"]').val(direccion)
                 modal.find('.modal-body input[id="telefonoEdit"]').val(telefono)
                 modal.find('.modal-body input[id="nitEdit"]').val(nit)
+            })
+            $('#tiendaDeleteModal').on('show.bs.modal', function (event) {
+				var button = $(event.relatedTarget)
+				var title = button.data('title')
+                var id = button.data('id')
+                var nombre = button.data('nombre')
+                var direccion = button.data('direccion')
+                var telefono = button.data('telefono')
+                var nit = button.data('nit')
+				var modal = $(this)
+				modal.find('.modal-title').text(title)
+                modal.find('.modal-body input[id="id_tiendaDel"]').val(id)
+                modal.find('.modal-body input[id="nombreDel"]').val(nombre)
+                modal.find('.modal-body input[id="direccionDel"]').val(direccion)
+                modal.find('.modal-body input[id="telefonoDel"]').val(telefono)
+                modal.find('.modal-body input[id="nitDel"]').val(nit)
+            })
+            $('#tiendaAgregarModal').on('show.bs.modal', function (event) {
+				var button = $(event.relatedTarget) 
+				var title = button.data('title') 
+				var modal = $(this)
+				modal.find('.modal-title').text(title)
 			})
         });
         function ListarTiendas() {
@@ -351,7 +477,7 @@
 				var outhtml = '<p><h3>Listado de tiendas: ' + json.length + '</h3></p> <table id="TiendasTable" class="display" style="width:100%">';
 					  outhtml = outhtml + '<thead><tr><th>Id</th><th>Nombre</th><th>Dirección</th><th>Teléfono</th><th>Nit</th><th>Acciones</th></tr></thead><tbody>';
 					$.each(json, function(index) {
-                      outhtml = outhtml +  ' <tr><td>'+json[index].idtienda+'</td><td>'+json[index].nombretienda+'</td><td>'+json[index].direccion+'</td> <td>'+json[index].telefono+'</td><td>'+json[index].nit+'</td><td><a title="Editar elemento" class="fa fa-edit" data-toggle="modal" data-target="#tiendaModal" data-title="Editar tienda" data-id="' + json[index].idtienda + '" data-nombre="'+ json[index].nombretienda +'" data-direccion="' + json[index].direccion + '" data-telefono="' + json[index].telefono + '" data-nit="' + json[index].nit + '"></a></td></tr>';
+                      outhtml = outhtml +  ' <tr><td>'+json[index].idtienda+'</td><td>'+json[index].nombretienda+'</td><td>'+json[index].direccion+'</td> <td>'+json[index].telefono+'</td><td>'+json[index].nit+'</td><td><a title="Editar elemento" class="fa fa-edit" data-toggle="modal" data-target="#tiendaModal" data-title="Editar tienda" data-id="' + json[index].idtienda + '" data-nombre="'+ json[index].nombretienda +'" data-direccion="' + json[index].direccion + '" data-telefono="' + json[index].telefono + '" data-nit="' + json[index].nit + '"></a>&nbsp;&nbsp;&nbsp;<a title="Eliminar elemento" class="fa fa-trash-o" data-toggle="modal" data-target="#tiendaDeleteModal" data-title="Eliminar tienda" data-id="' + json[index].idtienda + '" data-nombre="'+ json[index].nombretienda +'" data-direccion="' + json[index].direccion + '" data-telefono="' + json[index].telefono + '" data-nit="' + json[index].nit + '"></a></td></tr>';
 					});
 					outhtml = outhtml + '</tbody></table></div>'; 
 				  $('#data').html(outhtml);
@@ -408,18 +534,67 @@
 							$('#telefonoEdit').val("");
                             $('#nitEdit').val("");
 
-							ListarTiendas();
-							alert('La tienda fue modificada correctamente.');
+                            ListarTiendas();
+                            alertify.success('La tienda fue modificada correctamente.');
                         } else {
                             $('#id_tiendaEdit').val("");
 							$('#nombreEdit').val("");
 							$('#direccionEdit').val("");
                             $('#telefonoEdit').val("");
                             $('#nitEdit').val("");
-							alert(xhr.response);
+                            alertify.error(xhr.response);
 						}
 					};
-			}); // end click event handler
+            }); // end click event handler
+            $('#btnEliminar').on('click', function(e) {
+                e.preventDefault();
+                var idVar = $('#id_tiendaDel').val();
+                var url = "http://localhost:9090/tiendas/" + idVar;
+				var xhr = new XMLHttpRequest();
+					xhr.open("DELETE", url, true);
+					xhr.setRequestHeader("Content-Type", "application/json");
+					xhr.send();
+					xhr.onload = function() {
+						console.log(xhr.response);
+						if(xhr.response == "OK") {
+							ListarTiendas();
+                            alertify.success('La tienda fue eliminada correctamente.');
+						} else {
+							alertify.error(xhr.response);
+						}
+					};
+            }); // end click event handler 
+            $('#btnAgregar').on('click', function(e) {
+				e.preventDefault();
+				var nomVar = $('#nombreAdd').val();
+				var dirVar = $('#direccionAdd').val();
+                var telVar = $('#telefonoAdd').val();
+                var nitVar = $('#nitAdd').val();
+				var url = "http://localhost:9090/tiendas";
+				var xhr = new XMLHttpRequest();
+					xhr.open("POST", url, true);
+					xhr.setRequestHeader("Content-Type", "application/json");
+					var data = JSON.stringify({ "nombretienda": nomVar, "direccion": dirVar, "telefono": telVar, "nit": nitVar });
+					xhr.send(data);
+					xhr.onload = function() {
+						console.log(xhr.response);
+						if(xhr.response == "OK") {
+							$('#nombreAdd').val("");
+							$('#direccionAdd').val("");
+                            $('#telefonoAdd').val("");
+                            $('#nitAdd').val("");
+
+							ListarTiendas();
+                            alertify.success('La tienda fue ingresada correctamente.');
+						} else {
+							$('#nombreAdd').val("");
+							$('#direccionAdd').val("");
+                            $('#telefonoAdd').val("");
+                            $('#nitAdd').val("");
+							alertify.error(xhr.response);
+						}
+					};
+			});
     </script>
 </body>
 </html>
