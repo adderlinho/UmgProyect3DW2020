@@ -1,17 +1,12 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!-->
 <html class="no-js" lang="">
-<!--<![endif]-->
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Ela Admin - HTML5 Admin Template</title>
-    <meta name="description" content="Ela Admin - HTML5 Admin Template">
+    <title>Mi Tienda</title>
+    <meta name="description" content="UmgProyect3DW2020" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="AdderlySinay" />
 
     <link rel="apple-touch-icon" href="https://i.imgur.com/QRAUqs9.png">
     <link rel="shortcut icon" href="https://i.imgur.com/QRAUqs9.png">
@@ -23,8 +18,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
     <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="assets/css/lib/datatable/dataTables.bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -183,7 +180,7 @@
                     <div class="col-sm-4">
                         <div class="page-header float-left">
                             <div class="page-title">
-                                <h1>Administracion de productos</h1>
+                                <h1>Administracion de tiendas</h1>
                             </div>
                         </div>
                     </div>
@@ -191,8 +188,8 @@
                         <div class="page-header float-right">
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
-                                    <li><a href="#">Productos</a></li>
-                                    <li class="active">Productos</li>
+                                    <li><a href="#">Tiendas</a></li>
+                                    <li class="active">Tiendas</li>
                                 </ol>
                             </div>
                         </div>
@@ -202,7 +199,60 @@
         </div>
         <!-- /.breadcrumbs-->
         <!-- Content -->
+        <div class="modal fade" id="tiendaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="fname">Id:</label>
+                                <input type="text" id="id_tiendaEdit" class="form-control" disabled>
+                            </div>
+                        </div>
 
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="fname">Nombre:</label>
+                                <input type="text" id="nombreEdit" class="form-control" placeholder="Nombre del empleado">
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="email">Dirección:</label>
+                                <input type="text" id="direccionEdit" class="form-control" placeholder="Dirección del empleado">
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="subject">Teléfono:</label>
+                                <input type="tel" id="telefonoEdit" class="form-control" placeholder="Teléfono del empleado">
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="subject">Nit:</label>
+                                <input type="tel" id="nitEdit" class="form-control" placeholder="Teléfono del empleado">
+                            </div>
+                        </div>
+                    </form>	
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                  <button id="btnModificar" type="button" class="btn btn-primary" data-dismiss="modal">Guardar cambios</button>
+                </div>
+              </div>
+            </div>
+          </div>
         <!-- /.breadcrumbs-->
         <!-- Content -->
         <div class="content">
@@ -214,44 +264,8 @@
                 <div class="row">
                     <div class="col col-lg-12">
                         <section class="card">
-                            <div class="card-body text-secondary">
-
-
-
-                                <h1>Aqui va el contenido productos</h1>
-
-
-                                <h1>Aqui va el contenido productos</h1>
-
-
-                                <h1>Aqui va el contenido productos</h1>
-
-
-                                <h1>Aqui va el contenido productos</h1>
-
-                                <h1>Aqui va el contenido productos</h1>
-
-
-                                <h1>Aqui va el contenido productos</h1>
-
-
-                                <h1>Aqui va el contenido productos</h1>
-
-
-                                <h1>Aqui va el contenido productos</h1>
-
-
-                                <h1>Aqui va el contenido productos</h1>
-
-                                <h1>Aqui va el contenido productos</h1>
-
-
-                                <h1>Aqui va el contenido productos</h1>
-
-
-                                <h1>Aqui va el contenido productos</h1>
-
-
+                            <div class="card-body text-secondary" id="app">  
+                                <div id="data"></div>
                             </div>
                         </section>
                     </div>
@@ -265,19 +279,12 @@
         <div class="clearfix"></div>
         <!-- Footer -->
 
-
-
-
-
         <!-- Footer -->
         <footer class="site-footer">
             <div class="footer-inner bg-white">
                 <div class="row">
                     <div class="col-sm-6">
                         Copyright &copy; 2020
-                    </div>
-                    <div class="col-sm-6 text-right">
-                        Designed by <a href="https://colorlib.com">Desarrollo Web</a>
                     </div>
                 </div>
             </div>
@@ -292,13 +299,127 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
     <script src="assets/js/main.js"></script>
-    <!--  Chart js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.3/dist/Chart.bundle.min.js"></script>
-    <!--Flot Chart-->
-    <script src="https://cdn.jsdelivr.net/npm/jquery.flot@0.8.3/jquery.flot.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flot-spline@0.0.1/js/jquery.flot.spline.min.js"></script>
-    <!-- local -->
-    <script src="assets/js/widgets.js"></script>
-</body>
 
+    <!-- jQuery -->
+	<script src="assets/js/jquery-3.2.1.min.js"></script>
+	<!-- Bootstrap -->
+	<script src="assets/js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="assets/js/jquery.waypoints.min.js"></script>
+
+    <!--DataTables-->
+    <script src="assets/js/lib/data-table/datatables.min.js"></script>
+    <script src="assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
+    <script src="assets/js/lib/data-table/dataTables.buttons.min.js"></script>
+    <script src="assets/js/lib/data-table/buttons.bootstrap.min.js"></script>
+    <script src="assets/js/lib/data-table/jszip.min.js"></script>
+    <script src="assets/js/lib/data-table/vfs_fonts.js"></script>
+    <script src="assets/js/lib/data-table/buttons.html5.min.js"></script>
+    <script src="assets/js/lib/data-table/buttons.print.min.js"></script>
+    <script src="assets/js/lib/data-table/buttons.colVis.min.js"></script>
+
+    <script type="text/javascript">
+        $(function() { 
+            ListarTiendas();
+            $('#tiendaModal').on('show.bs.modal', function (event) {
+				var button = $(event.relatedTarget) // Button that triggered the modal
+				var title = button.data('title') // Extract info from data-* attributes
+                var id = button.data('id')
+                var nombre = button.data('nombre')
+                var direccion = button.data('direccion')
+                var telefono = button.data('telefono')
+                var nit = button.data('nit')
+				// If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+				// Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+				var modal = $(this)
+				modal.find('.modal-title').text(title)
+                modal.find('.modal-body input[id="id_tiendaEdit"]').val(id)
+                modal.find('.modal-body input[id="nombreEdit"]').val(nombre)
+                modal.find('.modal-body input[id="direccionEdit"]').val(direccion)
+                modal.find('.modal-body input[id="telefonoEdit"]').val(telefono)
+                modal.find('.modal-body input[id="nitEdit"]').val(nit)
+			})
+        });
+        function ListarTiendas() {
+			var requri   = 'http://localhost:9090/tiendas';
+  
+			requestJSON(requri, function(json) {
+			if(json == null) {
+			  $('#data').html("");
+			}
+			else {
+				var outhtml = '<p><h3>Listado de tiendas: ' + json.length + '</h3></p> <table id="TiendasTable" class="display" style="width:100%">';
+					  outhtml = outhtml + '<thead><tr><th>Id</th><th>Nombre</th><th>Dirección</th><th>Teléfono</th><th>Nit</th><th>Acciones</th></tr></thead><tbody>';
+					$.each(json, function(index) {
+                      outhtml = outhtml +  ' <tr><td>'+json[index].idtienda+'</td><td>'+json[index].nombretienda+'</td><td>'+json[index].direccion+'</td> <td>'+json[index].telefono+'</td><td>'+json[index].nit+'</td><td><a title="Editar elemento" class="fa fa-edit" data-toggle="modal" data-target="#tiendaModal" data-title="Editar tienda" data-id="' + json[index].idtienda + '" data-nombre="'+ json[index].nombretienda +'" data-direccion="' + json[index].direccion + '" data-telefono="' + json[index].telefono + '" data-nit="' + json[index].nit + '"></a></td></tr>';
+					});
+					outhtml = outhtml + '</tbody></table></div>'; 
+				  $('#data').html(outhtml);
+				  runCompleteCallback();
+			  } // end else statement
+			}); // end requestJSON Ajax call
+
+			function requestJSON(url, callback) {
+			  $.ajax({
+				url: url,
+				headers: { 'Content-Type': 'application/json'},
+				dataType: "json",
+				complete: function(xhr) {
+				  callback.call(null, xhr.responseJSON);
+				}
+			  });
+			}
+
+			function runCompleteCallback() {
+            var table = $('#TiendasTable');
+			table.DataTable( {
+				"searching": true,
+				"paging":   true,
+				"ordering": true,
+				"info":     true,
+				"lengthMenu": [[10, 20, -1], [10, 20, "All"]],
+				"columnDefs": [
+							{ width: '20%', targets: 0 }
+						],
+				"fixedColumns": true,
+				"responsive": true
+			});
+		  }; // end click event handler
+        }
+        $('#btnModificar').on('click', function(e) {
+				e.preventDefault();
+				var idVar = $('#id_tiendaEdit').val();
+				var nomVar = $('#nombreEdit').val();
+				var dirVar = $('#direccionEdit').val();
+                var telVar = $('#telefonoEdit').val();
+                var nitVar = $('#nitEdit').val();
+				var url = "http://localhost:9090/tiendas";
+				var xhr = new XMLHttpRequest();
+					xhr.open("PUT", url, true);
+					xhr.setRequestHeader("Content-Type", "application/json");
+					var data = JSON.stringify({ "idtienda": idVar, "nombretienda": nomVar, "direccion": dirVar, "telefono": telVar, "nit": nitVar });
+					xhr.send(data);
+					xhr.onload = function() {
+						console.log(xhr.response);
+						if(xhr.response == "OK") {
+							$('#id_tiendaEdit').val("");
+							$('#nombreEdit').val("");
+							$('#direccionEdit').val("");
+							$('#telefonoEdit').val("");
+                            $('#nitEdit').val("");
+
+							ListarTiendas();
+							alert('La tienda fue modificada correctamente.');
+                        } else {
+                            $('#id_tiendaEdit').val("");
+							$('#nombreEdit').val("");
+							$('#direccionEdit').val("");
+                            $('#telefonoEdit').val("");
+                            $('#nitEdit').val("");
+							alert(xhr.response);
+						}
+					};
+			}); // end click event handler
+    </script>
+</body>
 </html>

@@ -24,7 +24,7 @@ import umg.edu.Proyect3DW2020.negocio.tiendaRepository;
  */
 @CrossOrigin("*")
 @RestController
-@RequestMapping("/tienda")
+@RequestMapping("/tiendas")
 public class tiendaController {
     @Autowired
     private tiendaRepository repo;

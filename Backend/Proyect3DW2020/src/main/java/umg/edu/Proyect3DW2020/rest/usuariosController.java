@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-import umg.edu.Proyect3DW2020.modelo.kardexProductos;
-import umg.edu.Proyect3DW2020.negocio.kardexProductosRepository;
+import umg.edu.Proyect3DW2020.modelo.usuarios;
+import umg.edu.Proyect3DW2020.negocio.usuariosRepository;
 
 /**
  *
@@ -24,25 +24,25 @@ import umg.edu.Proyect3DW2020.negocio.kardexProductosRepository;
  */
 @CrossOrigin("*")
 @RestController
-@RequestMapping("/kardex")
-public class kardexProductosController {
+@RequestMapping("/usuarios")
+public class usuariosController {
     @Autowired
-    private kardexProductosRepository repo;
+    private usuariosRepository repo;
 
     @GetMapping
-    public List <kardexProductos> listar(){
+    public List <usuarios> listar(){
         return repo.findAll();
     }
 
     @GetMapping(value="/buscar/{id}")
-    public kardexProductos buscarId(@PathVariable("id") final Integer id){
+    public usuarios buscarId(@PathVariable("id") final Integer id){
         return  repo.findById(id).get();
     }
 
     //metodo para insertar detalleProductoFinal
     @PostMapping
     @ResponseStatus(HttpStatus.OK)
-    public String  insertar(@RequestBody kardexProductos emp){
+    public String  insertar(@RequestBody usuarios emp){
         try {
             repo.save(emp);
             return "OK";
@@ -56,7 +56,7 @@ public class kardexProductosController {
     //metodo para modificar producto
     @PutMapping
     @ResponseStatus(HttpStatus.OK)
-    public String modificar(@RequestBody kardexProductos emp){
+    public String modificar(@RequestBody usuarios emp){
         try {
             repo.save(emp);
             return "OK";
