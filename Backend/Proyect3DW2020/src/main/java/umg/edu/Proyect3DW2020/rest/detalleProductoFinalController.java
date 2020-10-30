@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 import umg.edu.Proyect3DW2020.modelo.detalleProductoFinal;
 import umg.edu.Proyect3DW2020.negocio.detalleProductoFinalRepository;
+import umg.edu.Proyect3DW2020.service.detalleProductoFinalServicio;
 
 /**
  *
@@ -27,57 +28,39 @@ import umg.edu.Proyect3DW2020.negocio.detalleProductoFinalRepository;
 @RequestMapping("/detalle_producto")
 public class detalleProductoFinalController {
     @Autowired
-    private detalleProductoFinalRepository repo;
+    private detalleProductoFinalServicio  servicio;
 
     @GetMapping
     public List <detalleProductoFinal> listar(){
-        return repo.findAll();
+        return servicio.enlistAll_detalleProductoFinal();
     }
 
     @GetMapping(value="/buscar/{id}")
     public detalleProductoFinal buscarId(@PathVariable("id") final Integer id){
-        return  repo.findById(id).get();
+        return  servicio.findById_detalleProductoFinal(id);
     }
 
     //metodo para insertar detalleProductoFinal
     @PostMapping
     @ResponseStatus(HttpStatus.OK)
     public String  insertar(@RequestBody detalleProductoFinal emp){
-        try {
-            repo.save(emp);
-            return "OK";
-        }
-        catch (Exception ex)
-        {
-            return "Hubo un error insertando el detalleProductoFinal.";
-        }
+            return servicio.create(emp);
     }
 
     //metodo para modificar producto
     @PutMapping
     @ResponseStatus(HttpStatus.OK)
     public String modificar(@RequestBody detalleProductoFinal emp){
-        try {
-            repo.save(emp);
-            return "OK";
-        }
-        catch (Exception ex)
-        {
-            return "Hubo un error modificando el detalleProductoFinal.";
-        }
+            return servicio.modify_detalleProductoFinal(emp);
     }
+    
+   
 
     //metoo para eliminar producto
     @DeleteMapping(value="/{id}")
     @ResponseStatus(HttpStatus.OK)
     public String eliminar(@PathVariable("id") Integer id){
-        try {
-            repo.deleteById(id);
-            return "OK";
-        }
-        catch (Exception ex)
-        {
-            return "Hubo un error eliminando el detalleProductoFinal.";
-        }
+            return servicio.delete_detalleProductoFinal(id);
+        
     }
 }

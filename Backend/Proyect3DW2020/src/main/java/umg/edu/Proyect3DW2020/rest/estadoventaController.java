@@ -17,6 +17,7 @@ import java.util.List;
 
 import umg.edu.Proyect3DW2020.modelo.estadoventa;
 import umg.edu.Proyect3DW2020.negocio.estadoventaRepository;
+import umg.edu.Proyect3DW2020.service.estadoventaServicio;
 
 /**
  *
@@ -27,57 +28,39 @@ import umg.edu.Proyect3DW2020.negocio.estadoventaRepository;
 @RequestMapping("/estadoventa")
 public class estadoventaController {
     @Autowired
-    private estadoventaRepository repo;
+    private estadoventaServicio servicios;
 
     @GetMapping
     public List <estadoventa> listar(){
-        return repo.findAll();
+        return servicios.enlistAll_estadoventa();
     }
 
     @GetMapping(value="/buscar/{id}")
     public estadoventa buscarId(@PathVariable("id") final Integer id){
-        return  repo.findById(id).get();
+        return  servicios.findById_estadoventa_buscarid(id);
     }
 
     //metodo para insertar detalleProductoFinal
     @PostMapping
     @ResponseStatus(HttpStatus.OK)
     public String  insertar(@RequestBody estadoventa emp){
-        try {
-            repo.save(emp);
-            return "OK";
-        }
-        catch (Exception ex)
-        {
-            return "Hubo un error insertando el estadoventa.";
-        }
+                  return servicios.create(emp);
     }
 
     //metodo para modificar producto
     @PutMapping
     @ResponseStatus(HttpStatus.OK)
     public String modificar(@RequestBody estadoventa emp){
-        try {
-            repo.save(emp);
-            return "OK";
-        }
-        catch (Exception ex)
-        {
-            return "Hubo un error modificando el estadoventa.";
-        }
+      
+            return servicios.modify_estadoventa(emp);
+        
     }
 
     //metoo para eliminar producto
     @DeleteMapping(value="/{id}")
     @ResponseStatus(HttpStatus.OK)
     public String eliminar(@PathVariable("id") Integer id){
-        try {
-            repo.deleteById(id);
-            return "OK";
-        }
-        catch (Exception ex)
-        {
-            return "Hubo un error eliminando el estadoventa.";
-        }
+            return servicios.delete_estadoventa(id);
+        
     }
 }
