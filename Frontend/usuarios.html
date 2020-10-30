@@ -184,7 +184,7 @@
                     <div class="col-sm-4">
                         <div class="page-header float-left">
                             <div class="page-title">
-                                <h1>Administracion de tiendas</h1>
+                                <h1>Administracion de usuarios</h1>
                             </div>
                         </div>
                     </div>
@@ -192,8 +192,8 @@
                         <div class="page-header float-right">
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
-                                    <li><a href="#">Tiendas</a></li>
-                                    <li class="active">Tiendas</li>
+                                    <li><a href="#">Usuarios</a></li>
+                                    <li class="active">Usuarios</li>
                                 </ol>
                             </div>
                         </div>
@@ -203,7 +203,7 @@
         </div>
         <!-- /.breadcrumbs-->
         <!-- Content -->
-        <div class="modal fade" id="tiendaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="usuarioModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -217,35 +217,42 @@
                         <div class="row form-group">
                             <div class="col-md-12">
                                 <label for="fname">Id:</label>
-                                <input type="text" id="id_tiendaEdit" class="form-control" disabled>
+                                <input type="text" id="id_usuarioEdit" class="form-control" disabled>
                             </div>
                         </div>
 
                         <div class="row form-group">
                             <div class="col-md-12">
                                 <label for="fname">Nombre:</label>
-                                <input type="text" id="nombreEdit" class="form-control" placeholder="Nombre de la tienda">
+                                <input type="text" id="nombreEdit" class="form-control" placeholder="Nombre del usuario">
                             </div>
                         </div>
 
                         <div class="row form-group">
                             <div class="col-md-12">
-                                <label for="email">Dirección:</label>
-                                <input type="text" id="direccionEdit" class="form-control" placeholder="Dirección de la tienda">
+                                <label for="email">DPI:</label>
+                                <input type="text" id="dpiEdit" class="form-control" placeholder="DPI del usuario">
                             </div>
                         </div>
 
                         <div class="row form-group">
                             <div class="col-md-12">
                                 <label for="subject">Teléfono:</label>
-                                <input type="tel" id="telefonoEdit" class="form-control" placeholder="Teléfono de la tienda">
+                                <input type="tel" id="telefonoEdit" class="form-control" placeholder="Teléfono del usuario">
                             </div>
                         </div>
 
                         <div class="row form-group">
                             <div class="col-md-12">
-                                <label for="subject">Nit:</label>
-                                <input type="tel" id="nitEdit" class="form-control" placeholder="Teléfono de la tienda">
+                                <label for="subject">Estado:</label>
+                                <select id="estadoEdit" class="form-control" placeholder="Estado"></select>
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="subject">Tienda:</label>
+                                <select id="tiendaEdit" class="form-control" placeholder="Tienda"></select>
                             </div>
                         </div>
                     </form>	
@@ -257,7 +264,7 @@
               </div>
             </div>
           </div>
-          <div class="modal fade" id="tiendaDeleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal fade" id="usuarioDeleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -271,7 +278,7 @@
                         <div class="row form-group">
                             <div class="col-md-12">
                                 <label for="fname">Id:</label>
-                                <input type="text" id="id_tiendaDel" class="form-control" disabled>
+                                <input type="text" id="id_usuarioDel" class="form-control" disabled>
                             </div>
                         </div>
 
@@ -284,8 +291,8 @@
 
                         <div class="row form-group">
                             <div class="col-md-12">
-                                <label for="email">Dirección:</label>
-                                <input type="text" id="direccionDel" class="form-control" disabled>
+                                <label for="email">DPI:</label>
+                                <input type="text" id="dpiDel" class="form-control" disabled>
                             </div>
                         </div>
 
@@ -298,8 +305,15 @@
 
                         <div class="row form-group">
                             <div class="col-md-12">
-                                <label for="subject">Nit:</label>
-                                <input type="tel" id="nitDel" class="form-control" disabled>
+                                <label for="subject">Estado:</label>
+                                <select id="estadoDel" class="form-control" disabled></select>
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="subject">Tienda:</label>
+                                <select id="tiendaDel" class="form-control" disabled></select>
                             </div>
                         </div>
                     </form>	
@@ -311,7 +325,7 @@
               </div>
             </div>
           </div>
-          <div class="modal fade" id="tiendaAgregarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal fade" id="usuarioAgregarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -325,28 +339,35 @@
                         <div class="row form-group">
                             <div class="col-md-12">
                                 <label for="fname">Nombre:</label>
-                                <input type="text" id="nombreAdd" class="form-control" placeholder="Nombre de la tienda">
+                                <input type="text" id="nombreAdd" class="form-control" placeholder="Nombre del usuario">
                             </div>
                         </div>
 
                         <div class="row form-group">
                             <div class="col-md-12">
                                 <label for="email">Dirección:</label>
-                                <input type="text" id="direccionAdd" class="form-control" placeholder="Dirección de la tienda">
+                                <input type="text" id="dpiAdd" class="form-control" placeholder="DPI del usuario">
                             </div>
                         </div>
 
                         <div class="row form-group">
                             <div class="col-md-12">
                                 <label for="subject">Teléfono:</label>
-                                <input type="tel" id="telefonoAdd" class="form-control" placeholder="Teléfono de la tienda">
+                                <input type="tel" id="telefonoAdd" class="form-control" placeholder="Teléfono del usuario">
                             </div>
                         </div>
 
                         <div class="row form-group">
                             <div class="col-md-12">
-                                <label for="subject">Nit:</label>
-                                <input type="tel" id="nitAdd" class="form-control" placeholder="Teléfono de la tienda">
+                                <label for="subject">Estado:</label>
+                                <select id="estadoAdd" class="form-control" placeholder="Estado"></select>
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="subject">Tienda:</label>
+                                <select id="tiendaAdd" class="form-control" placeholder="Tienda"></select>
                             </div>
                         </div>
                     </form>	
@@ -370,7 +391,7 @@
                     <div class="col col-lg-12">
                         <section class="card">
                             <div class="card-body text-secondary" id="app">  
-                                <div><button id="btnModalAgregar" class="col-md-2 offset-10 col-sm-2 fa fa-plus-circle btn btn-secondary" data-toggle="modal" data-target="#tiendaAgregarModal" data-title="Agregar tienda"> Agregar Tienda </button></div>
+                                <div><button id="btnModalAgregar" class="col-md-2 offset-10 col-sm-2 fa fa-plus-circle btn btn-secondary" data-toggle="modal" data-target="#usuarioAgregarModal" data-title="Agregar usuario"> Agregar Usuario </button></div>
                                 <div id="data"></div>
                             </div>
                         </section>
@@ -427,66 +448,292 @@
     <script type="text/javascript">
         $(function() { 
             alertify.set('notifier', 'position', 'top-center')
-            ListarTiendas();
-            $('#tiendaModal').on('show.bs.modal', function (event) {
-				var button = $(event.relatedTarget) // Button that triggered the modal
-				var title = button.data('title') // Extract info from data-* attributes
+            ListarUsuarios();
+            $('#usuarioModal').on('show.bs.modal', function (event) {
+				var button = $(event.relatedTarget) 
+				var title = button.data('title') 
                 var id = button.data('id')
                 var nombre = button.data('nombre')
-                var direccion = button.data('direccion')
+                var dpi = button.data('dpi')
                 var telefono = button.data('telefono')
-                var nit = button.data('nit')
-				// If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-				// Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+                var estado = button.data('estado')
+                var idtienda = button.data('idtienda')
+                
+                var requri2   = 'http://localhost:9090/tiendas';
+                var tiendas = $("#tiendaEdit");
+                var lista_tiendas = '';
+                requestJSON2(requri2, function(json) {
+                if(json == null) {
+                    lista_tiendas = null;
+                }
+                else {
+                    $.each(json, function(index)
+                    {
+                        lista_tiendas += '<option value="' + json[index].idtienda + '">' + json[index].nombretienda + '</option>';
+                    });
+                } 
+                tiendas.html(lista_tiendas);
+                $.each(json, function(index)
+                    {
+                        if(json[index].idtienda == idtienda)
+                        {
+                            document.getElementById('tiendaEdit').selectedIndex= index;
+                        }
+                    });
+                });
+
+                var requri3   = 'http://localhost:9090/estados';
+                var estados = $("#estadoEdit");
+                var lista_estados = '';
+                requestJSON3(requri3, function(json) {
+                if(json == null) {
+                    lista_estados = null;
+                }
+                else {
+                    $.each(json, function(index)
+                    {
+                        lista_estados += '<option value="' + json[index].estado + '">' + json[index].descripcion + '</option>';
+                    });
+                } 
+                estados.html(lista_estados);
+                $.each(json, function(index)
+                    {
+                        if(json[index].estado == estado)
+                        {
+                            document.getElementById('estadoEdit').selectedIndex= index;
+                        }
+                    });
+                });
+                
+                function requestJSON2(url, callback) {
+                $.ajax({
+                    url: url,
+                    headers: { 'Content-Type': 'application/json'},
+                    dataType: "json",
+                    complete: function(xhr) {
+                    callback.call(null, xhr.responseJSON);
+                    }
+                });
+                }
+
+                function requestJSON3(url, callback) {
+                $.ajax({
+                    url: url,
+                    headers: { 'Content-Type': 'application/json'},
+                    dataType: "json",
+                    complete: function(xhr) {
+                    callback.call(null, xhr.responseJSON);
+                    }
+                });
+                }
+
 				var modal = $(this)
 				modal.find('.modal-title').text(title)
-                modal.find('.modal-body input[id="id_tiendaEdit"]').val(id)
+                modal.find('.modal-body input[id="id_usuarioEdit"]').val(id)
                 modal.find('.modal-body input[id="nombreEdit"]').val(nombre)
-                modal.find('.modal-body input[id="direccionEdit"]').val(direccion)
+                modal.find('.modal-body input[id="dpiEdit"]').val(dpi)
                 modal.find('.modal-body input[id="telefonoEdit"]').val(telefono)
-                modal.find('.modal-body input[id="nitEdit"]').val(nit)
             })
-            $('#tiendaDeleteModal').on('show.bs.modal', function (event) {
+            $('#usuarioDeleteModal').on('show.bs.modal', function (event) {
 				var button = $(event.relatedTarget)
 				var title = button.data('title')
                 var id = button.data('id')
                 var nombre = button.data('nombre')
-                var direccion = button.data('direccion')
+                var dpi = button.data('dpi')
                 var telefono = button.data('telefono')
-                var nit = button.data('nit')
+                var estado = button.data('estado')
+                var idtienda = button.data('idtienda')
+
+                var requri2   = 'http://localhost:9090/tiendas';
+                var tiendas = $("#tiendaDel");
+                var lista_tiendas = '';
+                requestJSON2(requri2, function(json) {
+                if(json == null) {
+                    lista_tiendas = null;
+                }
+                else {
+                    $.each(json, function(index)
+                    {
+                        lista_tiendas += '<option value="' + json[index].idtienda + '">' + json[index].nombretienda + '</option>';
+                    });
+                } 
+                tiendas.html(lista_tiendas);
+                });
+
+                var requri3   = 'http://localhost:9090/estados';
+                var estados = $("#estadoDel");
+                var lista_estados = '';
+                requestJSON3(requri3, function(json) {
+                if(json == null) {
+                    lista_estados = null;
+                }
+                else {
+                    $.each(json, function(index)
+                    {
+                        lista_estados += '<option value="' + json[index].estado + '">' + json[index].descripcion + '</option>';
+                    });
+                } 
+                estados.html(lista_estados);
+                });
+                
+                function requestJSON2(url, callback) {
+                $.ajax({
+                    url: url,
+                    headers: { 'Content-Type': 'application/json'},
+                    dataType: "json",
+                    complete: function(xhr) {
+                    callback.call(null, xhr.responseJSON);
+                    }
+                });
+                }
+
+                function requestJSON3(url, callback) {
+                $.ajax({
+                    url: url,
+                    headers: { 'Content-Type': 'application/json'},
+                    dataType: "json",
+                    complete: function(xhr) {
+                    callback.call(null, xhr.responseJSON);
+                    }
+                });
+                }
+
 				var modal = $(this)
 				modal.find('.modal-title').text(title)
-                modal.find('.modal-body input[id="id_tiendaDel"]').val(id)
+                modal.find('.modal-body input[id="id_usuarioDel"]').val(id)
                 modal.find('.modal-body input[id="nombreDel"]').val(nombre)
-                modal.find('.modal-body input[id="direccionDel"]').val(direccion)
+                modal.find('.modal-body input[id="dpiDel"]').val(dpi)
                 modal.find('.modal-body input[id="telefonoDel"]').val(telefono)
-                modal.find('.modal-body input[id="nitDel"]').val(nit)
             })
-            $('#tiendaAgregarModal').on('show.bs.modal', function (event) {
+            $('#usuarioAgregarModal').on('show.bs.modal', function (event) {
 				var button = $(event.relatedTarget) 
-				var title = button.data('title') 
+                var title = button.data('title')
+                
+                var requri2   = 'http://localhost:9090/tiendas';
+                var tiendas = $("#tiendaAdd");
+                var lista_tiendas = '';
+                requestJSON2(requri2, function(json) {
+                if(json == null) {
+                    lista_tiendas = null;
+                }
+                else {
+                    $.each(json, function(index)
+                    {
+                        lista_tiendas += '<option value="' + json[index].idtienda + '">' + json[index].nombretienda + '</option>';
+                    });
+                } 
+                tiendas.html(lista_tiendas);
+                });
+
+                var requri3   = 'http://localhost:9090/estados';
+                var estados = $("#estadoAdd");
+                var lista_estados = '';
+                requestJSON3(requri3, function(json) {
+                if(json == null) {
+                    lista_estados = null;
+                }
+                else {
+                    $.each(json, function(index)
+                    {
+                        lista_estados += '<option value="' + json[index].estado + '">' + json[index].descripcion + '</option>';
+                    });
+                } 
+                estados.html(lista_estados);
+                });
+                
+                function requestJSON2(url, callback) {
+                $.ajax({
+                    url: url,
+                    headers: { 'Content-Type': 'application/json'},
+                    dataType: "json",
+                    complete: function(xhr) {
+                    callback.call(null, xhr.responseJSON);
+                    }
+                });
+                }
+
+                function requestJSON3(url, callback) {
+                $.ajax({
+                    url: url,
+                    headers: { 'Content-Type': 'application/json'},
+                    dataType: "json",
+                    complete: function(xhr) {
+                    callback.call(null, xhr.responseJSON);
+                    }
+                });
+                }
+                
 				var modal = $(this)
 				modal.find('.modal-title').text(title)
 			})
         });
-        function ListarTiendas() {
-			var requri   = 'http://localhost:9090/tiendas';
-  
+        function ListarUsuarios() {
+            var requri2   = 'http://localhost:9090/tiendas';
+            var lista_tiendas = [];
+            requestJSON2(requri2, function(json) {
+            if(json == null) {
+                lista_tiendas = null;
+            }
+            else {
+                $.each(json, function(index)
+                {    
+                    lista_tiendas.push({
+                        titulo: json[index].nombretienda,
+                        valor: json[index].idtienda
+                    });
+                });
+            }
+            });
+
+            var requri3   = 'http://localhost:9090/estados';
+            var lista_estados = [];
+            requestJSON3(requri3, function(json) {
+            if(json == null) {
+                lista_estados = null;
+            }
+            else {
+                $.each(json, function(index)
+                {
+                    lista_estados.push({
+                        titulo: json[index].descripcion,
+                        valor: json[index].estado
+                    });
+                });
+            } 
+            });
+
+			var requri   = 'http://localhost:9090/usuarios';
 			requestJSON(requri, function(json) {
 			if(json == null) {
 			  $('#data').html("");
 			}
 			else {
-				var outhtml = '<p><h3>Listado de tiendas: ' + json.length + '</h3></p> <table id="TiendasTable" class="display" style="width:100%">';
-					  outhtml = outhtml + '<thead><tr><th>Id</th><th>Nombre</th><th>Dirección</th><th>Teléfono</th><th>Nit</th><th>Acciones</th></tr></thead><tbody>';
+                var outhtml = '<p><h3>Listado de usuarios: ' + json.length + '</h3></p> <table id="UsuariosTable" class="display" style="width:100%">';
+                    outhtml = outhtml + '<thead><tr><th>Id</th><th>Nombre</th><th>DPI</th><th>Teléfono</th><th>Estado</th><th>Tienda</th><th>Acciones</th></tr></thead><tbody>';
+                    let tienda = '';
+                    let estado = '';
 					$.each(json, function(index) {
-                      outhtml = outhtml +  ' <tr><td>'+json[index].idtienda+'</td><td>'+json[index].nombretienda+'</td><td>'+json[index].direccion+'</td> <td>'+json[index].telefono+'</td><td>'+json[index].nit+'</td><td><a title="Editar elemento" class="fa fa-edit" data-toggle="modal" data-target="#tiendaModal" data-title="Editar tienda" data-id="' + json[index].idtienda + '" data-nombre="'+ json[index].nombretienda +'" data-direccion="' + json[index].direccion + '" data-telefono="' + json[index].telefono + '" data-nit="' + json[index].nit + '"></a>&nbsp;&nbsp;&nbsp;<a title="Eliminar elemento" class="fa fa-trash-o" data-toggle="modal" data-target="#tiendaDeleteModal" data-title="Eliminar tienda" data-id="' + json[index].idtienda + '" data-nombre="'+ json[index].nombretienda +'" data-direccion="' + json[index].direccion + '" data-telefono="' + json[index].telefono + '" data-nit="' + json[index].nit + '"></a></td></tr>';
+                        $.each(lista_tiendas, function(index2)
+                        {    
+                            if(json[index].idtienda == lista_tiendas[index2].valor)
+                            {
+                                tienda = lista_tiendas[index2].titulo;
+                            }
+                        });
+                        $.each(lista_estados, function(index3)
+                        {    
+                            if(json[index].estado == lista_estados[index3].valor)
+                            {
+                                estado = lista_estados[index3].titulo;
+                            }
+                        });
+                      outhtml = outhtml +  ' <tr><td>'+json[index].idusuario+'</td><td>'+json[index].nombre+'</td><td>'+json[index].dpi+'</td><td>'+json[index].telefono+'</td><td>'+estado+'</td><td>'+tienda+'</td><td><a title="Editar elemento" class="fa fa-edit" data-toggle="modal" data-target="#usuarioModal" data-title="Editar usuario" data-id="' + json[index].idusuario + '" data-nombre="'+ json[index].nombre +'" data-dpi="' + json[index].dpi + '" data-telefono="' + json[index].telefono + '" data-estado="' + json[index].estado + '" data-idtienda="' + json[index].idtienda + '"></a>&nbsp;&nbsp;&nbsp;<a title="Eliminar elemento" class="fa fa-trash-o" data-toggle="modal" data-target="#usuarioDeleteModal" data-title="Eliminar usuario" data-id="' + json[index].idusuario + '" data-nombre="'+ json[index].nombre +'" data-dpi="' + json[index].dpi + '" data-telefono="' + json[index].telefono + '" data-estado="' + json[index].estado + '" data-idtienda="' + json[index].idtienda + '"></a></td></tr>';
 					});
 					outhtml = outhtml + '</tbody></table></div>'; 
 				  $('#data').html(outhtml);
 				  runCompleteCallback();
-			  } // end else statement
-			}); // end requestJSON Ajax call
+			  }
+			});
 
 			function requestJSON(url, callback) {
 			  $.ajax({
@@ -497,10 +744,30 @@
 				  callback.call(null, xhr.responseJSON);
 				}
 			  });
-			}
+            }
+            function requestJSON2(url, callback) {
+            $.ajax({
+                url: url,
+                headers: { 'Content-Type': 'application/json'},
+                dataType: "json",
+                complete: function(xhr) {
+                callback.call(null, xhr.responseJSON);
+                }
+            });
+            }
+            function requestJSON3(url, callback) {
+            $.ajax({
+                url: url,
+                headers: { 'Content-Type': 'application/json'},
+                dataType: "json",
+                complete: function(xhr) {
+                callback.call(null, xhr.responseJSON);
+                }
+            });
+            }
 
 			function runCompleteCallback() {
-            var table = $('#TiendasTable');
+            var table = $('#UsuariosTable');
 			table.DataTable( {
 				"searching": true,
 				"paging":   true,
@@ -517,42 +784,45 @@
         }
         $('#btnModificar').on('click', function(e) {
 				e.preventDefault();
-				var idVar = $('#id_tiendaEdit').val();
+				var idVar = $('#id_usuarioEdit').val();
 				var nomVar = $('#nombreEdit').val();
-				var dirVar = $('#direccionEdit').val();
+				var dpiVar = $('#dpiEdit').val();
                 var telVar = $('#telefonoEdit').val();
-                var nitVar = $('#nitEdit').val();
-				var url = "http://localhost:9090/tiendas";
+                var estadoVar = $('#estadoEdit').val();
+                var tiendaVar = $('#tiendaEdit').val();
+				var url = "http://localhost:9090/usuarios";
 				var xhr = new XMLHttpRequest();
 					xhr.open("PUT", url, true);
 					xhr.setRequestHeader("Content-Type", "application/json");
-					var data = JSON.stringify({ "idtienda": idVar, "nombretienda": nomVar, "direccion": dirVar, "telefono": telVar, "nit": nitVar });
-					xhr.send(data);
+					var data = JSON.stringify({ "idusuario": idVar, "nombre": nomVar, "dpi": dpiVar, "telefono": telVar, "estado": estadoVar, "idtienda": tiendaVar });
+                    xhr.send(data);
 					xhr.onload = function() {
 						console.log(xhr.response);
 						if(xhr.response == "OK") {
-							$('#id_tiendaEdit').val("");
+							$('#id_usuarioEdit').val("");
 							$('#nombreEdit').val("");
-							$('#direccionEdit').val("");
+							$('#dpiEdit').val("");
 							$('#telefonoEdit').val("");
-                            $('#nitEdit').val("");
+                            $('#estadoEdit').val("");
+                            $('#tiendaEdit').val("");
 
-                            ListarTiendas();
-                            alertify.success('La tienda fue modificada correctamente.');
+                            ListarUsuarios();
+                            alertify.success('El usuario fue modificado correctamente.');
                         } else {
-                            $('#id_tiendaEdit').val("");
+							$('#id_usuarioEdit').val("");
 							$('#nombreEdit').val("");
-							$('#direccionEdit').val("");
-                            $('#telefonoEdit').val("");
-                            $('#nitEdit').val("");
+							$('#dpiEdit').val("");
+							$('#telefonoEdit').val("");
+                            $('#estadoEdit').val("");
+                            $('#tiendaEdit').val("");
                             alertify.error(xhr.response);
 						}
 					};
             }); // end click event handler
             $('#btnEliminar').on('click', function(e) {
                 e.preventDefault();
-                var idVar = $('#id_tiendaDel').val();
-                var url = "http://localhost:9090/tiendas/" + idVar;
+                var idVar = $('#id_usuarioDel').val();
+                var url = "http://localhost:9090/usuarios/" + idVar;
 				var xhr = new XMLHttpRequest();
 					xhr.open("DELETE", url, true);
 					xhr.setRequestHeader("Content-Type", "application/json");
@@ -560,40 +830,46 @@
 					xhr.onload = function() {
 						console.log(xhr.response);
 						if(xhr.response == "OK") {
-							ListarTiendas();
-                            alertify.success('La tienda fue eliminada correctamente.');
+							ListarUsuarios();
+                            alertify.success('El usuario fue eliminado correctamente.');
 						} else {
 							alertify.error(xhr.response);
 						}
 					};
             }); // end click event handler 
             $('#btnAgregar').on('click', function(e) {
-				e.preventDefault();
+                e.preventDefault();
+                $('#id_usuarioEdit').val("");
 				var nomVar = $('#nombreAdd').val();
-				var dirVar = $('#direccionAdd').val();
+				var dpiVar = $('#dpiAdd').val();
                 var telVar = $('#telefonoAdd').val();
-                var nitVar = $('#nitAdd').val();
-				var url = "http://localhost:9090/tiendas";
+                var estadoVar = $('#estadoAdd').val();
+                var tiendaVar = $('#tiendaAdd').val();
+				var url = "http://localhost:9090/usuarios";
 				var xhr = new XMLHttpRequest();
 					xhr.open("POST", url, true);
 					xhr.setRequestHeader("Content-Type", "application/json");
-					var data = JSON.stringify({ "nombretienda": nomVar, "direccion": dirVar, "telefono": telVar, "nit": nitVar });
+					var data = JSON.stringify({ "nombre": nomVar, "dpi": dpiVar, "telefono": telVar, "estado": estadoVar, "idtienda": tiendaVar });
 					xhr.send(data);
 					xhr.onload = function() {
 						console.log(xhr.response);
 						if(xhr.response == "OK") {
+							$('#id_usuarioAdd').val("");
 							$('#nombreAdd').val("");
-							$('#direccionAdd').val("");
-                            $('#telefonoAdd').val("");
-                            $('#nitAdd').val("");
+							$('#dpiAdd').val("");
+							$('#telefonoAdd').val("");
+                            $('#estadoAdd').val("");
+                            $('#tiendaAdd').val("");
 
-							ListarTiendas();
-                            alertify.success('La tienda fue ingresada correctamente.');
+							ListarUsuarios();
+                            alertify.success('El usuario fue ingresado correctamente.');
 						} else {
+							$('#id_usuarioAdd').val("");
 							$('#nombreAdd').val("");
-							$('#direccionAdd').val("");
-                            $('#telefonoAdd').val("");
-                            $('#nitAdd').val("");
+							$('#dpiAdd').val("");
+							$('#telefonoAdd').val("");
+                            $('#estadoAdd').val("");
+                            $('#tiendaAdd').val("");
 							alertify.error(xhr.response);
 						}
 					};
