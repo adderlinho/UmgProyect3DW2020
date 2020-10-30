@@ -17,6 +17,8 @@ import java.util.List;
 
 import umg.edu.Proyect3DW2020.modelo.tienda;
 import umg.edu.Proyect3DW2020.negocio.tiendaRepository;
+import umg.edu.Proyect3DW2020.service.tiendaServicio;
+
 
 /**
  *
@@ -26,58 +28,47 @@ import umg.edu.Proyect3DW2020.negocio.tiendaRepository;
 @RestController
 @RequestMapping("/tiendas")
 public class tiendaController {
-    @Autowired
-    private tiendaRepository repo;
 
+    @Autowired
+    private tiendaServicio tiendaServicio;
+
+    
     @GetMapping
     public List <tienda> listar(){
-        return repo.findAll();
+        return tiendaServicio.enlistAll_tienda();
     }
 
-    @GetMapping(value="/buscar/{id}")
+ @GetMapping(value="/buscar/{id}")
     public tienda buscarId(@PathVariable("id") final Integer id){
-        return  repo.findById(id).get();
-    }
+        return  tiendaServicio.findById_buscarid(id);
 
+  }
+    //mentodo que devuelve el nombre de una tienda
+     @GetMapping(value="/buscartienda/{id}")
+    public String buscartienda(@PathVariable("id") final Integer id){
+        return  tiendaServicio.findById_NombresTiendas(id);
+
+  }
     //metodo para insertar detalleProductoFinal
     @PostMapping
     @ResponseStatus(HttpStatus.OK)
     public String  insertar(@RequestBody tienda emp){
-        try {
-            repo.save(emp);
-            return "OK";
-        }
-        catch (Exception ex)
-        {
-            return "Hubo un error insertando la tienda.";
-        }
+        return tiendaServicio.create(emp);
     }
 
-    //metodo para modificar producto
+
+    //modifica una tienda
     @PutMapping
     @ResponseStatus(HttpStatus.OK)
-    public String modificar(@RequestBody tienda emp){
-        try {
-            repo.save(emp);
-            return "OK";
-        }
-        catch (Exception ex)
-        {
-            return "Hubo un error modificando la tienda.";
-        }
+    public String modificar(@RequestBody tienda emp){             
+        return tiendaServicio.modify_tienda(emp);
+        
     }
 
-    //metoo para eliminar producto
+
     @DeleteMapping(value="/{id}")
     @ResponseStatus(HttpStatus.OK)
     public String eliminar(@PathVariable("id") Integer id){
-        try {
-            repo.deleteById(id);
-            return "OK";
-        }
-        catch (Exception ex)
-        {
-            return "Hubo un error eliminando la tienda.";
-        }
+            return tiendaServicio.delete_tienda(id);  
     }
 }
