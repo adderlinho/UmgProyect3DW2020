@@ -49,7 +49,7 @@ public class ingredientesController {
         }
         catch (Exception ex)
         {
-            return "Hubo un error insertando el detalleProductoFinal.";
+            return "Hubo un error insertando el ingrediente.";
         }
     }
 
@@ -63,7 +63,7 @@ public class ingredientesController {
         }
         catch (Exception ex)
         {
-            return "Hubo un error modificando el detalleProductoFinal.";
+            return "Hubo un error modificando el ingrediente.";
         }
     }
 
@@ -77,7 +77,7 @@ public class ingredientesController {
         }
         catch (Exception ex)
         {
-            return "Hubo un error eliminando el detalleProductoFinal.";
+            return "Hubo un error eliminando el ingrediente.";
         }
     }
 }

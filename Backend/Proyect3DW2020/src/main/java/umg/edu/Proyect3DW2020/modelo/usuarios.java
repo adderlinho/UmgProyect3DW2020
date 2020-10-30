@@ -20,6 +20,7 @@ public class usuarios {
     private String telefono;
     private int estado;
     private int idtienda;
+    private int administrador;
 
     @Override
     public String toString() {
@@ -30,6 +31,8 @@ public class usuarios {
                 ", telefono='" + telefono + '\'' +
                 ", estado='" + estado + '\'' +
                 ", idtienda='" + idtienda + '\'' +
+                ", administrador='" + administrador + '\'' +
+                ", administrador='" + administrador + '\'' +
                 '}';
     }
 }

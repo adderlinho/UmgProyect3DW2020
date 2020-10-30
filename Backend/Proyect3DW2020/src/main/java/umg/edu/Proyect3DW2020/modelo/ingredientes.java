@@ -18,9 +18,6 @@ public class ingredientes {
     private String descripcion;
     private int medida;
     private int estado;
-    private int estado_estados;
-    private int usuario_crea;
-    private int idusuario_usuarios;
     private int idtienda;
 
     @Override
@@ -31,9 +28,6 @@ public class ingredientes {
                 ", descripcion='" + descripcion + '\'' +
                 ", medida='" + medida + '\'' +
                 ", estado='" + estado + '\'' +
-                ", estado_estados='" + estado_estados + '\'' +
-                ", usuario_crea='" + usuario_crea + '\'' +
-                ", idusuario_usuarios='" + idusuario_usuarios + '\'' +
                 ", idtienda='" + idtienda + '\'' +
                 '}';
     }
