@@ -54,12 +54,13 @@ public class tiendaServicio {
         }
          
 }
-   
+   //Servicio para enlistar tienda
    public List<tienda> enlistAll_tienda() {
        return repo.findAll();
    }
    
    
+   //servicio para buscar tienda por id
    public tienda findById_buscarid(Integer id){
       return  repo.findById(id).get();
    }
@@ -70,6 +71,7 @@ public class tiendaServicio {
    }
 
     
+    //servicio para eliminar tienda
     public String delete_tienda(Integer id){
          try {
             repo.deleteById(id);
