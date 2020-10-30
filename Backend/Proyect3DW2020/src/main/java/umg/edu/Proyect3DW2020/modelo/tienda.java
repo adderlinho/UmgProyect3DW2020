@@ -21,6 +21,11 @@ public class tienda {
         this.nit = nit;
     }
     
+    
+      public tienda() {
+      
+    }
+    
    
         
     public int getIdtienda() {
