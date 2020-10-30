@@ -18,8 +18,8 @@ public class usuarios {
     private String nombre;
     private String dpi;
     private String telefono;
-    private String estado;
-    private String idtienda;
+    private int estado;
+    private int idtienda;
 
     @Override
     public String toString() {
