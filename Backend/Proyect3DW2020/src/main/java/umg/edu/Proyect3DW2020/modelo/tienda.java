@@ -12,6 +12,41 @@ import lombok.Data;
 @Entity
 @Table(name="tienda")
 public class tienda {
+  
+    public tienda(int idtienda, String nombretienda, String direccion, String telefono, String nit) {
+        this.idtienda = idtienda;
+        this.nombretienda = nombretienda;
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.nit = nit;
+    }
+    
+    
+      public tienda() {
+      
+    }
+    
+   
+        
+    public int getIdtienda() {
+        return idtienda;
+    }
+
+    public String getNombretienda() {
+        return nombretienda;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public String getNit() {
+        return nit;
+    }
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idtienda;

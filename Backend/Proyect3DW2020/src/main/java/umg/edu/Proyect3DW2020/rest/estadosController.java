@@ -17,6 +17,7 @@ import java.util.List;
 
 import umg.edu.Proyect3DW2020.modelo.estados;
 import umg.edu.Proyect3DW2020.negocio.estadosRepository;
+import umg.edu.Proyect3DW2020.service.estadosServicios;
 
 /**
  *
@@ -27,57 +28,41 @@ import umg.edu.Proyect3DW2020.negocio.estadosRepository;
 @RequestMapping("/estados")
 public class estadosController {
     @Autowired
-    private estadosRepository repo;
+    private estadosServicios servicios;
 
     @GetMapping
     public List <estados> listar(){
-        return repo.findAll();
+        return servicios.enlistAll_estados();
     }
 
     @GetMapping(value="/buscar/{id}")
     public estados buscarId(@PathVariable("id") final Integer id){
-        return  repo.findById(id).get();
+        return  servicios.findById_buscarid(id);
     }
-
-    //metodo para insertar detalleProductoFinal
+    
+   
     @PostMapping
     @ResponseStatus(HttpStatus.OK)
     public String  insertar(@RequestBody estados emp){
-        try {
-            repo.save(emp);
-            return "OK";
-        }
-        catch (Exception ex)
-        {
-            return "Hubo un error insertando el detalleProductoFinal.";
-        }
-    }
+            return servicios.create(emp);
+        
+    } 
 
     //metodo para modificar producto
     @PutMapping
     @ResponseStatus(HttpStatus.OK)
     public String modificar(@RequestBody estados emp){
-        try {
-            repo.save(emp);
-            return "OK";
-        }
-        catch (Exception ex)
-        {
-            return "Hubo un error modificando el detalleProductoFinal.";
-        }
+          return servicios.modify_estados(emp);
+        
     }
+    
+   
 
     //metoo para eliminar producto
     @DeleteMapping(value="/{id}")
     @ResponseStatus(HttpStatus.OK)
     public String eliminar(@PathVariable("id") Integer id){
-        try {
-            repo.deleteById(id);
-            return "OK";
-        }
-        catch (Exception ex)
-        {
-            return "Hubo un error eliminando el detalleProductoFinal.";
-        }
+            return servicios.delete_estados(id);
     }
+    
 }
