@@ -8,10 +8,7 @@ package umg.edu.Proyect3DW2020.service;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-<<<<<<< HEAD
 
-=======
->>>>>>> 73d84c18380e779f2a7aa25a4dae44da3cfe545d
 import umg.edu.Proyect3DW2020.modelo.estadoventa;
 import umg.edu.Proyect3DW2020.negocio.estadoventaRepository;
 
