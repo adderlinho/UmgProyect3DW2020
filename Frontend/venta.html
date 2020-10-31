@@ -86,6 +86,9 @@
                     </li>
                     <li class="menu-title">Administracion de Tienda</li>
                     <!-- /.menu-title -->
+                     <li>
+                        <a href="venta.html"> <i class=" menu-icon fa fa-coffee"></i> Realizar una Venta</a>
+                    </li>
                     <li>
                         <a href="tiendas.html"> <i class=" menu-icon fa fa-coffee"></i> Registro de Tiendas</a>
                     </li>
@@ -249,9 +252,104 @@
         });
         function GetMenu() {
             
+         // datos de combos
+         // datos de tiendas
+         /*productosfinal pf
+     JOIN detalleproductofinal dpf ON dpf.idproductofinal = pf.idproductofinal
+     JOIN ingredientes i ON i.idingrediente = dpf.idingrediente
+  WHERE pf.estado = 1;
+*/
+        // datos de combos
+        var requri   = 'https://umgdw.herokuapp.com/combos';
+        var lista_combos = [];
+        requestJSON2(requri, function(json) {
+        if(json == null) {
+            lista_combos = null;
+        }
+        else {
+            $.each(json, function(index)
+            {    
+                lista_combos.push({
+                    titulo: json[index].nombre,
+                    valor: json[index].idproductofinal
+                });
+            });
+        }
+        });
+        //datos de productos
+        requri   = 'https://umgdw.herokuapp.com/producos';
+        var lista_productos = [];
+        requestJSON2(requri, function(json) {
+        if(json == null) {
+            lista_productos = null;
+        }
+        else {
+            $.each(json, function(index)
+            {    
+                lista_productos.push({
+                    iddetalleproductofinal: json[index].iddetalleproductofinal,
+                    cantidad: json[index].cantidad,
+                    estado: json[index].estado,
+                    idproductofinal: json[index].idproductofinal,
+                    idingrediente: json[index].idingrediente,
+                    idusuario_usuarios: json[index].idusuario_usuarios
+                });
+            });
+        }
+        });
+        //ingredientes
+        //idingrediente":1,"nombre":"Ala","descripcion":"Mediana","medida":2,"estado":1,"idtienda":1}
+
+
+        requri   = 'https://umgdw.herokuapp.com/ingredientes';
+        var lista_ingredientes = [];
+        requestJSON2(requri, function(json) {
+        if(json == null) {
+            lista_productos = null;
+        }
+        else {
+            $.each(json, function(index)
+            {    
+                lista_ingredientes.push({
+                    idingrediente: json[index].idingrediente,
+                    nombre: json[index].nombre,
+                    idtienda: json[index].idtienda,
+                    estado: json[index].estado,
+                    
+                    
+                });
+            });
+        }
+        });
+
+        // datos de tiendas
+
+
+        var requri   = 'https://umgdw.herokuapp.com/ingredientes';
+            var lista_ingredientes = [];
+            requestJSON(requri, function(json) {
+            if(json == null) {
+                lista_ingredientes = null;
+            }
+            else {
+                $.each(json, function(index)
+                {
+                    lista_ingredientes.push({
+                        titulo: json[index].nombre,
+                        valor: json[index].idingrediente
+                    });
+                });
+            } 
+            });
+
+            
+
+
+
+
             var requri   = 'http://localhost:9090/view_menu';
             setTimeout(function(){ 
-                requestJSON(requri, function(json) {
+            requestJSON(requri, function(json) {
             if(json == null) {
               $('#data').html("");
             }
@@ -301,26 +399,7 @@
                 }
               });
             }
-            function requestJSON2(url, callback) {
-            $.ajax({
-                url: url,
-                headers: { 'Content-Type': 'application/json'},
-                dataType: "json",
-                complete: function(xhr) {
-                callback.call(null, xhr.responseJSON);
-                }
-            });
-            }
-            function requestJSON3(url, callback) {
-            $.ajax({
-                url: url,
-                headers: { 'Content-Type': 'application/json'},
-                dataType: "json",
-                complete: function(xhr) {
-                callback.call(null, xhr.responseJSON);
-                }
-            });
-            }
+           
 
             function runCompleteCallback() {
             var table = $('#UsuariosTable');
@@ -338,64 +417,7 @@
             });
           }; // end click event handler
         }
-        $('#btnModificar').on('click', function(e) {
-                e.preventDefault();
-                var idVar = $('#id_usuarioEdit').val();
-                var nomVar = $('#nombreEdit').val();
-                var dpiVar = $('#dpiEdit').val();
-                var telVar = $('#telefonoEdit').val();
-                var estadoVar = $('#estadoEdit').val();
-                var tiendaVar = $('#tiendaEdit').val(); 
-                var adminVar = $('#adminEdit').val();
-                var url = "http://localhost:9090/usuarios";
-                var xhr = new XMLHttpRequest();
-                    xhr.open("PUT", url, true);
-                    xhr.setRequestHeader("Content-Type", "application/json");
-                    var data = JSON.stringify({ "idusuario": idVar, "nombre": nomVar, "dpi": dpiVar, "telefono": telVar, "estado": estadoVar, "idtienda": tiendaVar, "administrador": adminVar });
-                    xhr.send(data);
-                    xhr.onload = function() {
-                        console.log(xhr.response);
-                        if(xhr.response == "OK") {
-                            $('#id_usuarioEdit').val("");
-                            $('#nombreEdit').val("");
-                            $('#dpiEdit').val("");
-                            $('#telefonoEdit').val("");
-                            $('#estadoEdit').val("");
-                            $('#tiendaEdit').val("");
-                            $('#adminEdit').val("");
-
-                            ListarUsuarios();
-                            alertify.success('El usuario fue modificado correctamente.');
-                        } else {
-                            $('#id_usuarioEdit').val("");
-                            $('#nombreEdit').val("");
-                            $('#dpiEdit').val("");
-                            $('#telefonoEdit').val("");
-                            $('#estadoEdit').val("");
-                            $('#tiendaEdit').val("");
-                            $('#adminEdit').val("");
-                            alertify.error(xhr.response);
-                        }
-                    };
-            }); // end click event handler
-            $('#btnEliminar').on('click', function(e) {
-                e.preventDefault();
-                var idVar = $('#id_usuarioDel').val();
-                var url = "http://localhost:9090/usuarios/" + idVar;
-                var xhr = new XMLHttpRequest();
-                    xhr.open("DELETE", url, true);
-                    xhr.setRequestHeader("Content-Type", "application/json");
-                    xhr.send();
-                    xhr.onload = function() {
-                        console.log(xhr.response);
-                        if(xhr.response == "OK") {
-                            ListarUsuarios();
-                            alertify.success('El usuario fue eliminado correctamente.');
-                        } else {
-                            alertify.error(xhr.response);
-                        }
-                    };
-            }); // end click event handler 
+ 
             $('#btnAgregar').on('click', function(e) {
                 e.preventDefault();
                 $('#id_usuarioEdit').val("");
