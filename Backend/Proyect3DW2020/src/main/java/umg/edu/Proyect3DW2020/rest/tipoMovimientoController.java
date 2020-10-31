@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 import umg.edu.Proyect3DW2020.modelo.tipoMovimiento;
-import umg.edu.Proyect3DW2020.negocio.tipoMovimientoRepository;
+import umg.edu.Proyect3DW2020.service.tipoMovimientoServicio;
 
 /**
  *
@@ -27,57 +27,41 @@ import umg.edu.Proyect3DW2020.negocio.tipoMovimientoRepository;
 @RequestMapping("/tipoMovimiento")
 public class tipoMovimientoController {
     @Autowired
-    private tipoMovimientoRepository repo;
+    private tipoMovimientoServicio servicio;
 
     @GetMapping
     public List <tipoMovimiento> listar(){
-        return repo.findAll();
+        return servicio.enlistAll_tipoMovimiento();
     }
 
     @GetMapping(value="/buscar/{id}")
     public tipoMovimiento buscarId(@PathVariable("id") final Integer id){
-        return  repo.findById(id).get();
+        return  servicio.findById_tipoMovimiento_buscarid(id);
     }
 
     //metodo para insertar detalleProductoFinal
     @PostMapping
     @ResponseStatus(HttpStatus.OK)
     public String  insertar(@RequestBody tipoMovimiento emp){
-        try {
-            repo.save(emp);
-            return "OK";
-        }
-        catch (Exception ex)
-        {
-            return "Hubo un error insertando el detalleProductoFinal.";
-        }
+      
+            return servicio.create(emp);
+        
     }
 
-    //metodo para modificar producto
     @PutMapping
     @ResponseStatus(HttpStatus.OK)
     public String modificar(@RequestBody tipoMovimiento emp){
-        try {
-            repo.save(emp);
-            return "OK";
-        }
-        catch (Exception ex)
-        {
-            return "Hubo un error modificando el detalleProductoFinal.";
-        }
+   
+            return servicio.modify_tipoMovimiento(emp);
+        
     }
 
     //metoo para eliminar producto
     @DeleteMapping(value="/{id}")
     @ResponseStatus(HttpStatus.OK)
     public String eliminar(@PathVariable("id") Integer id){
-        try {
-            repo.deleteById(id);
-            return "OK";
-        }
-        catch (Exception ex)
-        {
-            return "Hubo un error eliminando el detalleProductoFinal.";
-        }
+        
+            return servicio.delete_tipoMovimiento(id);
+        
     }
 }

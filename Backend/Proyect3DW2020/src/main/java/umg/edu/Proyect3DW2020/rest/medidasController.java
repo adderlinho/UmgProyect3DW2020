@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 import umg.edu.Proyect3DW2020.modelo.medidas;
-import umg.edu.Proyect3DW2020.negocio.medidasRepository;
+import umg.edu.Proyect3DW2020.service.medidasServicios;
 
 /**
  *
@@ -27,57 +27,38 @@ import umg.edu.Proyect3DW2020.negocio.medidasRepository;
 @RequestMapping("/medidas")
 public class medidasController {
     @Autowired
-    private medidasRepository repo;
+    private medidasServicios servicios;
 
     @GetMapping
     public List <medidas> listar(){
-        return repo.findAll();
+        return servicios.enlistAll_medidas();
     }
 
     @GetMapping(value="/buscar/{id}")
     public medidas buscarId(@PathVariable("id") final Integer id){
-        return  repo.findById(id).get();
+        return  servicios.findById_medidas_buscarid(id);
     }
 
-    //metodo para insertar detalleProductoFinal
+   
     @PostMapping
     @ResponseStatus(HttpStatus.OK)
     public String  insertar(@RequestBody medidas emp){
-        try {
-            repo.save(emp);
-            return "OK";
-        }
-        catch (Exception ex)
-        {
-            return "Hubo un error insertando el estadoventa.";
-        }
+            return servicios.create(emp);
+        
     }
 
     //metodo para modificar producto
     @PutMapping
     @ResponseStatus(HttpStatus.OK)
     public String modificar(@RequestBody medidas emp){
-        try {
-            repo.save(emp);
-            return "OK";
-        }
-        catch (Exception ex)
-        {
-            return "Hubo un error modificando el estadoventa.";
-        }
+            return servicios.modify_medidas(emp);
     }
 
     //metoo para eliminar producto
     @DeleteMapping(value="/{id}")
     @ResponseStatus(HttpStatus.OK)
     public String eliminar(@PathVariable("id") Integer id){
-        try {
-            repo.deleteById(id);
-            return "OK";
-        }
-        catch (Exception ex)
-        {
-            return "Hubo un error eliminando el estadoventa.";
-        }
+            return servicios.delete_medidas(id);
+        
     }
 }

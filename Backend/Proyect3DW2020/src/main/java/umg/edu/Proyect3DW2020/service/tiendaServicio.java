@@ -15,7 +15,7 @@ import umg.edu.Proyect3DW2020.negocio.tiendaRepository;
  *
  * @author eli
  */
-@Service 
+@Service
 public class tiendaServicio {
     
    @Autowired

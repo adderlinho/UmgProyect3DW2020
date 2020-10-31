@@ -8,67 +8,67 @@ package umg.edu.Proyect3DW2020.service;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import umg.edu.Proyect3DW2020.modelo.estadoventa;
-import umg.edu.Proyect3DW2020.negocio.estadoventaRepository;
+import umg.edu.Proyect3DW2020.modelo.tipoMovimiento;
+import umg.edu.Proyect3DW2020.negocio.tipoMovimientoRepository;
 
 /**
  *
  * @author eli
  */
 @Service
-public class estadoventaServicio {
-    
-     @Autowired
-    private estadoventaRepository repo;
+public class tipoMovimientoServicio {
+
+
+       @Autowired
+    private tipoMovimientoRepository repo;
    
    
-     //Servicio para enlistar tienda
-   public List<estadoventa> enlistAll_estadoventa() {
+
+   public List<tipoMovimiento> enlistAll_tipoMovimiento() {
        return repo.findAll();
    }
    
    
-      //servicio para buscar tienda por id
-   public estadoventa findById_estadoventa_buscarid(Integer id){
+
+   public tipoMovimiento findById_tipoMovimiento_buscarid(Integer id){
       return  repo.findById(id).get();
    }
     
    
-     public String create(estadoventa estadoventa){ 
+     public String create(tipoMovimiento tipoMovimiento){ 
          try {
-            repo.save(estadoventa);
+            repo.save(tipoMovimiento);
             return "OK";
         }
         catch (Exception ex)
         {
-            return "Hubo un error insertando el estado de venta.";
+            return "Hubo un error insertando el tipo de movimiento.";
         }
          
 }
      
                 
-               public String modify_estadoventa(estadoventa estadoventa){ 
+               public String modify_tipoMovimiento(tipoMovimiento tipoMovimiento){ 
          try {
-            repo.save(estadoventa);
+            repo.save(tipoMovimiento);
             return "OK";
         }
         catch (Exception ex)
         {
-            return "Hubo un error modificar el estado de venta.";
+            return "Hubo un error modificar el tipo de movimiento.";
         }
          
 }
                
-       public String delete_estadoventa(Integer id){
+       public String delete_tipoMovimiento(Integer id){
          try {
             repo.deleteById(id);
             return "OK";
         }
         catch (Exception ex)
         {
-            return "Hubo un error eliminando el estado de venta.";
+            return "Hubo un error eliminando el tipo de movimiento.";
         }
     }
-    
     
 }

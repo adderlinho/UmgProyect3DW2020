@@ -14,13 +14,13 @@ import lombok.Data;
 public class estadoventa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idEstado;
+    private int idestado;
     private String descripcion;
 
     @Override
     public String toString() {
         return "estadoventa{" +
-                "idEstado='" + idEstado + '\'' +
+                "idEstado='" + idestado + '\'' +
                 ", descripcion='" + descripcion + '\'' +
                 '}';
     }

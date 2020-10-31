@@ -17,6 +17,7 @@ import java.util.List;
 
 import umg.edu.Proyect3DW2020.modelo.venta;
 import umg.edu.Proyect3DW2020.negocio.ventaRepository;
+import umg.edu.Proyect3DW2020.service.ventaServicio;
 
 /**
  *
@@ -27,57 +28,41 @@ import umg.edu.Proyect3DW2020.negocio.ventaRepository;
 @RequestMapping("/venta")
 public class ventaController {
     @Autowired
-    private ventaRepository repo;
+    private ventaServicio servicio;
 
     @GetMapping
     public List <venta> listar(){
-        return repo.findAll();
+        return servicio.enlistAll_venta();
     }
 
     @GetMapping(value="/buscar/{id}")
     public venta buscarId(@PathVariable("id") final Integer id){
-        return  repo.findById(id).get();
+        return  servicio.findById_venta_buscarid(id);
     }
 
     //metodo para insertar detalleProductoFinal
     @PostMapping
     @ResponseStatus(HttpStatus.OK)
     public String  insertar(@RequestBody venta emp){
-        try {
-            repo.save(emp);
-            return "OK";
-        }
-        catch (Exception ex)
-        {
-            return "Hubo un error insertando el detalleProductoFinal.";
-        }
+            return servicio.create(emp);
+        
     }
 
     //metodo para modificar producto
     @PutMapping
     @ResponseStatus(HttpStatus.OK)
     public String modificar(@RequestBody venta emp){
-        try {
-            repo.save(emp);
-            return "OK";
-        }
-        catch (Exception ex)
-        {
-            return "Hubo un error modificando el detalleProductoFinal.";
-        }
+     
+            return servicio.modify_venta(emp);
+        
     }
 
     //metoo para eliminar producto
     @DeleteMapping(value="/{id}")
     @ResponseStatus(HttpStatus.OK)
     public String eliminar(@PathVariable("id") Integer id){
-        try {
-            repo.deleteById(id);
-            return "OK";
-        }
-        catch (Exception ex)
-        {
-            return "Hubo un error eliminando el detalleProductoFinal.";
-        }
+ 
+            return servicio.delete_venta(id);
+        
     }
 }
