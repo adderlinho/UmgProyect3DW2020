@@ -324,8 +324,9 @@
             });
 
             //
-
-            $('.txtmenu').on('click', function(e) {
+             $('.txtmenu').off('click'); 
+            $(document).on( 'click', '.txtmenu', function(e){
+           // $('.txtmenu').on('click', function(e) {
                 e.preventDefault();
                console.log("presiona menu");
                 var idmenu = $(this).attr("id_menu");
