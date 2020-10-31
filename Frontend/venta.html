@@ -79,37 +79,25 @@
             <div class="animated fadeIn">
                 <!--  /Traffic -->
                 <div class="clearfix"></div>
-
+                <div class="form-inline" id= "datoscliente">
+                       <div class="form-group mx-sm-3">
+                           <label for="txtcliente" class="sr-only">Nombre Cliente</label>
+                           <input type="text" class="form-control" id="txtcliente" placeholder="Nombre de persona que realiza pedido">
+                       </div>
+                       <div class="form-group mx-sm-3">
+                           <label for="txttelefono" class="sr-only">Telefono</label>
+                           <input type="text" class="form-control" id="txttelefono" placeholder="Teléfono de cliente">
+                       </div>
+                       <button  id= "cmdguardar" class="btn btn-primary">Guardar</button>
+                       <br/>
+                    
+                </div>
                 <div class="row" id= "data">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card ov-h" ">
-                            <img class="card-img-top" src="https://www.eluniversal.com.mx/sites/default/files/2020/03/19/como_extraer_un_texto_de_una_imagen.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Menu No 1</h5>
-                                <p class="card-text">Papas, soda, 1 pieza de pollo.</p>
-                                <a id= "txtmenu_" id_menu= 0 class="btn btn-primary">Seleccionar Menú</a>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
                 <!-- /Calender Chart Weather -->
                 <!-- Modal - Calendar - Add New Event -->
-                <div class="modal fade none-border" id="event-modal">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                <h4 class="modal-title"><strong>Add New Event</strong></h4>
-                            </div>
-                            <div class="modal-body"></div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-success save-event waves-effect waves-light">Create event</button>
-                                <button type="button" class="btn btn-danger delete-event waves-effect waves-light" data-dismiss="modal">Delete</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
                 <!-- /#event-modal -->
                 <!-- Modal - Calendar - Add Category -->
                 <div class="modal fade none-border" id="add-category">
@@ -225,6 +213,10 @@
                     let tienda = '';
                     let estado = '';
                     let rol = '';
+
+
+                    outhtml= ' ';
+
                     $.each(json, function(index) {
                         
                         outhtml = outhtml +  '<div class="col-lg-4 col-md-6"><div class="card ov-h" "><img class="card-img-top" src="'+json[index].imagen+'" alt="Card image <h5 class="card-title">'+ json[index].nombre+'</h5> <p class="card-text">'+ json[index].descripcion+'</p><span class="badge badge-secondary">Precio: Q '+ json[index].precio+'</span></h1>                          <a id= "txtmenu_" id_menu= '+ json[index].idproductofinal +' class="btn btn-primary">Seleccionar Menú</a></div></div> </div>';
