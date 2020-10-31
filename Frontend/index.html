@@ -260,7 +260,7 @@
                                                         </div>
                                                     </td>
                                                     <td> #5469 </td>
-                                                    <td>  <span class="name">Adderly</span> </td>
+                                                    <td> <span class="name">Adderly</span> </td>
                                                     <td> <span class="product">Sinay</span> </td>
                                                     <td><span>7690-13-7664</span></td>
                                                     <td>
@@ -275,7 +275,7 @@
                                                         </div>
                                                     </td>
                                                     <td> #5468 </td>
-                                                    <td>  <span class="name">Eliezer</span> </td>
+                                                    <td> <span class="name">Eliezer</span> </td>
                                                     <td> <span class="product">Méndez</span> </td>
                                                     <td><span>7690-14-9683</span></td>
                                                     <td>
@@ -290,7 +290,7 @@
                                                         </div>
                                                     </td>
                                                     <td> #5467 </td>
-                                                    <td>  <span class="name">Cristian</span> </td>
+                                                    <td> <span class="name">Cristian</span> </td>
                                                     <td> <span class="product">Gómez</span> </td>
                                                     <td><span>7690-10-9778</span></td>
                                                     <td>
@@ -301,38 +301,41 @@
                                                     <td class="serial">4.</td>
                                                     <td class="avatar">
                                                         <div class="round-img">
-                                                            <a href="#"><img class="rounded-circle" src="images/avatar/4.jpg" alt=""></a>
+                                                            <a href="#"><img class="rounded-circle" src="images/avatar/j1.jpeg" alt=""></a>
                                                         </div>
                                                     </td>
                                                     <td> #5466 </td>
-                                                    <td>  <span class="name">Julio</span> </td>
+                                                    <td> <span class="name">Julio</span> </td>
                                                     <td> <span class="product">Lima</span> </td>
                                                     <td><span>7690-15-15591</span></td>
                                                     <td>
-                                                        <span class="badge badge-pending">Inactivo</span>
+                                                        <span class="badge badge-complete">Activo</span>
                                                     </td>
                                                 </tr>
                                                 <tr class=" pb-0">
                                                     <td class="serial">5.</td>
                                                     <td class="avatar pb-0">
                                                         <div class="round-img">
-                                                            <a href="#"><img class="rounded-circle" src="images/avatar/5.jpg" alt=""></a>
+                                                            <a href="#"><img class="rounded-circle" src="images/avatar/r1.jpeg" alt=""></a>
                                                         </div>
                                                     </td>
                                                     <td> #5465 </td>
-                                                    <td>  <span class="name">Rogelio</span> </td>
+                                                    <td> <span class="name">Rogelio</span> </td>
                                                     <td> <span class="product">Alvarez</span> </td>
                                                     <td><span>7690-98-2290</span></td>
                                                     <td>
-                                                        <span class="badge badge-pending">Inactivo</span>
+                                                        <span class="badge badge-complete">Activo</span>
                                                     </td>
                                                 </tr>
                                             </tbody>
                                         </table>
-                                    </div> <!-- /.table-stats -->
+                                    </div>
+                                    <!-- /.table-stats -->
                                 </div>
-                            </div> <!-- /.card -->
-                        </div>  <!-- /.col-lg-12 -->
+                            </div>
+                            <!-- /.card -->
+                        </div>
+                        <!-- /.col-lg-12 -->
                     </div>
                 </div>
                 <!-- /.orders -->
@@ -363,12 +366,12 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
     <script src="assets/js/main.js"></script>
 
-        <!-- jQuery -->
-	<script src="assets/js/jquery-3.2.1.min.js"></script>
-	<!-- Bootstrap -->
-	<script src="assets/js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="assets/js/jquery.waypoints.min.js"></script>
+    <!-- jQuery -->
+    <script src="assets/js/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Waypoints -->
+    <script src="assets/js/jquery.waypoints.min.js"></script>
 
     <!--DataTables-->
     <script src="assets/js/lib/data-table/datatables.min.js"></script>
@@ -383,84 +386,95 @@
     <script src="assets/js/alertify.min.js"></script>
 
     <script type="text/javascript">
-        $(document).ready(function(){
-            var requri   = 'https://umgdw.herokuapp.com/tiendas';
+        $(document).ready(function() {
+            var requri = 'https://umgdw.herokuapp.com/tiendas';
             requestJSON(requri, function(json) {
-            if(json == null) { $('#dataTienda').html(""); }
-            else {
-                $('#dataTienda').html(json.length);
-                $('#dataTienda').addClass('count');
-            }
+                if (json == null) {
+                    $('#dataTienda').html("");
+                } else {
+                    $('#dataTienda').html(json.length);
+                    $('#dataTienda').addClass('count');
+                }
             });
-            var requri2   = 'https://umgdw.herokuapp.com/usuarios';
+            var requri2 = 'https://umgdw.herokuapp.com/usuarios';
             requestJSON(requri2, function(json) {
-            if(json == null) { $('#dataUsuarios').html(""); }
-            else {
-                $('#dataUsuarios').html(json.length);
-                $('#dataUsuarios').addClass('count');
-            }
+                if (json == null) {
+                    $('#dataUsuarios').html("");
+                } else {
+                    $('#dataUsuarios').html(json.length);
+                    $('#dataUsuarios').addClass('count');
+                }
             });
-            var requri3   = 'https://umgdw.herokuapp.com/ingredientes';
+            var requri3 = 'https://umgdw.herokuapp.com/ingredientes';
             requestJSON(requri3, function(json) {
-            if(json == null) { $('#dataExistencias').html(""); }
-            else {
-                $('#dataExistencias').html(json.length);
-                $('#dataExistencias').addClass('count');
-            }
+                if (json == null) {
+                    $('#dataExistencias').html("");
+                } else {
+                    $('#dataExistencias').html(json.length);
+                    $('#dataExistencias').addClass('count');
+                }
             });
-            var requri4   = 'https://umgdw.herokuapp.com/combos';
+            var requri4 = 'https://umgdw.herokuapp.com/combos';
             requestJSON(requri4, function(json) {
-            if(json == null) { $('#dataCombos').html(""); }
-            else {
-                $('#dataCombos').html(json.length);
-                $('#dataCombos').addClass('count');
-            }
+                if (json == null) {
+                    $('#dataCombos').html("");
+                } else {
+                    $('#dataCombos').html(json.length);
+                    $('#dataCombos').addClass('count');
+                }
             });
-            var requri5   = 'https://umgdw.herokuapp.com/productos';
+            var requri5 = 'https://umgdw.herokuapp.com/productos';
             requestJSON(requri5, function(json) {
-            if(json == null) { $('#dataProductos').html(""); }
-            else {
-                $('#dataProductos').html(json.length);
-                $('#dataProductos').addClass('count');
-            }
+                if (json == null) {
+                    $('#dataProductos').html("");
+                } else {
+                    $('#dataProductos').html(json.length);
+                    $('#dataProductos').addClass('count');
+                }
             });
-            var requri5   = 'https://umgdw.herokuapp.com/venta';
+            var requri5 = 'https://umgdw.herokuapp.com/venta';
             requestJSON(requri5, function(json) {
-            if(json == null) { $('#dataVentas').html(""); }
-            else {
-                $('#dataVentas').html(json.length);
-                $('#dataVentas').addClass('count');
-            }
+                if (json == null) {
+                    $('#dataVentas').html("");
+                } else {
+                    $('#dataVentas').html(json.length);
+                    $('#dataVentas').addClass('count');
+                }
             });
-            var requri5   = 'https://umgdw.herokuapp.com/productos';
+            var requri5 = 'https://umgdw.herokuapp.com/productos';
             requestJSON(requri5, function(json) {
-            if(json == null) { $('#dataKardex').html(""); }
-            else {
-                $('#dataKardex').html(json.length);
-                $('#dataKardex').addClass('count');
-            }
+                if (json == null) {
+                    $('#dataKardex').html("");
+                } else {
+                    $('#dataKardex').html(json.length);
+                    $('#dataKardex').addClass('count');
+                }
             });
-            var requri5   = 'https://umgdw.herokuapp.com/productos';
+            var requri5 = 'https://umgdw.herokuapp.com/productos';
             requestJSON(requri5, function(json) {
-            if(json == null) { $('#dataEstados').html(""); }
-            else {
-                $('#dataEstados').html(json.length);
-                $('#dataEstados').addClass('count');
-            }
+                if (json == null) {
+                    $('#dataEstados').html("");
+                } else {
+                    $('#dataEstados').html(json.length);
+                    $('#dataEstados').addClass('count');
+                }
             });
+
             function requestJSON(url, callback) {
-			  $.ajax({
-				url: url,
-				headers: { 'Content-Type': 'application/json'},
-				dataType: "json",
-				complete: function(xhr) {
-				  callback.call(null, xhr.responseJSON);
-				}
-			  });
+                $.ajax({
+                    url: url,
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    dataType: "json",
+                    complete: function(xhr) {
+                        callback.call(null, xhr.responseJSON);
+                    }
+                });
             }
-            
+
         });
-    </script>    
+    </script>
 </body>
 
 </html>
