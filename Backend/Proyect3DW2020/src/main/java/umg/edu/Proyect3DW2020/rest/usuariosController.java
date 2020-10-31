@@ -49,7 +49,7 @@ public class usuariosController {
         }
         catch (Exception ex)
         {
-            return "Hubo un error insertando el usuarios.";
+            return "Hubo un error insertando el usuario.";
         }
     }
 
@@ -63,7 +63,7 @@ public class usuariosController {
         }
         catch (Exception ex)
         {
-            return "Hubo un error modificando el usuarios.";
+            return "Hubo un error modificando el usuario.";
         }
     }
 
@@ -77,7 +77,7 @@ public class usuariosController {
         }
         catch (Exception ex)
         {
-            return "Hubo un error eliminando el usuarios.";
+            return "Hubo un error eliminando el usuario.";
         }
     }
 }

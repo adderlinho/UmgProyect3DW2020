@@ -19,6 +19,7 @@ public class productosFinal {
     private double precio;
     private int estado;
     private int idtienda;
+    private String imagen;
 
     @Override
     public String toString() {
@@ -29,6 +30,7 @@ public class productosFinal {
                 ", estado='" + estado + '\'' +
                 ", precio='" + precio + '\'' +
                 ", idtienda='" + idtienda + '\'' +
+                ", imagen='" + imagen + '\'' +
                 '}';
     }
 }

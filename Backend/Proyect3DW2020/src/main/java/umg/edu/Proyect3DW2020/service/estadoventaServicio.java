@@ -7,6 +7,8 @@ package umg.edu.Proyect3DW2020.service;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import umg.edu.Proyect3DW2020.modelo.estadoventa;
 import umg.edu.Proyect3DW2020.negocio.estadoventaRepository;
 
@@ -14,6 +16,7 @@ import umg.edu.Proyect3DW2020.negocio.estadoventaRepository;
  *
  * @author eli
  */
+@Service
 public class estadoventaServicio {
     
      @Autowired
@@ -45,7 +48,7 @@ public class estadoventaServicio {
 }
      
                 
-               public String modify_estadoventa(estadoventa estadoventa){ 
+               public String modify_estadoventa(estadoventa estadoventa){
          try {
             repo.save(estadoventa);
             return "OK";

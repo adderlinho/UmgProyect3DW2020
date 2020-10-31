@@ -43,7 +43,7 @@
                         <a href="usuarios.html"> <i class=" menu-icon fa fa-users"></i> Registro de usuarios</a>
                     </li>
                     <li>
-                        <a href="ingredientes.html"> <i class=" menu-icon fa fa-cutlery"></i> Registro de ingredientes</a>
+                        <a href="ingredientes.html"> <i class=" menu-icon fa fa-cutlery"></i> Registro de existencias</a>
                     </li>
                     <li>
                         <a href="combos.html"> <i class=" menu-icon fa fa-sitemap"></i> Registro de combos</a>
@@ -148,6 +148,13 @@
                                 <select id="tiendaEdit" class="form-control" placeholder="Tienda"></select>
                             </div>
                         </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="email">Imagen:</label>
+                                <input type="text" id="imgEdit" class="form-control" placeholder="Imagen del combo">
+                            </div>
+                        </div>
                     </form>	
                 </div>
                 <div class="modal-footer">
@@ -209,6 +216,13 @@
                                 <select id="tiendaDel" class="form-control" disabled></select>
                             </div>
                         </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="email">Imagen:</label>
+                                <input type="text" id="imgDel" class="form-control" disabled>
+                            </div>
+                        </div>
                     </form>	
                 </div>
                 <div class="modal-footer">
@@ -261,6 +275,13 @@
                             <div class="col-md-12">
                                 <label for="subject">Tienda:</label>
                                 <select id="tiendaAdd" class="form-control" placeholder="Tienda"></select>
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="email">Imagen:</label>
+                                <input type="text" id="imgAdd" class="form-control" placeholder="Imagen del combo">
                             </div>
                         </div>
                     </form>	
@@ -351,6 +372,7 @@
                 var precio = button.data('precio')
                 var estado = button.data('estado')
                 var idtienda = button.data('idtienda')
+                var img = button.data('imagen')
 
                 var requri2   = 'http://localhost:9090/tiendas';
                 var tiendas = $("#tiendaEdit");
@@ -426,6 +448,7 @@
                 modal.find('.modal-body input[id="nombreEdit"]').val(nombre)
                 modal.find('.modal-body input[id="descEdit"]').val(desc)
                 modal.find('.modal-body input[id="precioEdit"]').val(precio)
+                modal.find('.modal-body input[id="imgEdit"]').val(img)
             })
             $('#DeleteModal').on('show.bs.modal', function (event) {
 				var button = $(event.relatedTarget)
@@ -436,6 +459,7 @@
                 var precio = button.data('precio')
                 var estado = button.data('estado')
                 var idtienda = button.data('idtienda')
+                var img = button.data('imagen')
 
                 var requri2   = 'http://localhost:9090/tiendas';
                 var tiendas = $("#tiendaDel");
@@ -497,6 +521,7 @@
                 modal.find('.modal-body input[id="nombreDel"]').val(nombre)
                 modal.find('.modal-body input[id="descDel"]').val(desc)
                 modal.find('.modal-body input[id="precioDel"]').val(precio)
+                modal.find('.modal-body input[id="imgDel"]').val(img)
             })
             $('#AgregarModal').on('show.bs.modal', function (event) {
 				var button = $(event.relatedTarget) 
@@ -602,11 +627,11 @@
 			  $('#data').html("");
 			}
 			else {
-                var outhtml = '<p><h3>Listado de combos: ' + json.length + '</h3></p> <table id="DataTable" class="display" style="width:100%">';
-                    outhtml = outhtml + '<thead><tr><th>Id</th><th>Nombre</th><th>Descripción</th><th>Precio</th><th>Estado</th><th>Tienda</th><th>Acciones</th></tr></thead><tbody>';
+                var outhtml = '<p><h3>Total de combos ingresados: ' + json.length + '</h3></p> <table id="DataTable" class="display" style="width:100%">';
+                    outhtml = outhtml + '<thead><tr><th>Id</th><th>Nombre</th><th>Descripción</th><th>Precio</th><th>Estado</th><th>Tienda</th><th>Imagen</th><th>Acciones</th></tr></thead><tbody>';
                     let tienda = '';
                     let estado = '';
-                    let medida = '';
+                    let imagen = '';
 					$.each(json, function(index) {
                         $.each(lista_tiendas, function(index2)
                         {    
@@ -622,7 +647,13 @@
                                 estado = lista_estados[index3].titulo;
                             }
                         });
-                      outhtml = outhtml +  ' <tr><td>'+json[index].idproductofinal+'</td><td>'+json[index].nombre+'</td><td>'+json[index].descripcion+'</td><td>'+json[index].precio+'</td><td>'+estado+'</td><td>'+tienda+'</td><td><a title="Editar elemento" class="fa fa-edit" data-toggle="modal" data-target="#EditModal" data-title="Editar combos" data-id="' + json[index].idproductofinal + '" data-nombre="'+ json[index].nombre +'" data-desc="' + json[index].descripcion + '" data-precio="' + json[index].precio + '" data-estado="' + json[index].estado + '" data-idtienda="' + json[index].idtienda + '"></a>&nbsp;&nbsp;&nbsp;<a title="Eliminar elemento" class="fa fa-trash-o" data-toggle="modal" data-target="#DeleteModal" data-title="Eliminar combos" data-id="' + json[index].idproductofinal + '" data-nombre="'+ json[index].nombre +'" data-desc="' + json[index].descripcion + '" data-precio="' + json[index].precio + '" data-estado="' + json[index].estado + '" data-idtienda="' + json[index].idtienda + '"></a></td></tr>';
+                        if(json[index].imagen == null) {
+                            imagen = '<a></a>';
+                        }
+                        else {
+                            imagen = '<a title="Abrir URL de imagen" class="fa fa-external-link" href="'+json[index].imagen+'" target="_blank"></a>';
+                        }
+                      outhtml = outhtml +  ' <tr><td>'+json[index].idproductofinal+'</td><td>'+json[index].nombre+'</td><td>'+json[index].descripcion+'</td><td>'+json[index].precio+'</td><td>'+estado+'</td><td>'+tienda+'</td><td>'+imagen+'</td><td><a title="Editar elemento" class="fa fa-edit" data-toggle="modal" data-target="#EditModal" data-title="Editar combos" data-id="' + json[index].idproductofinal + '" data-nombre="'+ json[index].nombre +'" data-desc="' + json[index].descripcion + '" data-precio="' + json[index].precio + '" data-estado="' + json[index].estado + '" data-idtienda="' + json[index].idtienda + '" data-imagen="' + json[index].imagen + '"></a>&nbsp;&nbsp;&nbsp;<a title="Eliminar elemento" class="fa fa-trash-o" data-toggle="modal" data-target="#DeleteModal" data-title="Eliminar combos" data-id="' + json[index].idproductofinal + '" data-nombre="'+ json[index].nombre +'" data-desc="' + json[index].descripcion + '" data-precio="' + json[index].precio + '" data-estado="' + json[index].estado + '" data-idtienda="' + json[index].idtienda + '" data-imagen="' + json[index].imagen + '"></a></td></tr>';
 					});
 					outhtml = outhtml + '</tbody></table></div>'; 
 				  $('#data').html(outhtml);
@@ -687,12 +718,13 @@
 				var descVar = $('#descEdit').val();
                 var preVar = $('#precioEdit').val();
                 var estadoVar = $('#estadoEdit').val();
-                var tiendaVar = $('#tiendaEdit').val(); 
+                var tiendaVar = $('#tiendaEdit').val();
+                var imgVar = $('#imgEdit').val();
 				var url = "http://localhost:9090/combos";
 				var xhr = new XMLHttpRequest();
 					xhr.open("PUT", url, true);
 					xhr.setRequestHeader("Content-Type", "application/json");
-					var data = JSON.stringify({ "idproductofinal": idVar, "nombre": nomVar, "descripcion": descVar, "precio": preVar, "estado": estadoVar, "idtienda": tiendaVar });
+					var data = JSON.stringify({ "idproductofinal": idVar, "nombre": nomVar, "descripcion": descVar, "precio": preVar, "estado": estadoVar, "idtienda": tiendaVar, "imagen": imgVar });
                     xhr.send(data);
 					xhr.onload = function() {
 						console.log(xhr.response);
@@ -703,6 +735,7 @@
 							$('#precioEdit').val("");
                             $('#estadoEdit').val("");
                             $('#tiendaEdit').val("");
+                            $('#imgEdit').val("");
 
                             ListarCombos();
                             alertify.success('El combo fue modificado correctamente.');
@@ -713,6 +746,7 @@
 							$('#precioEdit').val("");
                             $('#estadoEdit').val("");
                             $('#tiendaEdit').val("");
+                            $('#imgEdit').val("");
                             alertify.error(xhr.response);
 						}
 					};
@@ -743,11 +777,12 @@
                 var preVar = $('#precioAdd').val();
                 var estadoVar = $('#estadoAdd').val();
                 var tiendaVar = $('#tiendaAdd').val();
+                var imgVar = $('#imgAdd').val();
 				var url = "http://localhost:9090/combos";
 				var xhr = new XMLHttpRequest();
 					xhr.open("POST", url, true);
 					xhr.setRequestHeader("Content-Type", "application/json");
-					var data = JSON.stringify({ "nombre": nomVar, "descripcion": descVar, "precio": preVar, "estado": estadoVar, "idtienda": tiendaVar });
+					var data = JSON.stringify({ "nombre": nomVar, "descripcion": descVar, "precio": preVar, "estado": estadoVar, "idtienda": tiendaVar, "imagen": imgVar });
 					xhr.send(data);
 					xhr.onload = function() {
 						console.log(xhr.response);
@@ -758,6 +793,7 @@
 							$('#precioAdd').val("");
                             $('#estadoAdd').val("");
                             $('#tiendaAdd').val("");
+                            $('#imgAdd').val("");
 
 							ListarCombos();
                             alertify.success('El combo fue ingresado correctamente.');
@@ -768,6 +804,7 @@
 							$('#precioAdd').val("");
                             $('#estadoAdd').val("");
                             $('#tiendaAdd').val("");
+                            $('#imgAdd').val("");
 							alertify.error(xhr.response);
 						}
 					};

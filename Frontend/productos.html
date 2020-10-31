@@ -43,7 +43,7 @@
                         <a href="usuarios.html"> <i class=" menu-icon fa fa-users"></i> Registro de usuarios</a>
                     </li>
                     <li>
-                        <a href="ingredientes.html"> <i class=" menu-icon fa fa-cutlery"></i> Registro de ingredientes</a>
+                        <a href="ingredientes.html"> <i class=" menu-icon fa fa-cutlery"></i> Registro de existencias</a>
                     </li>
                     <li>
                         <a href="combos.html"> <i class=" menu-icon fa fa-sitemap"></i> Registro de combos</a>
@@ -695,7 +695,7 @@
 			  $('#data').html("");
 			}
 			else {
-                var outhtml = '<p><h3>Listado de productos: ' + json.length + '</h3></p> <table id="DataTable" class="display" style="width:100%">';
+                var outhtml = '<p><h3>Total de productos ingresados: ' + json.length + '</h3></p> <table id="DataTable" class="display" style="width:100%">';
                     outhtml = outhtml + '<thead><tr><th>Id</th><th>Combo</th><th>Ingrediente</th><th>Cantidad</th><th>Estado</th><th>Acciones</th></tr></thead><tbody>';
                     let combo = '';
                     let estado = '';

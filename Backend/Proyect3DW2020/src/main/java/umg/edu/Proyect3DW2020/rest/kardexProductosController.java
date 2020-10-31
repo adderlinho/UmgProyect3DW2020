@@ -49,7 +49,7 @@ public class kardexProductosController {
         }
         catch (Exception ex)
         {
-            return "Hubo un error insertando el detalleProductoFinal.";
+            return "Hubo un error insertando el kardex.";
         }
     }
 
@@ -63,7 +63,7 @@ public class kardexProductosController {
         }
         catch (Exception ex)
         {
-            return "Hubo un error modificando el detalleProductoFinal.";
+            return "Hubo un error modificando el kardex.";
         }
     }
 
@@ -77,7 +77,7 @@ public class kardexProductosController {
         }
         catch (Exception ex)
         {
-            return "Hubo un error eliminando el detalleProductoFinal.";
+            return "Hubo un error eliminando el kardex.";
         }
     }
 }

@@ -43,7 +43,7 @@
                         <a href="usuarios.html"> <i class=" menu-icon fa fa-users"></i> Registro de usuarios</a>
                     </li>
                     <li>
-                        <a href="ingredientes.html"> <i class=" menu-icon fa fa-cutlery"></i> Registro de ingredientes</a>
+                        <a href="ingredientes.html"> <i class=" menu-icon fa fa-cutlery"></i> Registro de existencias</a>
                     </li>
                     <li>
                         <a href="combos.html"> <i class=" menu-icon fa fa-sitemap"></i> Registro de combos</a>
@@ -370,7 +370,7 @@
 			  $('#data').html("");
 			}
 			else {
-				var outhtml = '<p><h3>Listado de tiendas: ' + json.length + '</h3></p> <table id="TiendasTable" class="display" style="width:100%">';
+				var outhtml = '<p><h3>Total de tiendas ingresadas: ' + json.length + '</h3></p> <table id="TiendasTable" class="display" style="width:100%">';
 					  outhtml = outhtml + '<thead><tr><th>Id</th><th>Nombre</th><th>Dirección</th><th>Teléfono</th><th>Nit</th><th>Acciones</th></tr></thead><tbody>';
 					$.each(json, function(index) {
                       outhtml = outhtml +  ' <tr><td>'+json[index].idtienda+'</td><td>'+json[index].nombretienda+'</td><td>'+json[index].direccion+'</td> <td>'+json[index].telefono+'</td><td>'+json[index].nit+'</td><td><a title="Editar elemento" class="fa fa-edit" data-toggle="modal" data-target="#tiendaModal" data-title="Editar tienda" data-id="' + json[index].idtienda + '" data-nombre="'+ json[index].nombretienda +'" data-direccion="' + json[index].direccion + '" data-telefono="' + json[index].telefono + '" data-nit="' + json[index].nit + '"></a>&nbsp;&nbsp;&nbsp;<a title="Eliminar elemento" class="fa fa-trash-o" data-toggle="modal" data-target="#tiendaDeleteModal" data-title="Eliminar tienda" data-id="' + json[index].idtienda + '" data-nombre="'+ json[index].nombretienda +'" data-direccion="' + json[index].direccion + '" data-telefono="' + json[index].telefono + '" data-nit="' + json[index].nit + '"></a></td></tr>';

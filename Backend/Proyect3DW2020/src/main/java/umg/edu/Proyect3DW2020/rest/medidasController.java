@@ -49,7 +49,7 @@ public class medidasController {
         }
         catch (Exception ex)
         {
-            return "Hubo un error insertando el estadoventa.";
+            return "Hubo un error insertando la medida.";
         }
     }
 
@@ -63,7 +63,7 @@ public class medidasController {
         }
         catch (Exception ex)
         {
-            return "Hubo un error modificando el estadoventa.";
+            return "Hubo un error modificando la medida.";
         }
     }
 
@@ -77,7 +77,7 @@ public class medidasController {
         }
         catch (Exception ex)
         {
-            return "Hubo un error eliminando el estadoventa.";
+            return "Hubo un error eliminando la medida.";
         }
     }
 }
