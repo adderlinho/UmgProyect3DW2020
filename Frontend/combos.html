@@ -1,5 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,6 +37,9 @@
                     </li>
                     <li class="menu-title">Administracion de Tienda</li>
                     <!-- /.menu-title -->
+                    <li>
+                        <a href="venta.html"> <i class=" menu-icon fa fa-coffee"></i> Realizar una Venta</a>
+                    </li>
                     <li>
                         <a href="tiendas.html"> <i class=" menu-icon fa fa-coffee"></i> Registro de Tiendas</a>
                     </li>
@@ -98,201 +102,201 @@
         <!-- Content -->
         <div class="modal fade" id="EditModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="#">
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <label for="fname">Id:</label>
+                                    <input type="text" id="idEdit" class="form-control" disabled>
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <label for="fname">Nombre:</label>
+                                    <input type="text" id="nombreEdit" class="form-control" placeholder="Nombre del combo">
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <label for="email">Descripción:</label>
+                                    <input type="text" id="descEdit" class="form-control" placeholder="Descripción del combo">
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <label for="subject">Precio:</label>
+                                    <input type="number" id="precioEdit" class="form-control" placeholder="Precio del combo">
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <label for="subject">Estado:</label>
+                                    <select id="estadoEdit" class="form-control" placeholder="Estado"></select>
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <label for="subject">Tienda:</label>
+                                    <select id="tiendaEdit" class="form-control" placeholder="Tienda"></select>
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <label for="email">Imagen:</label>
+                                    <input type="text" id="imgEdit" class="form-control" placeholder="Imagen del combo">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button id="btnModificar" type="button" class="btn btn-primary" data-dismiss="modal">Guardar cambios</button>
+                    </div>
                 </div>
-                <div class="modal-body">
-                    <form action="#">
-                        <div class="row form-group">
-                            <div class="col-md-12">
-                                <label for="fname">Id:</label>
-                                <input type="text" id="idEdit" class="form-control" disabled>
-                            </div>
-                        </div>
-
-                        <div class="row form-group">
-                            <div class="col-md-12">
-                                <label for="fname">Nombre:</label>
-                                <input type="text" id="nombreEdit" class="form-control" placeholder="Nombre del combo">
-                            </div>
-                        </div>
-
-                        <div class="row form-group">
-                            <div class="col-md-12">
-                                <label for="email">Descripción:</label>
-                                <input type="text" id="descEdit" class="form-control" placeholder="Descripción del combo">
-                            </div>
-                        </div>
-
-                        <div class="row form-group">
-                            <div class="col-md-12">
-                                <label for="subject">Precio:</label>
-                                <input type="number" id="precioEdit" class="form-control" placeholder="Precio del combo">
-                            </div>
-                        </div>
-
-                        <div class="row form-group">
-                            <div class="col-md-12">
-                                <label for="subject">Estado:</label>
-                                <select id="estadoEdit" class="form-control" placeholder="Estado"></select>
-                            </div>
-                        </div>
-
-                        <div class="row form-group">
-                            <div class="col-md-12">
-                                <label for="subject">Tienda:</label>
-                                <select id="tiendaEdit" class="form-control" placeholder="Tienda"></select>
-                            </div>
-                        </div>
-
-                        <div class="row form-group">
-                            <div class="col-md-12">
-                                <label for="email">Imagen:</label>
-                                <input type="text" id="imgEdit" class="form-control" placeholder="Imagen del combo">
-                            </div>
-                        </div>
-                    </form>	
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                  <button id="btnModificar" type="button" class="btn btn-primary" data-dismiss="modal">Guardar cambios</button>
-                </div>
-              </div>
             </div>
-          </div>
-          <div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        </div>
+        <div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="#">
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <label for="fname">Id:</label>
+                                    <input type="text" id="idDel" class="form-control" disabled>
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <label for="fname">Nombre:</label>
+                                    <input type="text" id="nombreDel" class="form-control" disabled>
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <label for="email">Descripción:</label>
+                                    <input type="text" id="descDel" class="form-control" disabled>
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <label for="subject">Precio:</label>
+                                    <input type="number" id="precioDel" class="form-control" disabled>
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <label for="subject">Estado:</label>
+                                    <select id="estadoDel" class="form-control" disabled></select>
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <label for="subject">Tienda:</label>
+                                    <select id="tiendaDel" class="form-control" disabled></select>
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <label for="email">Imagen:</label>
+                                    <input type="text" id="imgDel" class="form-control" disabled>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button id="btnEliminar" type="button" class="btn btn-danger" data-dismiss="modal">Eliminar</button>
+                    </div>
                 </div>
-                <div class="modal-body">
-                    <form action="#">
-                        <div class="row form-group">
-                            <div class="col-md-12">
-                                <label for="fname">Id:</label>
-                                <input type="text" id="idDel" class="form-control" disabled>
-                            </div>
-                        </div>
-
-                        <div class="row form-group">
-                            <div class="col-md-12">
-                                <label for="fname">Nombre:</label>
-                                <input type="text" id="nombreDel" class="form-control" disabled>
-                            </div>
-                        </div>
-
-                        <div class="row form-group">
-                            <div class="col-md-12">
-                                <label for="email">Descripción:</label>
-                                <input type="text" id="descDel" class="form-control" disabled>
-                            </div>
-                        </div>
-
-                        <div class="row form-group">
-                            <div class="col-md-12">
-                                <label for="subject">Precio:</label>
-                                <input type="number" id="precioDel" class="form-control" disabled>
-                            </div>
-                        </div>
-
-                        <div class="row form-group">
-                            <div class="col-md-12">
-                                <label for="subject">Estado:</label>
-                                <select id="estadoDel" class="form-control" disabled></select>
-                            </div>
-                        </div>
-
-                        <div class="row form-group">
-                            <div class="col-md-12">
-                                <label for="subject">Tienda:</label>
-                                <select id="tiendaDel" class="form-control" disabled></select>
-                            </div>
-                        </div>
-
-                        <div class="row form-group">
-                            <div class="col-md-12">
-                                <label for="email">Imagen:</label>
-                                <input type="text" id="imgDel" class="form-control" disabled>
-                            </div>
-                        </div>
-                    </form>	
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                  <button id="btnEliminar" type="button" class="btn btn-danger" data-dismiss="modal">Eliminar</button>
-                </div>
-              </div>
             </div>
-          </div>
-          <div class="modal fade" id="AgregarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        </div>
+        <div class="modal fade" id="AgregarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="#">
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <label for="fname">Nombre:</label>
+                                    <input type="text" id="nombreAdd" class="form-control" placeholder="Nombre del combo">
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <label for="email">Descripción:</label>
+                                    <input type="text" id="descAdd" class="form-control" placeholder="Descripción del combo">
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <label for="subject">Precio:</label>
+                                    <input type="number" id="precioAdd" class="form-control" placeholder="Precio del combo">
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <label for="subject">Estado:</label>
+                                    <select id="estadoAdd" class="form-control" placeholder="Estado"></select>
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <label for="subject">Tienda:</label>
+                                    <select id="tiendaAdd" class="form-control" placeholder="Tienda"></select>
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <label for="email">Imagen:</label>
+                                    <input type="text" id="imgAdd" class="form-control" placeholder="Imagen del combo">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button id="btnAgregar" type="button" class="btn btn-primary" data-dismiss="modal">Guardar cambios</button>
+                    </div>
                 </div>
-                <div class="modal-body">
-                    <form action="#">
-                        <div class="row form-group">
-                            <div class="col-md-12">
-                                <label for="fname">Nombre:</label>
-                                <input type="text" id="nombreAdd" class="form-control" placeholder="Nombre del combo">
-                            </div>
-                        </div>
-
-                        <div class="row form-group">
-                            <div class="col-md-12">
-                                <label for="email">Descripción:</label>
-                                <input type="text" id="descAdd" class="form-control" placeholder="Descripción del combo">
-                            </div>
-                        </div>
-
-                        <div class="row form-group">
-                            <div class="col-md-12">
-                                <label for="subject">Precio:</label>
-                                <input type="number" id="precioAdd" class="form-control" placeholder="Precio del combo">
-                            </div>
-                        </div>
-
-                        <div class="row form-group">
-                            <div class="col-md-12">
-                                <label for="subject">Estado:</label>
-                                <select id="estadoAdd" class="form-control" placeholder="Estado"></select>
-                            </div>
-                        </div>
-
-                        <div class="row form-group">
-                            <div class="col-md-12">
-                                <label for="subject">Tienda:</label>
-                                <select id="tiendaAdd" class="form-control" placeholder="Tienda"></select>
-                            </div>
-                        </div>
-
-                        <div class="row form-group">
-                            <div class="col-md-12">
-                                <label for="email">Imagen:</label>
-                                <input type="text" id="imgAdd" class="form-control" placeholder="Imagen del combo">
-                            </div>
-                        </div>
-                    </form>	
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                  <button id="btnAgregar" type="button" class="btn btn-primary" data-dismiss="modal">Guardar cambios</button>
-                </div>
-              </div>
             </div>
-          </div>
+        </div>
         <!-- /.breadcrumbs-->
         <!-- Content -->
         <div class="content">
@@ -304,7 +308,7 @@
                 <div class="row">
                     <div class="col col-lg-12">
                         <section class="card">
-                            <div class="card-body text-secondary" id="app">  
+                            <div class="card-body text-secondary" id="app">
                                 <div><button id="btnModalAgregar" class="col-md-2 offset-10 col-sm-2 fa fa-plus-circle btn btn-secondary" data-toggle="modal" data-target="#AgregarModal" data-title="Agregar combo"> Agregar combo </button></div>
                                 <div id="data"></div>
                             </div>
@@ -342,11 +346,11 @@
     <script src="assets/js/main.js"></script>
 
     <!-- jQuery -->
-	<script src="assets/js/jquery-3.2.1.min.js"></script>
-	<!-- Bootstrap -->
-	<script src="assets/js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="assets/js/jquery.waypoints.min.js"></script>
+    <script src="assets/js/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Waypoints -->
+    <script src="assets/js/jquery.waypoints.min.js"></script>
 
     <!--DataTables-->
     <script src="assets/js/lib/data-table/datatables.min.js"></script>
@@ -360,12 +364,12 @@
     <script src="assets/js/lib/data-table/buttons.colVis.min.js"></script>
     <script src="assets/js/alertify.min.js"></script>
     <script type="text/javascript">
-        $(function() { 
+        $(function() {
             alertify.set('notifier', 'position', 'top-center')
             ListarCombos();
-            $('#EditModal').on('show.bs.modal', function (event) {
-				var button = $(event.relatedTarget) 
-				var title = button.data('title') 
+            $('#EditModal').on('show.bs.modal', function(event) {
+                var button = $(event.relatedTarget)
+                var title = button.data('title')
                 var id = button.data('id')
                 var nombre = button.data('nombre')
                 var desc = button.data('desc')
@@ -374,85 +378,81 @@
                 var idtienda = button.data('idtienda')
                 var img = button.data('imagen')
 
-                var requri2   = 'https://umgdw.herokuapp.com/tiendas';
+                var requri2 = 'https://umgdw.herokuapp.com/tiendas';
                 var tiendas = $("#tiendaEdit");
                 var lista_tiendas = '';
                 requestJSON2(requri2, function(json) {
-                if(json == null) {
-                    lista_tiendas = null;
-                }
-                else {
-                    $.each(json, function(index)
-                    {
-                        lista_tiendas += '<option value="' + json[index].idtienda + '">' + json[index].nombretienda + '</option>';
-                    });
-                } 
-                tiendas.html(lista_tiendas);
-                $.each(json, function(index)
-                    {
-                        if(json[index].idtienda == idtienda)
-                        {
-                            document.getElementById('tiendaEdit').selectedIndex= index;
+                    if (json == null) {
+                        lista_tiendas = null;
+                    } else {
+                        $.each(json, function(index) {
+                            lista_tiendas += '<option value="' + json[index].idtienda + '">' + json[index].nombretienda + '</option>';
+                        });
+                    }
+                    tiendas.html(lista_tiendas);
+                    $.each(json, function(index) {
+                        if (json[index].idtienda == idtienda) {
+                            document.getElementById('tiendaEdit').selectedIndex = index;
                         }
                     });
                 });
 
-                var requri3   = 'https://umgdw.herokuapp.com/estados';
+                var requri3 = 'https://umgdw.herokuapp.com/estados';
                 var estados = $("#estadoEdit");
                 var lista_estados = '';
                 requestJSON3(requri3, function(json) {
-                if(json == null) {
-                    lista_estados = null;
-                }
-                else {
-                    $.each(json, function(index)
-                    {
-                        lista_estados += '<option value="' + json[index].estado + '">' + json[index].descripcion + '</option>';
-                    });
-                } 
-                estados.html(lista_estados);
-                $.each(json, function(index)
-                    {
-                        if(json[index].estado == estado)
-                        {
-                            document.getElementById('estadoEdit').selectedIndex= index;
+                    if (json == null) {
+                        lista_estados = null;
+                    } else {
+                        $.each(json, function(index) {
+                            lista_estados += '<option value="' + json[index].estado + '">' + json[index].descripcion + '</option>';
+                        });
+                    }
+                    estados.html(lista_estados);
+                    $.each(json, function(index) {
+                        if (json[index].estado == estado) {
+                            document.getElementById('estadoEdit').selectedIndex = index;
                         }
                     });
                 });
-                
+
                 function requestJSON2(url, callback) {
-                $.ajax({
-                    url: url,
-                    headers: { 'Content-Type': 'application/json'},
-                    dataType: "json",
-                    complete: function(xhr) {
-                    callback.call(null, xhr.responseJSON);
-                    }
-                });
+                    $.ajax({
+                        url: url,
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        dataType: "json",
+                        complete: function(xhr) {
+                            callback.call(null, xhr.responseJSON);
+                        }
+                    });
                 }
 
                 function requestJSON3(url, callback) {
-                $.ajax({
-                    url: url,
-                    headers: { 'Content-Type': 'application/json'},
-                    dataType: "json",
-                    complete: function(xhr) {
-                    callback.call(null, xhr.responseJSON);
-                    }
-                });
+                    $.ajax({
+                        url: url,
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        dataType: "json",
+                        complete: function(xhr) {
+                            callback.call(null, xhr.responseJSON);
+                        }
+                    });
                 }
 
-				var modal = $(this)
-				modal.find('.modal-title').text(title)
+                var modal = $(this)
+                modal.find('.modal-title').text(title)
                 modal.find('.modal-body input[id="idEdit"]').val(id)
                 modal.find('.modal-body input[id="nombreEdit"]').val(nombre)
                 modal.find('.modal-body input[id="descEdit"]').val(desc)
                 modal.find('.modal-body input[id="precioEdit"]').val(precio)
                 modal.find('.modal-body input[id="imgEdit"]').val(img)
             })
-            $('#DeleteModal').on('show.bs.modal', function (event) {
-				var button = $(event.relatedTarget)
-				var title = button.data('title')
+            $('#DeleteModal').on('show.bs.modal', function(event) {
+                var button = $(event.relatedTarget)
+                var title = button.data('title')
                 var id = button.data('id')
                 var nombre = button.data('nombre')
                 var desc = button.data('desc')
@@ -461,354 +461,371 @@
                 var idtienda = button.data('idtienda')
                 var img = button.data('imagen')
 
-                var requri2   = 'https://umgdw.herokuapp.com/tiendas';
+                var requri2 = 'https://umgdw.herokuapp.com/tiendas';
                 var tiendas = $("#tiendaDel");
                 var lista_tiendas = '';
                 requestJSON2(requri2, function(json) {
-                if(json == null) {
-                    lista_tiendas = null;
-                }
-                else {
-                    $.each(json, function(index)
-                    {
-                        lista_tiendas += '<option value="' + json[index].idtienda + '">' + json[index].nombretienda + '</option>';
-                    });
-                } 
-                tiendas.html(lista_tiendas);
+                    if (json == null) {
+                        lista_tiendas = null;
+                    } else {
+                        $.each(json, function(index) {
+                            lista_tiendas += '<option value="' + json[index].idtienda + '">' + json[index].nombretienda + '</option>';
+                        });
+                    }
+                    tiendas.html(lista_tiendas);
                 });
 
-                var requri3   = 'https://umgdw.herokuapp.com/estados';
+                var requri3 = 'https://umgdw.herokuapp.com/estados';
                 var estados = $("#estadoDel");
                 var lista_estados = '';
                 requestJSON3(requri3, function(json) {
-                if(json == null) {
-                    lista_estados = null;
-                }
-                else {
-                    $.each(json, function(index)
-                    {
-                        lista_estados += '<option value="' + json[index].estado + '">' + json[index].descripcion + '</option>';
-                    });
-                } 
-                estados.html(lista_estados);
-                });
-                
-                function requestJSON2(url, callback) {
-                $.ajax({
-                    url: url,
-                    headers: { 'Content-Type': 'application/json'},
-                    dataType: "json",
-                    complete: function(xhr) {
-                    callback.call(null, xhr.responseJSON);
+                    if (json == null) {
+                        lista_estados = null;
+                    } else {
+                        $.each(json, function(index) {
+                            lista_estados += '<option value="' + json[index].estado + '">' + json[index].descripcion + '</option>';
+                        });
                     }
+                    estados.html(lista_estados);
                 });
+
+                function requestJSON2(url, callback) {
+                    $.ajax({
+                        url: url,
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        dataType: "json",
+                        complete: function(xhr) {
+                            callback.call(null, xhr.responseJSON);
+                        }
+                    });
                 }
 
                 function requestJSON3(url, callback) {
-                $.ajax({
-                    url: url,
-                    headers: { 'Content-Type': 'application/json'},
-                    dataType: "json",
-                    complete: function(xhr) {
-                    callback.call(null, xhr.responseJSON);
-                    }
-                });
+                    $.ajax({
+                        url: url,
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        dataType: "json",
+                        complete: function(xhr) {
+                            callback.call(null, xhr.responseJSON);
+                        }
+                    });
                 }
 
-				var modal = $(this)
-				modal.find('.modal-title').text(title)
+                var modal = $(this)
+                modal.find('.modal-title').text(title)
                 modal.find('.modal-body input[id="idDel"]').val(id)
                 modal.find('.modal-body input[id="nombreDel"]').val(nombre)
                 modal.find('.modal-body input[id="descDel"]').val(desc)
                 modal.find('.modal-body input[id="precioDel"]').val(precio)
                 modal.find('.modal-body input[id="imgDel"]').val(img)
             })
-            $('#AgregarModal').on('show.bs.modal', function (event) {
-				var button = $(event.relatedTarget) 
+            $('#AgregarModal').on('show.bs.modal', function(event) {
+                var button = $(event.relatedTarget)
                 var title = button.data('title')
 
-                var requri2   = 'https://umgdw.herokuapp.com/tiendas';
+                var requri2 = 'https://umgdw.herokuapp.com/tiendas';
                 var tiendas = $("#tiendaAdd");
                 var lista_tiendas = '';
                 requestJSON2(requri2, function(json) {
-                if(json == null) {
-                    lista_tiendas = null;
-                }
-                else {
-                    $.each(json, function(index)
-                    {
-                        lista_tiendas += '<option value="' + json[index].idtienda + '">' + json[index].nombretienda + '</option>';
-                    });
-                } 
-                tiendas.html(lista_tiendas);
+                    if (json == null) {
+                        lista_tiendas = null;
+                    } else {
+                        $.each(json, function(index) {
+                            lista_tiendas += '<option value="' + json[index].idtienda + '">' + json[index].nombretienda + '</option>';
+                        });
+                    }
+                    tiendas.html(lista_tiendas);
                 });
 
-                var requri3   = 'https://umgdw.herokuapp.com/estados';
+                var requri3 = 'https://umgdw.herokuapp.com/estados';
                 var estados = $("#estadoAdd");
                 var lista_estados = '';
                 requestJSON3(requri3, function(json) {
-                if(json == null) {
-                    lista_estados = null;
-                }
-                else {
-                    $.each(json, function(index)
-                    {
-                        lista_estados += '<option value="' + json[index].estado + '">' + json[index].descripcion + '</option>';
-                    });
-                } 
-                estados.html(lista_estados);
-                });
-                
-                function requestJSON2(url, callback) {
-                $.ajax({
-                    url: url,
-                    headers: { 'Content-Type': 'application/json'},
-                    dataType: "json",
-                    complete: function(xhr) {
-                    callback.call(null, xhr.responseJSON);
+                    if (json == null) {
+                        lista_estados = null;
+                    } else {
+                        $.each(json, function(index) {
+                            lista_estados += '<option value="' + json[index].estado + '">' + json[index].descripcion + '</option>';
+                        });
                     }
+                    estados.html(lista_estados);
                 });
+
+                function requestJSON2(url, callback) {
+                    $.ajax({
+                        url: url,
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        dataType: "json",
+                        complete: function(xhr) {
+                            callback.call(null, xhr.responseJSON);
+                        }
+                    });
                 }
 
                 function requestJSON3(url, callback) {
-                $.ajax({
-                    url: url,
-                    headers: { 'Content-Type': 'application/json'},
-                    dataType: "json",
-                    complete: function(xhr) {
-                    callback.call(null, xhr.responseJSON);
-                    }
-                });
+                    $.ajax({
+                        url: url,
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        dataType: "json",
+                        complete: function(xhr) {
+                            callback.call(null, xhr.responseJSON);
+                        }
+                    });
                 }
-                
-				var modal = $(this)
-				modal.find('.modal-title').text(title)
-			})
+
+                var modal = $(this)
+                modal.find('.modal-title').text(title)
+            })
         });
+
         function ListarCombos() {
-            var requri2   = 'https://umgdw.herokuapp.com/tiendas';
+            var requri2 = 'https://umgdw.herokuapp.com/tiendas';
             var lista_tiendas = [];
             requestJSON2(requri2, function(json) {
-            if(json == null) {
-                lista_tiendas = null;
-            }
-            else {
-                $.each(json, function(index)
-                {    
-                    lista_tiendas.push({
-                        titulo: json[index].nombretienda,
-                        valor: json[index].idtienda
+                if (json == null) {
+                    lista_tiendas = null;
+                } else {
+                    $.each(json, function(index) {
+                        lista_tiendas.push({
+                            titulo: json[index].nombretienda,
+                            valor: json[index].idtienda
+                        });
                     });
-                });
-            }
+                }
             });
 
-            var requri3   = 'https://umgdw.herokuapp.com/estados';
+            var requri3 = 'https://umgdw.herokuapp.com/estados';
             var lista_estados = [];
             requestJSON3(requri3, function(json) {
-            if(json == null) {
-                lista_estados = null;
-            }
-            else {
-                $.each(json, function(index)
-                {
-                    lista_estados.push({
-                        titulo: json[index].descripcion,
-                        valor: json[index].estado
+                if (json == null) {
+                    lista_estados = null;
+                } else {
+                    $.each(json, function(index) {
+                        lista_estados.push({
+                            titulo: json[index].descripcion,
+                            valor: json[index].estado
+                        });
                     });
-                });
-            } 
+                }
             });
 
-            var requri   = 'https://umgdw.herokuapp.com/combos';
-            setTimeout(function(){ 
+            var requri = 'https://umgdw.herokuapp.com/combos';
+            setTimeout(function() {
                 requestJSON(requri, function(json) {
-			if(json == null) {
-			  $('#data').html("");
-			}
-			else {
-                var outhtml = '<p><h3>Total de combos ingresados: ' + json.length + '</h3></p> <table id="DataTable" class="display" style="width:100%">';
-                    outhtml = outhtml + '<thead><tr><th>Id</th><th>Nombre</th><th>Descripción</th><th>Precio</th><th>Estado</th><th>Tienda</th><th>Imagen</th><th>Acciones</th></tr></thead><tbody>';
-                    let tienda = '';
-                    let estado = '';
-                    let imagen = '';
-					$.each(json, function(index) {
-                        $.each(lista_tiendas, function(index2)
-                        {    
-                            if(json[index].idtienda == lista_tiendas[index2].valor)
-                            {
-                                tienda = lista_tiendas[index2].titulo;
+                    if (json == null) {
+                        $('#data').html("");
+                    } else {
+                        var outhtml = '<p><h3>Total de combos ingresados: ' + json.length + '</h3></p> <table id="DataTable" class="display" style="width:100%">';
+                        outhtml = outhtml + '<thead><tr><th>Id</th><th>Nombre</th><th>Descripción</th><th>Precio</th><th>Estado</th><th>Tienda</th><th>Imagen</th><th>Acciones</th></tr></thead><tbody>';
+                        let tienda = '';
+                        let estado = '';
+                        let imagen = '';
+                        $.each(json, function(index) {
+                            $.each(lista_tiendas, function(index2) {
+                                if (json[index].idtienda == lista_tiendas[index2].valor) {
+                                    tienda = lista_tiendas[index2].titulo;
+                                }
+                            });
+                            $.each(lista_estados, function(index3) {
+                                if (json[index].estado == lista_estados[index3].valor) {
+                                    estado = lista_estados[index3].titulo;
+                                }
+                            });
+                            if (json[index].imagen == null || json[index].imagen == '') {
+                                imagen = '<a></a>';
+                            } else {
+                                imagen = '<a title="Abrir URL de imagen" class="fa fa-external-link" href="' + json[index].imagen + '" target="_blank"></a>';
                             }
+                            outhtml = outhtml + ' <tr><td>' + json[index].idproductofinal + '</td><td>' + json[index].nombre + '</td><td>' + json[index].descripcion + '</td><td>' + json[index].precio + '</td><td>' + estado + '</td><td>' + tienda + '</td><td>' + imagen + '</td><td><a title="Editar elemento" class="fa fa-edit" data-toggle="modal" data-target="#EditModal" data-title="Editar combos" data-id="' + json[index].idproductofinal + '" data-nombre="' + json[index].nombre + '" data-desc="' + json[index].descripcion + '" data-precio="' + json[index].precio + '" data-estado="' + json[index].estado + '" data-idtienda="' + json[index].idtienda + '" data-imagen="' + json[index].imagen + '"></a>&nbsp;&nbsp;&nbsp;<a title="Eliminar elemento" class="fa fa-trash-o" data-toggle="modal" data-target="#DeleteModal" data-title="Eliminar combos" data-id="' + json[index].idproductofinal + '" data-nombre="' + json[index].nombre + '" data-desc="' + json[index].descripcion + '" data-precio="' + json[index].precio + '" data-estado="' + json[index].estado + '" data-idtienda="' + json[index].idtienda + '" data-imagen="' + json[index].imagen + '"></a></td></tr>';
                         });
-                        $.each(lista_estados, function(index3)
-                        {    
-                            if(json[index].estado == lista_estados[index3].valor)
-                            {
-                                estado = lista_estados[index3].titulo;
-                            }
-                        });
-                        if(json[index].imagen == null || json[index].imagen == '') {
-                            imagen = '<a></a>';
-                        }
-                        else {
-                            imagen = '<a title="Abrir URL de imagen" class="fa fa-external-link" href="'+json[index].imagen+'" target="_blank"></a>';
-                        }
-                      outhtml = outhtml +  ' <tr><td>'+json[index].idproductofinal+'</td><td>'+json[index].nombre+'</td><td>'+json[index].descripcion+'</td><td>'+json[index].precio+'</td><td>'+estado+'</td><td>'+tienda+'</td><td>'+imagen+'</td><td><a title="Editar elemento" class="fa fa-edit" data-toggle="modal" data-target="#EditModal" data-title="Editar combos" data-id="' + json[index].idproductofinal + '" data-nombre="'+ json[index].nombre +'" data-desc="' + json[index].descripcion + '" data-precio="' + json[index].precio + '" data-estado="' + json[index].estado + '" data-idtienda="' + json[index].idtienda + '" data-imagen="' + json[index].imagen + '"></a>&nbsp;&nbsp;&nbsp;<a title="Eliminar elemento" class="fa fa-trash-o" data-toggle="modal" data-target="#DeleteModal" data-title="Eliminar combos" data-id="' + json[index].idproductofinal + '" data-nombre="'+ json[index].nombre +'" data-desc="' + json[index].descripcion + '" data-precio="' + json[index].precio + '" data-estado="' + json[index].estado + '" data-idtienda="' + json[index].idtienda + '" data-imagen="' + json[index].imagen + '"></a></td></tr>';
-					});
-					outhtml = outhtml + '</tbody></table></div>'; 
-				  $('#data').html(outhtml);
-				  runCompleteCallback();
-			  }
-			});
+                        outhtml = outhtml + '</tbody></table></div>';
+                        $('#data').html(outhtml);
+                        runCompleteCallback();
+                    }
+                });
             }, 1000);
 
-			function requestJSON(url, callback) {
-			  $.ajax({
-				url: url,
-				headers: { 'Content-Type': 'application/json'},
-				dataType: "json",
-				complete: function(xhr) {
-				  callback.call(null, xhr.responseJSON);
-				}
-			  });
+            function requestJSON(url, callback) {
+                $.ajax({
+                    url: url,
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    dataType: "json",
+                    complete: function(xhr) {
+                        callback.call(null, xhr.responseJSON);
+                    }
+                });
             }
 
             function requestJSON2(url, callback) {
-            $.ajax({
-                url: url,
-                headers: { 'Content-Type': 'application/json'},
-                dataType: "json",
-                complete: function(xhr) {
-                callback.call(null, xhr.responseJSON);
-                }
-            });
+                $.ajax({
+                    url: url,
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    dataType: "json",
+                    complete: function(xhr) {
+                        callback.call(null, xhr.responseJSON);
+                    }
+                });
             }
 
             function requestJSON3(url, callback) {
-            $.ajax({
-                url: url,
-                headers: { 'Content-Type': 'application/json'},
-                dataType: "json",
-                complete: function(xhr) {
-                callback.call(null, xhr.responseJSON);
-                }
-            });
+                $.ajax({
+                    url: url,
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    dataType: "json",
+                    complete: function(xhr) {
+                        callback.call(null, xhr.responseJSON);
+                    }
+                });
             }
 
-			function runCompleteCallback() {
-            var table = $('#DataTable');
-			table.DataTable( {
-				"searching": true,
-				"paging":   true,
-				"ordering": true,
-				"info":     true,
-				"lengthMenu": [[10, 20, -1], [10, 20, "All"]],
-				"columnDefs": [
-							{ width: '20%', targets: 0 }
-						],
-				"fixedColumns": true,
-				"responsive": true
-			});
-		  }; // end click event handler
+            function runCompleteCallback() {
+                var table = $('#DataTable');
+                table.DataTable({
+                    "searching": true,
+                    "paging": true,
+                    "ordering": true,
+                    "info": true,
+                    "lengthMenu": [
+                        [10, 20, -1],
+                        [10, 20, "All"]
+                    ],
+                    "columnDefs": [{
+                        width: '20%',
+                        targets: 0
+                    }],
+                    "fixedColumns": true,
+                    "responsive": true
+                });
+            }; // end click event handler
         }
         $('#btnModificar').on('click', function(e) {
-				e.preventDefault();
-				var idVar = $('#idEdit').val();
-				var nomVar = $('#nombreEdit').val();
-				var descVar = $('#descEdit').val();
-                var preVar = $('#precioEdit').val();
-                var estadoVar = $('#estadoEdit').val();
-                var tiendaVar = $('#tiendaEdit').val();
-                var imgVar = $('#imgEdit').val();
-				var url = "https://umgdw.herokuapp.com/combos";
-				var xhr = new XMLHttpRequest();
-					xhr.open("PUT", url, true);
-					xhr.setRequestHeader("Content-Type", "application/json");
-					var data = JSON.stringify({ "idproductofinal": idVar, "nombre": nomVar, "descripcion": descVar, "precio": preVar, "estado": estadoVar, "idtienda": tiendaVar, "imagen": imgVar });
-                    xhr.send(data);
-					xhr.onload = function() {
-						console.log(xhr.response);
-						if(xhr.response == "OK") {
-							$('#idEdit').val("");
-							$('#nombreEdit').val("");
-							$('#descEdit').val("");
-							$('#precioEdit').val("");
-                            $('#estadoEdit').val("");
-                            $('#tiendaEdit').val("");
-                            $('#imgEdit').val("");
+            e.preventDefault();
+            var idVar = $('#idEdit').val();
+            var nomVar = $('#nombreEdit').val();
+            var descVar = $('#descEdit').val();
+            var preVar = $('#precioEdit').val();
+            var estadoVar = $('#estadoEdit').val();
+            var tiendaVar = $('#tiendaEdit').val();
+            var imgVar = $('#imgEdit').val();
+            var url = "https://umgdw.herokuapp.com/combos";
+            var xhr = new XMLHttpRequest();
+            xhr.open("PUT", url, true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+            var data = JSON.stringify({
+                "idproductofinal": idVar,
+                "nombre": nomVar,
+                "descripcion": descVar,
+                "precio": preVar,
+                "estado": estadoVar,
+                "idtienda": tiendaVar,
+                "imagen": imgVar
+            });
+            xhr.send(data);
+            xhr.onload = function() {
+                console.log(xhr.response);
+                if (xhr.response == "OK") {
+                    $('#idEdit').val("");
+                    $('#nombreEdit').val("");
+                    $('#descEdit').val("");
+                    $('#precioEdit').val("");
+                    $('#estadoEdit').val("");
+                    $('#tiendaEdit').val("");
+                    $('#imgEdit').val("");
 
-                            ListarCombos();
-                            alertify.success('El combo fue modificado correctamente.');
-                        } else {
-							$('#idEdit').val("");
-							$('#nombreEdit').val("");
-							$('#descEdit').val("");
-							$('#precioEdit').val("");
-                            $('#estadoEdit').val("");
-                            $('#tiendaEdit').val("");
-                            $('#imgEdit').val("");
-                            alertify.error(xhr.response);
-						}
-					};
-            }); // end click event handler
-            $('#btnEliminar').on('click', function(e) {
-                e.preventDefault();
-                var idVar = $('#idDel').val();
-                var url = "https://umgdw.herokuapp.com/combos/" + idVar;
-				var xhr = new XMLHttpRequest();
-					xhr.open("DELETE", url, true);
-					xhr.setRequestHeader("Content-Type", "application/json");
-					xhr.send();
-					xhr.onload = function() {
-						console.log(xhr.response);
-						if(xhr.response == "OK") {
-							ListarCombos();
-                            alertify.success('El combo fue eliminado correctamente.');
-						} else {
-							alertify.error(xhr.response);
-						}
-					};
-            }); // end click event handler 
-            $('#btnAgregar').on('click', function(e) {
-                e.preventDefault();
-                $('#idEdit').val("");
-				var nomVar = $('#nombreAdd').val();
-				var descVar = $('#descAdd').val();
-                var preVar = $('#precioAdd').val();
-                var estadoVar = $('#estadoAdd').val();
-                var tiendaVar = $('#tiendaAdd').val();
-                var imgVar = $('#imgAdd').val();
-				var url = "https://umgdw.herokuapp.com/combos";
-				var xhr = new XMLHttpRequest();
-					xhr.open("POST", url, true);
-					xhr.setRequestHeader("Content-Type", "application/json");
-					var data = JSON.stringify({ "nombre": nomVar, "descripcion": descVar, "precio": preVar, "estado": estadoVar, "idtienda": tiendaVar, "imagen": imgVar });
-					xhr.send(data);
-					xhr.onload = function() {
-						console.log(xhr.response);
-						if(xhr.response == "OK") {
-							$('#idAdd').val("");
-							$('#nombreAdd').val("");
-							$('#descAdd').val("");
-							$('#precioAdd').val("");
-                            $('#estadoAdd').val("");
-                            $('#tiendaAdd').val("");
-                            $('#imgAdd').val("");
+                    ListarCombos();
+                    alertify.success('El combo fue modificado correctamente.');
+                } else {
+                    $('#idEdit').val("");
+                    $('#nombreEdit').val("");
+                    $('#descEdit').val("");
+                    $('#precioEdit').val("");
+                    $('#estadoEdit').val("");
+                    $('#tiendaEdit').val("");
+                    $('#imgEdit').val("");
+                    alertify.error(xhr.response);
+                }
+            };
+        }); // end click event handler
+        $('#btnEliminar').on('click', function(e) {
+            e.preventDefault();
+            var idVar = $('#idDel').val();
+            var url = "https://umgdw.herokuapp.com/combos/" + idVar;
+            var xhr = new XMLHttpRequest();
+            xhr.open("DELETE", url, true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.send();
+            xhr.onload = function() {
+                console.log(xhr.response);
+                if (xhr.response == "OK") {
+                    ListarCombos();
+                    alertify.success('El combo fue eliminado correctamente.');
+                } else {
+                    alertify.error(xhr.response);
+                }
+            };
+        }); // end click event handler 
+        $('#btnAgregar').on('click', function(e) {
+            e.preventDefault();
+            $('#idEdit').val("");
+            var nomVar = $('#nombreAdd').val();
+            var descVar = $('#descAdd').val();
+            var preVar = $('#precioAdd').val();
+            var estadoVar = $('#estadoAdd').val();
+            var tiendaVar = $('#tiendaAdd').val();
+            var imgVar = $('#imgAdd').val();
+            var url = "https://umgdw.herokuapp.com/combos";
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", url, true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+            var data = JSON.stringify({
+                "nombre": nomVar,
+                "descripcion": descVar,
+                "precio": preVar,
+                "estado": estadoVar,
+                "idtienda": tiendaVar,
+                "imagen": imgVar
+            });
+            xhr.send(data);
+            xhr.onload = function() {
+                console.log(xhr.response);
+                if (xhr.response == "OK") {
+                    $('#idAdd').val("");
+                    $('#nombreAdd').val("");
+                    $('#descAdd').val("");
+                    $('#precioAdd').val("");
+                    $('#estadoAdd').val("");
+                    $('#tiendaAdd').val("");
+                    $('#imgAdd').val("");
 
-							ListarCombos();
-                            alertify.success('El combo fue ingresado correctamente.');
-						} else {
-							$('#idAdd').val("");
-							$('#nombreAdd').val("");
-							$('#descAdd').val("");
-							$('#precioAdd').val("");
-                            $('#estadoAdd').val("");
-                            $('#tiendaAdd').val("");
-                            $('#imgAdd').val("");
-							alertify.error(xhr.response);
-						}
-					};
-			});
+                    ListarCombos();
+                    alertify.success('El combo fue ingresado correctamente.');
+                } else {
+                    $('#idAdd').val("");
+                    $('#nombreAdd').val("");
+                    $('#descAdd').val("");
+                    $('#precioAdd').val("");
+                    $('#estadoAdd').val("");
+                    $('#tiendaAdd').val("");
+                    $('#imgAdd').val("");
+                    alertify.error(xhr.response);
+                }
+            };
+        });
     </script>
 </body>
+
 </html>
