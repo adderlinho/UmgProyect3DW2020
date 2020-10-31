@@ -375,6 +375,29 @@
                         }
                     });
                 });
+
+                var requri4   = 'http://localhost:9090/ingredientes';
+                var ingredientes = $("#ingEdit");
+                var lista_ingredientes = '';
+                requestJSON4(requri4, function(json) {
+                if(json == null) {
+                    lista_ingredientes = null;
+                }
+                else {
+                    $.each(json, function(index)
+                    {
+                        lista_ingredientes += '<option value="' + json[index].idingrediente + '">' + json[index].nombre + '</option>';
+                    });
+                } 
+                ingredientes.html(lista_ingredientes);
+                $.each(json, function(index)
+                    {
+                        if(json[index].idingrediente == ing)
+                        {
+                            document.getElementById('ingEdit').selectedIndex= index;
+                        }
+                    });
+                });
                 
                 function requestJSON2(url, callback) {
                 $.ajax({
@@ -398,37 +421,45 @@
                 });
                 }
 
+                function requestJSON4(url, callback) {
+                $.ajax({
+                    url: url,
+                    headers: { 'Content-Type': 'application/json'},
+                    dataType: "json",
+                    complete: function(xhr) {
+                    callback.call(null, xhr.responseJSON);
+                    }
+                });
+                }
+
 				var modal = $(this)
 				modal.find('.modal-title').text(title)
                 modal.find('.modal-body input[id="idEdit"]').val(id)
-                modal.find('.modal-body input[id="nombreEdit"]').val(nombre)
-                modal.find('.modal-body input[id="descEdit"]').val(desc)
-                modal.find('.modal-body input[id="precioEdit"]').val(precio)
+                modal.find('.modal-body input[id="cantEdit"]').val(cant)
             })
             $('#DeleteModal').on('show.bs.modal', function (event) {
 				var button = $(event.relatedTarget)
 				var title = button.data('title')
                 var id = button.data('id')
-                var nombre = button.data('nombre')
-                var desc = button.data('desc')
-                var precio = button.data('precio')
+                var combo = button.data('combo')
+                var ing = button.data('ing')
+                var cant = button.data('cant')
                 var estado = button.data('estado')
-                var idtienda = button.data('idtienda')
 
-                var requri2   = 'http://localhost:9090/tiendas';
-                var tiendas = $("#tiendaDel");
-                var lista_tiendas = '';
+                var requri2   = 'http://localhost:9090/combos';
+                var combos = $("#comboDel");
+                var lista_combos = '';
                 requestJSON2(requri2, function(json) {
                 if(json == null) {
-                    lista_tiendas = null;
+                    lista_combos = null;
                 }
                 else {
                     $.each(json, function(index)
                     {
-                        lista_tiendas += '<option value="' + json[index].idtienda + '">' + json[index].nombretienda + '</option>';
+                        lista_combos += '<option value="' + json[index].idproductofinal + '">' + json[index].nombre + '</option>';
                     });
                 } 
-                tiendas.html(lista_tiendas);
+                combos.html(lista_combos);
                 });
 
                 var requri3   = 'http://localhost:9090/estados';
@@ -446,6 +477,29 @@
                 } 
                 estados.html(lista_estados);
                 });
+
+                var requri4   = 'http://localhost:9090/ingredientes';
+                var ingredientes = $("#ingDel");
+                var lista_ingredientes = '';
+                requestJSON4(requri4, function(json) {
+                if(json == null) {
+                    lista_ingredientes = null;
+                }
+                else {
+                    $.each(json, function(index)
+                    {
+                        lista_ingredientes += '<option value="' + json[index].idingrediente + '">' + json[index].nombre + '</option>';
+                    });
+                } 
+                ingredientes.html(lista_ingredientes);
+                $.each(json, function(index)
+                    {
+                        if(json[index].idingrediente == ing)
+                        {
+                            document.getElementById('ingDel').selectedIndex= index;
+                        }
+                    });
+                });
                 
                 function requestJSON2(url, callback) {
                 $.ajax({
@@ -469,31 +523,40 @@
                 });
                 }
 
+                function requestJSON4(url, callback) {
+                $.ajax({
+                    url: url,
+                    headers: { 'Content-Type': 'application/json'},
+                    dataType: "json",
+                    complete: function(xhr) {
+                    callback.call(null, xhr.responseJSON);
+                    }
+                });
+                }
+
 				var modal = $(this)
 				modal.find('.modal-title').text(title)
                 modal.find('.modal-body input[id="idDel"]').val(id)
-                modal.find('.modal-body input[id="nombreDel"]').val(nombre)
-                modal.find('.modal-body input[id="descDel"]').val(desc)
-                modal.find('.modal-body input[id="precioDel"]').val(precio)
+                modal.find('.modal-body input[id="cantDel"]').val(cant)
             })
             $('#AgregarModal').on('show.bs.modal', function (event) {
 				var button = $(event.relatedTarget) 
                 var title = button.data('title')
 
-                var requri2   = 'http://localhost:9090/tiendas';
-                var tiendas = $("#tiendaAdd");
-                var lista_tiendas = '';
+                var requri2   = 'http://localhost:9090/combos';
+                var combos = $("#comboAdd");
+                var lista_combos = '';
                 requestJSON2(requri2, function(json) {
                 if(json == null) {
-                    lista_tiendas = null;
+                    lista_combos = null;
                 }
                 else {
                     $.each(json, function(index)
                     {
-                        lista_tiendas += '<option value="' + json[index].idtienda + '">' + json[index].nombretienda + '</option>';
+                        lista_combos += '<option value="' + json[index].idproductofinal + '">' + json[index].nombre + '</option>';
                     });
                 } 
-                tiendas.html(lista_tiendas);
+                combos.html(lista_combos);
                 });
 
                 var requri3   = 'http://localhost:9090/estados';
@@ -511,6 +574,30 @@
                 } 
                 estados.html(lista_estados);
                 });
+
+
+                var requri4   = 'http://localhost:9090/ingredientes';
+                var ingredientes = $("#ingAdd");
+                var lista_ingredientes = '';
+                requestJSON4(requri4, function(json) {
+                if(json == null) {
+                    lista_ingredientes = null;
+                }
+                else {
+                    $.each(json, function(index)
+                    {
+                        lista_ingredientes += '<option value="' + json[index].idingrediente + '">' + json[index].nombre + '</option>';
+                    });
+                } 
+                ingredientes.html(lista_ingredientes);
+                $.each(json, function(index)
+                    {
+                        if(json[index].idproductofinal == ing)
+                        {
+                            document.getElementById('ingAdd').selectedIndex= index;
+                        }
+                    });
+                });
                 
                 function requestJSON2(url, callback) {
                 $.ajax({
@@ -533,24 +620,35 @@
                     }
                 });
                 }
+
+                function requestJSON4(url, callback) {
+                $.ajax({
+                    url: url,
+                    headers: { 'Content-Type': 'application/json'},
+                    dataType: "json",
+                    complete: function(xhr) {
+                    callback.call(null, xhr.responseJSON);
+                    }
+                });
+                }
                 
 				var modal = $(this)
 				modal.find('.modal-title').text(title)
 			})
         });
         function ListarProductos() {
-            var requri2   = 'http://localhost:9090/tiendas';
-            var lista_tiendas = [];
+            var requri2   = 'http://localhost:9090/combos';
+            var lista_combos = [];
             requestJSON2(requri2, function(json) {
             if(json == null) {
-                lista_tiendas = null;
+                lista_combos = null;
             }
             else {
                 $.each(json, function(index)
                 {    
-                    lista_tiendas.push({
-                        titulo: json[index].nombretienda,
-                        valor: json[index].idtienda
+                    lista_combos.push({
+                        titulo: json[index].nombre,
+                        valor: json[index].idproductofinal
                     });
                 });
             }
@@ -573,24 +671,41 @@
             } 
             });
 
-            var requri   = 'http://localhost:9090/combos';
+            var requri4   = 'http://localhost:9090/ingredientes';
+            var lista_ingredientes = [];
+            requestJSON4(requri4, function(json) {
+            if(json == null) {
+                lista_ingredientes = null;
+            }
+            else {
+                $.each(json, function(index)
+                {
+                    lista_ingredientes.push({
+                        titulo: json[index].nombre,
+                        valor: json[index].idingrediente
+                    });
+                });
+            } 
+            });
+
+            var requri   = 'http://localhost:9090/productos';
             setTimeout(function(){ 
                 requestJSON(requri, function(json) {
 			if(json == null) {
 			  $('#data').html("");
 			}
 			else {
-                var outhtml = '<p><h3>Listado de combos: ' + json.length + '</h3></p> <table id="DataTable" class="display" style="width:100%">';
-                    outhtml = outhtml + '<thead><tr><th>Id</th><th>Nombre</th><th>Descripción</th><th>Precio</th><th>Estado</th><th>Tienda</th><th>Acciones</th></tr></thead><tbody>';
-                    let tienda = '';
+                var outhtml = '<p><h3>Listado de productos: ' + json.length + '</h3></p> <table id="DataTable" class="display" style="width:100%">';
+                    outhtml = outhtml + '<thead><tr><th>Id</th><th>Combo</th><th>Ingrediente</th><th>Cantidad</th><th>Estado</th><th>Acciones</th></tr></thead><tbody>';
+                    let combo = '';
                     let estado = '';
-                    let medida = '';
+                    let ingrediente = '';
 					$.each(json, function(index) {
-                        $.each(lista_tiendas, function(index2)
+                        $.each(lista_combos, function(index2)
                         {    
-                            if(json[index].idtienda == lista_tiendas[index2].valor)
+                            if(json[index].idproductofinal == lista_combos[index2].valor)
                             {
-                                tienda = lista_tiendas[index2].titulo;
+                                combo = lista_combos[index2].titulo;
                             }
                         });
                         $.each(lista_estados, function(index3)
@@ -600,7 +715,14 @@
                                 estado = lista_estados[index3].titulo;
                             }
                         });
-                      outhtml = outhtml +  ' <tr><td>'+json[index].idproductofinal+'</td><td>'+json[index].nombre+'</td><td>'+json[index].descripcion+'</td><td>'+json[index].precio+'</td><td>'+estado+'</td><td>'+tienda+'</td><td><a title="Editar elemento" class="fa fa-edit" data-toggle="modal" data-target="#EditModal" data-title="Editar combos" data-id="' + json[index].idproductofinal + '" data-nombre="'+ json[index].nombre +'" data-desc="' + json[index].descripcion + '" data-precio="' + json[index].precio + '" data-estado="' + json[index].estado + '" data-idtienda="' + json[index].idtienda + '"></a>&nbsp;&nbsp;&nbsp;<a title="Eliminar elemento" class="fa fa-trash-o" data-toggle="modal" data-target="#DeleteModal" data-title="Eliminar combos" data-id="' + json[index].idproductofinal + '" data-nombre="'+ json[index].nombre +'" data-desc="' + json[index].descripcion + '" data-precio="' + json[index].precio + '" data-estado="' + json[index].estado + '" data-idtienda="' + json[index].idtienda + '"></a></td></tr>';
+                        $.each(lista_ingredientes, function(index2)
+                        {    
+                            if(json[index].idingrediente == lista_ingredientes[index2].valor)
+                            {
+                                ingrediente = lista_ingredientes[index2].titulo;
+                            }
+                        });
+                      outhtml = outhtml +  ' <tr><td>'+json[index].iddetalleproductofinal+'</td><td>'+combo+'</td><td>'+ingrediente+'</td><td>'+json[index].cantidad+'</td><td>'+estado+'</td><td><a title="Editar elemento" class="fa fa-edit" data-toggle="modal" data-target="#EditModal" data-title="Editar productos" data-id="' + json[index].iddetalleproductofinal + '" data-combo="'+ json[index].idproductofinal +'" data-ing="' + json[index].idingrediente + '" data-cant="' + json[index].cantidad + '" data-estado="' + json[index].estado + '"></a>&nbsp;&nbsp;&nbsp;<a title="Eliminar elemento" class="fa fa-trash-o" data-toggle="modal" data-target="#DeleteModal" data-title="Eliminar productos" data-id="' + json[index].iddetalleproductofinal + '" data-combo="'+ json[index].idproductofinal +'" data-ing="' + json[index].idingrediente + '" data-cant="' + json[index].cantidad + '" data-estado="' + json[index].estado + '"></a></td></tr>';
 					});
 					outhtml = outhtml + '</tbody></table></div>'; 
 				  $('#data').html(outhtml);
@@ -642,6 +764,17 @@
             });
             }
 
+            function requestJSON4(url, callback) {
+                $.ajax({
+                    url: url,
+                    headers: { 'Content-Type': 'application/json'},
+                    dataType: "json",
+                    complete: function(xhr) {
+                    callback.call(null, xhr.responseJSON);
+                    }
+                });
+                }
+
 			function runCompleteCallback() {
             var table = $('#DataTable');
 			table.DataTable( {
@@ -661,36 +794,33 @@
         $('#btnModificar').on('click', function(e) {
 				e.preventDefault();
 				var idVar = $('#idEdit').val();
-				var nomVar = $('#nombreEdit').val();
-				var descVar = $('#descEdit').val();
-                var preVar = $('#precioEdit').val();
+				var comboVar = $('#comboEdit').val();
+				var ingVar = $('#ingEdit').val();
+                var cantVar = $('#cantEdit').val();
                 var estadoVar = $('#estadoEdit').val();
-                var tiendaVar = $('#tiendaEdit').val(); 
-				var url = "http://localhost:9090/combos";
+				var url = "http://localhost:9090/productos";
 				var xhr = new XMLHttpRequest();
 					xhr.open("PUT", url, true);
 					xhr.setRequestHeader("Content-Type", "application/json");
-					var data = JSON.stringify({ "idproductofinal": idVar, "nombre": nomVar, "descripcion": descVar, "precio": preVar, "estado": estadoVar, "idtienda": tiendaVar });
+					var data = JSON.stringify({ "iddetalleproductofinal": idVar, "idproductofinal": comboVar, "idingrediente": ingVar, "cantidad": cantVar, "estado": estadoVar, "idusuario_usuarios": 2 });
                     xhr.send(data);
 					xhr.onload = function() {
 						console.log(xhr.response);
 						if(xhr.response == "OK") {
 							$('#idEdit').val("");
-							$('#nombreEdit').val("");
-							$('#descEdit').val("");
-							$('#precioEdit').val("");
+							$('#comboEdit').val("");
+							$('#ingEdit').val("");
+							$('#cantEdit').val("");
                             $('#estadoEdit').val("");
-                            $('#tiendaEdit').val("");
 
                             ListarProductos();
-                            alertify.success('El combo fue modificado correctamente.');
+                            alertify.success('El producto fue modificado correctamente.');
                         } else {
 							$('#idEdit').val("");
-							$('#nombreEdit').val("");
-							$('#descEdit').val("");
-							$('#precioEdit').val("");
+							$('#comboEdit').val("");
+							$('#ingEdit').val("");
+							$('#cantEdit').val("");
                             $('#estadoEdit').val("");
-                            $('#tiendaEdit').val("");
                             alertify.error(xhr.response);
 						}
 					};
@@ -698,7 +828,7 @@
             $('#btnEliminar').on('click', function(e) {
                 e.preventDefault();
                 var idVar = $('#idDel').val();
-                var url = "http://localhost:9090/combos/" + idVar;
+                var url = "http://localhost:9090/productos/" + idVar;
 				var xhr = new XMLHttpRequest();
 					xhr.open("DELETE", url, true);
 					xhr.setRequestHeader("Content-Type", "application/json");
@@ -707,7 +837,7 @@
 						console.log(xhr.response);
 						if(xhr.response == "OK") {
 							ListarProductos();
-                            alertify.success('El combo fue eliminado correctamente.');
+                            alertify.success('El producto fue eliminado correctamente.');
 						} else {
 							alertify.error(xhr.response);
 						}
@@ -716,36 +846,33 @@
             $('#btnAgregar').on('click', function(e) {
                 e.preventDefault();
                 $('#idEdit').val("");
-				var nomVar = $('#nombreAdd').val();
-				var descVar = $('#descAdd').val();
-                var preVar = $('#precioAdd').val();
+				var comboVar = $('#comboAdd').val();
+				var ingVar = $('#ingAdd').val();
+                var cantVar = $('#cantAdd').val();
                 var estadoVar = $('#estadoAdd').val();
-                var tiendaVar = $('#tiendaAdd').val();
-				var url = "http://localhost:9090/combos";
+				var url = "http://localhost:9090/productos";
 				var xhr = new XMLHttpRequest();
 					xhr.open("POST", url, true);
 					xhr.setRequestHeader("Content-Type", "application/json");
-					var data = JSON.stringify({ "nombre": nomVar, "descripcion": descVar, "precio": preVar, "estado": estadoVar, "idtienda": tiendaVar });
+					var data = JSON.stringify({ "idproductofinal": comboVar, "idingrediente": ingVar, "cantidad": cantVar, "estado": estadoVar, "idusuario_usuarios": 2 });
 					xhr.send(data);
 					xhr.onload = function() {
 						console.log(xhr.response);
 						if(xhr.response == "OK") {
 							$('#idAdd').val("");
-							$('#nombreAdd').val("");
-							$('#descAdd').val("");
-							$('#precioAdd').val("");
+							$('#comboAdd').val("");
+							$('#ingAdd').val("");
+							$('#cantAdd').val("");
                             $('#estadoAdd').val("");
-                            $('#tiendaAdd').val("");
 
 							ListarProductos();
-                            alertify.success('El combo fue ingresado correctamente.');
+                            alertify.success('El producto fue ingresado correctamente.');
 						} else {
 							$('#idAdd').val("");
-							$('#nombreAdd').val("");
-							$('#descAdd').val("");
-							$('#precioAdd').val("");
+							$('#comboAdd').val("");
+							$('#ingAdd').val("");
+							$('#cantAdd').val("");
                             $('#estadoAdd').val("");
-                            $('#tiendaAdd').val("");
 							alertify.error(xhr.response);
 						}
 					};
