@@ -40,22 +40,6 @@ public class detalleProductoFinal {
         return idproductofinal;
     }
 
-    public int getIdproductofinal_productosfinal() {
-        return idproductofinal_productosfinal;
-    }
-
-    public int getIdingrediente_ingredientes() {
-        return idingrediente_ingredientes;
-    }
-
-    public int getEstado_estados() {
-        return estado_estados;
-    }
-
-    public int getUsuario_crea() {
-        return usuario_crea;
-    }
-
     public int getIdusuario_usuarios() {
         return idusuario_usuarios;
     }

@@ -25,7 +25,7 @@ import umg.edu.Proyect3DW2020.service.detalleProductoFinalServicio;
  */
 @CrossOrigin("*")
 @RestController
-@RequestMapping("/detalle_producto")
+@RequestMapping("/productos")
 public class detalleProductoFinalController {
     @Autowired
     private detalleProductoFinalServicio  servicio;

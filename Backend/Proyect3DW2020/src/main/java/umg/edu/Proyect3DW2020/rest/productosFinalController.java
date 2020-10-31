@@ -24,7 +24,7 @@ import umg.edu.Proyect3DW2020.negocio.productosFinalRepository;
  */
 @CrossOrigin("*")
 @RestController
-@RequestMapping("/producto")
+@RequestMapping("/combos")
 public class productosFinalController {
     @Autowired
     private productosFinalRepository repo;

@@ -16,9 +16,8 @@ public class productosFinal {
     private int idproductofinal;
     private String nombre;
     private String descripcion;
-    private int estado;
     private double precio;
-    private int estado_estados;
+    private int estado;
     private int idtienda;
 
     @Override
@@ -29,7 +28,6 @@ public class productosFinal {
                 ", descripcion='" + descripcion + '\'' +
                 ", estado='" + estado + '\'' +
                 ", precio='" + precio + '\'' +
-                ", estado_estados='" + estado_estados + '\'' +
                 ", idtienda='" + idtienda + '\'' +
                 '}';
     }
