@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 import umg.edu.Proyect3DW2020.modelo.productosFinal;
-import umg.edu.Proyect3DW2020.negocio.productosFinalRepository;
+import umg.edu.Proyect3DW2020.service.productosFinalServicio;
 
 /**
  *
@@ -27,57 +27,40 @@ import umg.edu.Proyect3DW2020.negocio.productosFinalRepository;
 @RequestMapping("/combos")
 public class productosFinalController {
     @Autowired
-    private productosFinalRepository repo;
+    private productosFinalServicio servicio;
 
     @GetMapping
     public List <productosFinal> listar(){
-        return repo.findAll();
+        return servicio.enlistAll_productosFinal();
     }
 
     @GetMapping(value="/buscar/{id}")
     public productosFinal buscarId(@PathVariable("id") final Integer id){
-        return  repo.findById(id).get();
+        return  servicio.findById_productosFinal_buscarid(id);
     }
 
     //metodo para insertar detalleProductoFinal
     @PostMapping
     @ResponseStatus(HttpStatus.OK)
     public String  insertar(@RequestBody productosFinal emp){
-        try {
-            repo.save(emp);
-            return "OK";
-        }
-        catch (Exception ex)
-        {
-            return "Hubo un error insertando el combo.";
-        }
+        return servicio.create(emp);
+
     }
 
     //metodo para modificar producto
     @PutMapping
     @ResponseStatus(HttpStatus.OK)
     public String modificar(@RequestBody productosFinal emp){
-        try {
-            repo.save(emp);
-            return "OK";
-        }
-        catch (Exception ex)
-        {
-            return "Hubo un error modificando el combo.";
-        }
+
+        return servicio.modify_productosFinal(emp);
+
     }
 
     //metoo para eliminar producto
     @DeleteMapping(value="/{id}")
     @ResponseStatus(HttpStatus.OK)
     public String eliminar(@PathVariable("id") Integer id){
-        try {
-            repo.deleteById(id);
-            return "OK";
-        }
-        catch (Exception ex)
-        {
-            return "Hubo un error eliminando el combo.";
-        }
+        return servicio.delete_productosFinal(id);
+
     }
 }

@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 import umg.edu.Proyect3DW2020.modelo.sysDiagrams;
-import umg.edu.Proyect3DW2020.negocio.sysDiagramsRepository;
+import umg.edu.Proyect3DW2020.service.sysDiagramsServicio;
 
 /**
  *
@@ -27,57 +27,37 @@ import umg.edu.Proyect3DW2020.negocio.sysDiagramsRepository;
 @RequestMapping("/sysDiagrams")
 public class sysDiagramsController {
     @Autowired
-    private sysDiagramsRepository repo;
+    private sysDiagramsServicio servicio;
 
     @GetMapping
     public List <sysDiagrams> listar(){
-        return repo.findAll();
+        return servicio.enlistAll_sysDiagrams();
     }
 
     @GetMapping(value="/buscar/{id}")
     public sysDiagrams buscarId(@PathVariable("id") final Integer id){
-        return  repo.findById(id).get();
+        return  servicio.findById_sysDiagrams_buscarid(id);
     }
 
     //metodo para insertar detalleProductoFinal
     @PostMapping
     @ResponseStatus(HttpStatus.OK)
     public String  insertar(@RequestBody sysDiagrams emp){
-        try {
-            repo.save(emp);
-            return "OK";
-        }
-        catch (Exception ex)
-        {
-            return "Hubo un error insertando el sysDiagrams.";
-        }
+        return servicio.create(emp);
     }
 
     //metodo para modificar producto
     @PutMapping
     @ResponseStatus(HttpStatus.OK)
     public String modificar(@RequestBody sysDiagrams emp){
-        try {
-            repo.save(emp);
-            return "OK";
-        }
-        catch (Exception ex)
-        {
-            return "Hubo un error modificando el sysDiagrams.";
-        }
+        return servicio.modify_sysDiagrams(emp);
     }
 
     //metoo para eliminar producto
     @DeleteMapping(value="/{id}")
     @ResponseStatus(HttpStatus.OK)
     public String eliminar(@PathVariable("id") Integer id){
-        try {
-            repo.deleteById(id);
-            return "OK";
-        }
-        catch (Exception ex)
-        {
-            return "Hubo un error eliminando el sysDiagrams.";
-        }
+        return servicio.delete_sysDiagrams(id);
+
     }
 }

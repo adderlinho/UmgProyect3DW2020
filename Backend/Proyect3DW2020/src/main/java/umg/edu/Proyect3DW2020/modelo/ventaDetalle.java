@@ -16,13 +16,13 @@ public class ventaDetalle {
     private int iddetalleventa;
     private int idventa;
     private int idproductofinal;
-    private Date fechacrea;
     private int cantidad;
     private int preciounitario;
     private int estado;
     private int idventa_venta;
     private int idproductofinal_productosfinal;
     private int estado_estados;
+    private Date fechacrea;
 
     @Override
     public String toString() {
@@ -30,13 +30,13 @@ public class ventaDetalle {
                 "iddetalleventa='" + iddetalleventa + '\'' +
                 ", idventa='" + idventa + '\'' +
                 ", idproductofinal='" + idproductofinal + '\'' +
-                ", fechacrea='" + fechacrea + '\'' +
                 ", cantidad='" + cantidad + '\'' +
                 ", preciounitario='" + preciounitario + '\'' +
                 ", estado='" + estado + '\'' +
                 ", idventa_venta='" + idventa_venta + '\'' +
                 ", idproductofinal_productosfinal='" + idproductofinal_productosfinal + '\'' +
                 ", estado_estados='" + estado_estados + '\'' +
+                ", fechacrea='" + fechacrea + '\'' +
                 '}';
     }
 }

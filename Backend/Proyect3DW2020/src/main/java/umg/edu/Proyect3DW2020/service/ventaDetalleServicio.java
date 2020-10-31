@@ -8,71 +8,67 @@ package umg.edu.Proyect3DW2020.service;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-<<<<<<< HEAD
-
-=======
->>>>>>> 73d84c18380e779f2a7aa25a4dae44da3cfe545d
-import umg.edu.Proyect3DW2020.modelo.estadoventa;
-import umg.edu.Proyect3DW2020.negocio.estadoventaRepository;
+import umg.edu.Proyect3DW2020.modelo.ventaDetalle;
+import umg.edu.Proyect3DW2020.negocio.ventaDetalleRepository;
 
 /**
  *
  * @author eli
  */
 @Service
-public class estadoventaServicio {
+public class ventaDetalleServicio {
     
-     @Autowired
-    private estadoventaRepository repo;
+       @Autowired
+    private ventaDetalleRepository repo;
    
    
-     //Servicio para enlistar tienda
-   public List<estadoventa> enlistAll_estadoventa() {
+    
+   public List<ventaDetalle> enlistAll_ventaDetalle() {
        return repo.findAll();
    }
    
    
       //servicio para buscar tienda por id
-   public estadoventa findById_estadoventa_buscarid(Integer id){
+   public ventaDetalle findById_ventaDetalle_buscarid(Integer id){
       return  repo.findById(id).get();
    }
     
    
-     public String create(estadoventa estadoventa){ 
+     public String create(ventaDetalle ventaDetalle){ 
          try {
-            repo.save(estadoventa);
+            repo.save(ventaDetalle);
             return "OK";
         }
         catch (Exception ex)
         {
-            return "Hubo un error insertando el estado de venta.";
+            return "Hubo un error insertando el detalle de la venta.";
         }
          
 }
      
                 
-               public String modify_estadoventa(estadoventa estadoventa){
+               public String modify_ventaDetalle(ventaDetalle ventaDetalle){ 
          try {
-            repo.save(estadoventa);
+            repo.save(ventaDetalle);
             return "OK";
         }
         catch (Exception ex)
         {
-            return "Hubo un error modificar el estado de venta.";
+            return "Hubo un error modificar el detalle de la venta.";
         }
          
 }
                
-       public String delete_estadoventa(Integer id){
+       public String delete_ventaDetalle(Integer id){
          try {
             repo.deleteById(id);
             return "OK";
         }
         catch (Exception ex)
         {
-            return "Hubo un error eliminando el estado de venta.";
+            return "Hubo un error eliminando el detale de la venta.";
         }
     }
     
-    
 }
+

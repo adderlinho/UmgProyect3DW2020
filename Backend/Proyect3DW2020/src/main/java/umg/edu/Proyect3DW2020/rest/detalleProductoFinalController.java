@@ -16,7 +16,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import umg.edu.Proyect3DW2020.modelo.detalleProductoFinal;
-import umg.edu.Proyect3DW2020.negocio.detalleProductoFinalRepository;
 import umg.edu.Proyect3DW2020.service.detalleProductoFinalServicio;
 
 /**

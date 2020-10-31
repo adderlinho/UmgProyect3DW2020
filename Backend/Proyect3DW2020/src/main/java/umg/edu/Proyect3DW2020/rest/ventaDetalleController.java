@@ -17,6 +17,7 @@ import java.util.List;
 
 import umg.edu.Proyect3DW2020.modelo.ventaDetalle;
 import umg.edu.Proyect3DW2020.negocio.ventaDetalleRepository;
+import umg.edu.Proyect3DW2020.service.ventaDetalleServicio;
 
 /**
  *
@@ -24,60 +25,42 @@ import umg.edu.Proyect3DW2020.negocio.ventaDetalleRepository;
  */
 @CrossOrigin("*")
 @RestController
-@RequestMapping("/ventaDetalle")
+@RequestMapping("/ventadetalle")
 public class ventaDetalleController {
     @Autowired
-    private ventaDetalleRepository repo;
+    private ventaDetalleServicio servicio;
 
     @GetMapping
     public List <ventaDetalle> listar(){
-        return repo.findAll();
+        return servicio.enlistAll_ventaDetalle();
     }
 
     @GetMapping(value="/buscar/{id}")
     public ventaDetalle buscarId(@PathVariable("id") final Integer id){
-        return  repo.findById(id).get();
+        return  servicio.findById_ventaDetalle_buscarid(id);
     }
 
-    //metodo para insertar detalleProductoFinal
+
     @PostMapping
     @ResponseStatus(HttpStatus.OK)
     public String  insertar(@RequestBody ventaDetalle emp){
-        try {
-            repo.save(emp);
-            return "OK";
-        }
-        catch (Exception ex)
-        {
-            return "Hubo un error insertando la venta Detalle.";
-        }
+        return servicio.create(emp);
+
     }
 
-    //metodo para modificar producto
+
     @PutMapping
     @ResponseStatus(HttpStatus.OK)
     public String modificar(@RequestBody ventaDetalle emp){
-        try {
-            repo.save(emp);
-            return "OK";
-        }
-        catch (Exception ex)
-        {
-            return "Hubo un error modificando la venta Detalle.";
-        }
+        return servicio.modify_ventaDetalle(emp);
+
     }
 
-    //metoo para eliminar producto
+
     @DeleteMapping(value="/{id}")
     @ResponseStatus(HttpStatus.OK)
     public String eliminar(@PathVariable("id") Integer id){
-        try {
-            repo.deleteById(id);
-            return "OK";
-        }
-        catch (Exception ex)
-        {
-            return "Hubo un error eliminando la venta Detalle.";
-        }
+        return servicio.delete_ventaDetalle(id);
+
     }
 }

@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 import umg.edu.Proyect3DW2020.modelo.tienda;
-import umg.edu.Proyect3DW2020.negocio.tiendaRepository;
 import umg.edu.Proyect3DW2020.service.tiendaServicio;
 
 
