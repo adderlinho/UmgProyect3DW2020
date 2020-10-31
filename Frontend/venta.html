@@ -1,17 +1,12 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!-->
 <html class="no-js" lang="">
-<!--<![endif]-->
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Ela Admin - HTML5 Admin Template</title>
-    <meta name="description" content="Ela Admin - HTML5 Admin Template">
+    <title>Mi Tienda</title>
+    <meta name="description" content="UmgProyect3DW2020" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="AdderlySinay" />
 
     <link rel="apple-touch-icon" href="https://i.imgur.com/QRAUqs9.png">
     <link rel="shortcut icon" href="https://i.imgur.com/QRAUqs9.png">
@@ -23,56 +18,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
     <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="assets/css/lib/datatable/dataTables.bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
-    <link href="https://cdn.jsdelivr.net/npm/chartist@0.11.0/dist/chartist.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/jqvmap@1.5.1/dist/jqvmap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/alertify.min.css">
 
-    <link href="https://cdn.jsdelivr.net/npm/weathericons@2.1.0/css/weather-icons.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" rel="stylesheet" />
-
-    <style>
-        #weatherWidget .currentDesc {
-            color: #ffffff!important;
-        }
-        
-        .traffic-chart {
-            min-height: 335px;
-        }
-        
-        #flotPie1 {
-            height: 150px;
-        }
-        
-        #flotPie1 td {
-            padding: 3px;
-        }
-        
-        #flotPie1 table {
-            top: 20px!important;
-            right: -10px!important;
-        }
-        
-        .chart-container {
-            display: table;
-            min-width: 270px;
-            text-align: left;
-            padding-top: 10px;
-            padding-bottom: 10px;
-        }
-        
-        #flotLine5 {
-            height: 105px;
-        }
-        
-        #flotBarChart {
-            height: 150px;
-        }
-        
-        #cellPaiChart {
-            height: 160px;
-        }
-    </style>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -86,6 +36,9 @@
                     </li>
                     <li class="menu-title">Administracion de Tienda</li>
                     <!-- /.menu-title -->
+                     <li>
+                        <a href="venta.html"> <i class=" menu-icon fa fa-coffee"></i> Realizar una Venta</a>
+                    </li>
                     <li>
                         <a href="tiendas.html"> <i class=" menu-icon fa fa-coffee"></i> Registro de Tiendas</a>
                     </li>
@@ -93,7 +46,7 @@
                         <a href="usuarios.html"> <i class=" menu-icon fa fa-users"></i> Registro de usuarios</a>
                     </li>
                     <li>
-                        <a href="ingredientes.html"> <i class=" menu-icon fa fa-cutlery"></i> Registro de ingredientes</a>
+                        <a href="ingredientes.html"> <i class=" menu-icon fa fa-cutlery"></i> Registro de existencias</a>
                     </li>
                     <li>
                         <a href="combos.html"> <i class=" menu-icon fa fa-sitemap"></i> Registro de combos</a>
@@ -126,37 +79,25 @@
             <div class="animated fadeIn">
                 <!--  /Traffic -->
                 <div class="clearfix"></div>
-
+                <div class="form-inline" id= "datoscliente">
+                       <div class="form-group mx-sm-3">
+                           <label for="txtcliente" class="sr-only">Nombre Cliente</label>
+                           <input type="text" class="form-control" id="txtcliente" placeholder="Nombre de persona que realiza pedido">
+                       </div>
+                       <div class="form-group mx-sm-3">
+                           <label for="txttelefono" class="sr-only">Telefono</label>
+                           <input type="text" class="form-control" id="txttelefono" placeholder="Teléfono de cliente">
+                       </div>
+                       <button  id= "cmdguardarventa" class="btn btn-primary">Guardar</button>
+                       <br/>
+                    
+                </div>
                 <div class="row" id= "data">
-                    <div class="col-lg-4 col-md-6">
-                    	<div class="card ov-h" ">
-			  				<img class="card-img-top" src="https://www.eluniversal.com.mx/sites/default/files/2020/03/19/como_extraer_un_texto_de_una_imagen.jpg" alt="Card image cap">
-					  		<div class="card-body">
-					    		<h5 class="card-title">Menu No 1</h5>
-					    		<p class="card-text">Papas, soda, 1 pieza de pollo.</p>
-					    		<a id= "txtmenu_" id_menu= 0 class="btn btn-primary">Seleccionar Menú</a>
-					  		</div>
-						</div>
-                    </div>
+                    
                 </div>
                 <!-- /Calender Chart Weather -->
                 <!-- Modal - Calendar - Add New Event -->
-                <div class="modal fade none-border" id="event-modal">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                <h4 class="modal-title"><strong>Add New Event</strong></h4>
-                            </div>
-                            <div class="modal-body"></div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-success save-event waves-effect waves-light">Create event</button>
-                                <button type="button" class="btn btn-danger delete-event waves-effect waves-light" data-dismiss="modal">Delete</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
                 <!-- /#event-modal -->
                 <!-- Modal - Calendar - Add Category -->
                 <div class="modal fade none-border" id="add-category">
@@ -224,72 +165,115 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
     <script src="assets/js/main.js"></script>
 
+     <!-- jQuery -->
+    <script src="assets/js/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Waypoints -->
+    <script src="assets/js/jquery.waypoints.min.js"></script>
     <!--  Chart js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.3/dist/Chart.bundle.min.js"></script>
 
+
+    <script src="assets/js/alertify.min.js"></script>
+
     <!--Chartist Chart-->
-    <script src="https://cdn.jsdelivr.net/npm/chartist@0.11.0/dist/chartist.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartist-plugin-legend@0.6.2/chartist-plugin-legend.min.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/jquery.flot@0.8.3/jquery.flot.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flot-pie@1.0.0/src/jquery.flot.pie.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flot-spline@0.0.1/js/jquery.flot.spline.min.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/simpleweather@3.1.0/jquery.simpleWeather.min.js"></script>
-    <script src="assets/js/init/weather-init.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.js"></script>
-    <script src="assets/js/init/fullcalendar-init.js"></script>
+ 
     <script type="text/javascript">
-        $(function() { 
-            alertify.set('notifier', 'position', 'top-center')
+        $(document).ready(function(){    
             GetMenu();
-             
+            alertify.set('notifier', 'position', 'top-center');
+            
         });
         function GetMenu() {
-            
-            var requri   = 'http://localhost:9090/view_menu';
-            setTimeout(function(){ 
-                requestJSON(requri, function(json) {
+            var requri   = 'https://umgdw.herokuapp.com/combos';
+            var lista_combos = [];
+            requestJSON(requri, function(json) {
             if(json == null) {
-              $('#data').html("");
+                lista_combos = null;
             }
+            /*else {
+                $.each(json, function(index)
+                {    
+                    lista_combos.push({
+                        idproductofinal: json[index].idproductofinal,
+                        nombre: json[index].nombre,
+                        descripcion: json[index].descripcion,
+                        precio: json[index].precio,
+                        estado: json[index].estado,
+                        idtienda: json[index].idtienda,
+                       
+                        imagen: json[index].imagen
+                    });
+                });
+            }*/
+
             else {
-                var outhtml = '';
+                    var outhtml = '';
                     let tienda = '';
                     let estado = '';
                     let rol = '';
+
+
+                    outhtml= ' ';
+
                     $.each(json, function(index) {
-                        $.each(lista_tiendas, function(index2)
-                        {    
-                            if(json[index].idtienda == lista_tiendas[index2].valor)
-                            {
-                                tienda = lista_tiendas[index2].titulo;
-                            }
-                        });
-                        $.each(lista_estados, function(index3)
-                        {    
-                            if(json[index].estado == lista_estados[index3].valor)
-                            {
-                                estado = lista_estados[index3].titulo;
-                            }
-                        });
-                      if(json[index].administrador == 0)
-                      {
-                          rol = 'Usuario';
-                      }
-                      else if (json[index].administrador == 1){
-                        rol = 'Administrador';
-                      }
-                      outhtml = outhtml +  ' <tr><td>'+json[index].idusuario+'</td><td>'+json[index].nombre+'</td><td>'+json[index].dpi+'</td><td>'+json[index].telefono+'</td><td>'+estado+'</td><td>'+tienda+'</td><td>'+rol+'</td><td><a title="Editar elemento" class="fa fa-edit" data-toggle="modal" data-target="#usuarioModal" data-title="Editar usuario" data-id="' + json[index].idusuario + '" data-nombre="'+ json[index].nombre +'" data-dpi="' + json[index].dpi + '" data-telefono="' + json[index].telefono + '" data-estado="' + json[index].estado + '" data-idtienda="' + json[index].idtienda + '" data-admin="' + json[index].administrador + '"></a>&nbsp;&nbsp;&nbsp;<a title="Eliminar elemento" class="fa fa-trash-o" data-toggle="modal" data-target="#usuarioDeleteModal" data-title="Eliminar usuario" data-id="' + json[index].idusuario + '" data-nombre="'+ json[index].nombre +'" data-dpi="' + json[index].dpi + '" data-telefono="' + json[index].telefono + '" data-estado="' + json[index].estado + '" data-idtienda="' + json[index].idtienda + '" data-admin="' + json[index].administrador + '"></a></td></tr>';
+                        
+                        outhtml = outhtml +  '<div class="col-lg-4 col-md-6"><div class="card ov-h" "><img class="card-img-top" src="'+json[index].imagen+'" alt="Card image <h5 class="card-title">'+ json[index].nombre+'</h5> <p class="card-text">'+ json[index].descripcion+'</p><span class="badge badge-secondary">Precio: Q '+ json[index].precio+'</span></h1>                          <a id= "txtmenu_" id_menu= '+ json[index].idproductofinal +' class="btn btn-primary">Seleccionar Menú</a></div></div> </div>';
                     });
-                    outhtml = outhtml + '</tbody></table></div>'; 
+                    outhtml = outhtml + ''; 
                   $('#data').html(outhtml);
-                  runCompleteCallback();
+                  
               }
+
+
+
             });
-            }, 1000);
+            console.log(lista_combos);
+            //datos de productos
+            requri   = 'https://umgdw.herokuapp.com/productos';
+            var lista_productos = [];
+            requestJSON(requri, function(json) {
+            if(json == null) {
+                lista_productos = null;
+            }
+            else {
+                $.each(json, function(index)
+                {    
+                    lista_productos.push({
+                        iddetalleproductofinal: json[index].iddetalleproductofinal,
+                        cantidad: json[index].cantidad,
+                        estado: json[index].estado,
+                        idproductofinal: json[index].idproductofinal,
+                        idingrediente: json[index].idingrediente,
+                        idusuario_usuarios: json[index].idusuario_usuarios
+                    });
+                });
+            }
+            });
+            console.log (lista_productos);
+            //ingredientes
+            requri   = 'https://umgdw.herokuapp.com/ingredientes';
+            var lista_ingredientes = [];
+            requestJSON(requri, function(json) {
+            if(json == null) {
+                lista_ingredientes = null;
+            }
+            else {
+                $.each(json, function(index)
+                {    
+                    lista_ingredientes.push({
+                        idingrediente: json[index].idingrediente,
+                        nombre: json[index].nombre,
+                        idtienda: json[index].idtienda,
+                        estado: json[index].estado,
+                        
+                        
+                    });
+                });
+            }
+            });
+            console.log(lista_ingredientes);
 
             function requestJSON(url, callback) {
               $.ajax({
@@ -301,111 +285,30 @@
                 }
               });
             }
-            function requestJSON2(url, callback) {
-            $.ajax({
-                url: url,
-                headers: { 'Content-Type': 'application/json'},
-                dataType: "json",
-                complete: function(xhr) {
-                callback.call(null, xhr.responseJSON);
-                }
-            });
-            }
-            function requestJSON3(url, callback) {
-            $.ajax({
-                url: url,
-                headers: { 'Content-Type': 'application/json'},
-                dataType: "json",
-                complete: function(xhr) {
-                callback.call(null, xhr.responseJSON);
-                }
-            });
-            }
+           }
 
-            function runCompleteCallback() {
-            var table = $('#UsuariosTable');
-            table.DataTable( {
-                "searching": true,
-                "paging":   true,
-                "ordering": true,
-                "info":     true,
-                "lengthMenu": [[10, 20, -1], [10, 20, "All"]],
-                "columnDefs": [
-                            { width: '20%', targets: 0 }
-                        ],
-                "fixedColumns": true,
-                "responsive": true
-            });
-          }; // end click event handler
-        }
-        $('#btnModificar').on('click', function(e) {
+           //////////////////////////////////// opcion de venta
+            $('#cmdguardarventa').on('click', function(e) {
                 e.preventDefault();
-                var idVar = $('#id_usuarioEdit').val();
-                var nomVar = $('#nombreEdit').val();
-                var dpiVar = $('#dpiEdit').val();
-                var telVar = $('#telefonoEdit').val();
-                var estadoVar = $('#estadoEdit').val();
-                var tiendaVar = $('#tiendaEdit').val(); 
-                var adminVar = $('#adminEdit').val();
-                var url = "http://localhost:9090/usuarios";
-                var xhr = new XMLHttpRequest();
-                    xhr.open("PUT", url, true);
-                    xhr.setRequestHeader("Content-Type", "application/json");
-                    var data = JSON.stringify({ "idusuario": idVar, "nombre": nomVar, "dpi": dpiVar, "telefono": telVar, "estado": estadoVar, "idtienda": tiendaVar, "administrador": adminVar });
-                    xhr.send(data);
-                    xhr.onload = function() {
-                        console.log(xhr.response);
-                        if(xhr.response == "OK") {
-                            $('#id_usuarioEdit').val("");
-                            $('#nombreEdit').val("");
-                            $('#dpiEdit').val("");
-                            $('#telefonoEdit').val("");
-                            $('#estadoEdit').val("");
-                            $('#tiendaEdit').val("");
-                            $('#adminEdit').val("");
-
-                            ListarUsuarios();
-                            alertify.success('El usuario fue modificado correctamente.');
-                        } else {
-                            $('#id_usuarioEdit').val("");
-                            $('#nombreEdit').val("");
-                            $('#dpiEdit').val("");
-                            $('#telefonoEdit').val("");
-                            $('#estadoEdit').val("");
-                            $('#tiendaEdit').val("");
-                            $('#adminEdit').val("");
-                            alertify.error(xhr.response);
-                        }
-                    };
-            }); // end click event handler
-            $('#btnEliminar').on('click', function(e) {
-                e.preventDefault();
-                var idVar = $('#id_usuarioDel').val();
-                var url = "http://localhost:9090/usuarios/" + idVar;
-                var xhr = new XMLHttpRequest();
-                    xhr.open("DELETE", url, true);
-                    xhr.setRequestHeader("Content-Type", "application/json");
-                    xhr.send();
-                    xhr.onload = function() {
-                        console.log(xhr.response);
-                        if(xhr.response == "OK") {
-                            ListarUsuarios();
-                            alertify.success('El usuario fue eliminado correctamente.');
-                        } else {
-                            alertify.error(xhr.response);
-                        }
-                    };
-            }); // end click event handler 
-            $('#btnAgregar').on('click', function(e) {
-                e.preventDefault();
-                $('#id_usuarioEdit').val("");
-                var nomVar = $('#nombreAdd').val();
-                var dpiVar = $('#dpiAdd').val();
+               
+                $('#txtcliente').attr('readonly', true); 
+                $('#txttelefono').attr('readonly', true); 
+                
+                var clnombre = $('#txtcliente').val();
+                var cltelefono = $('#txttelefono').val();
                 var telVar = $('#telefonoAdd').val();
-                var estadoVar = $('#estadoAdd').val();
-                var tiendaVar = $('#tiendaAdd').val();
-                var adminVar = $('#adminEdit').val();
-                var url = "http://localhost:9090/usuarios";
+                /*
+                    private int idventa;
+                    private String nombrecliente;
+                    private Date fechapedido;
+                    private int estado;
+                    private int idestado_estadoventa;
+                    private int usuario_crea;
+                    private int idusuario_usuarios;
+                    private int idtienda;
+
+                */
+                var url = "https://umgdw.herokuapp.com/venta";
                 var xhr = new XMLHttpRequest();
                     xhr.open("POST", url, true);
                     xhr.setRequestHeader("Content-Type", "application/json");
@@ -436,6 +339,7 @@
                         }
                     };
             });
+       
     </script>
 </body>
 

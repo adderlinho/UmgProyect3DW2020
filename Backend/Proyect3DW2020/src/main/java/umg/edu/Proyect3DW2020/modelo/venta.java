@@ -24,6 +24,7 @@ public class venta {
 
     @Override
     public String toString() {
+       
         return "venta{" +
                 "idventa='" + idventa + '\'' +
                 ", nombrecliente='" + nombrecliente + '\'' +
