@@ -8,67 +8,68 @@ package umg.edu.Proyect3DW2020.service;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import umg.edu.Proyect3DW2020.modelo.estadoventa;
-import umg.edu.Proyect3DW2020.negocio.estadoventaRepository;
+import umg.edu.Proyect3DW2020.modelo.usuarios;
+import umg.edu.Proyect3DW2020.negocio.usuariosRepository;
 
 /**
  *
  * @author eli
  */
 @Service
-public class estadoventaServicio {
+public class usuariosServicio {
     
-     @Autowired
-    private estadoventaRepository repo;
+
+       @Autowired
+    private usuariosRepository repo;
    
    
      //Servicio para enlistar tienda
-   public List<estadoventa> enlistAll_estadoventa() {
+   public List<usuarios> enlistAll_usuarios() {
        return repo.findAll();
    }
    
    
       //servicio para buscar tienda por id
-   public estadoventa findById_estadoventa_buscarid(Integer id){
+   public usuarios findById_usuarios_buscarid(Integer id){
       return  repo.findById(id).get();
    }
     
    
-     public String create(estadoventa estadoventa){ 
+     public String create(usuarios usuarios){ 
          try {
-            repo.save(estadoventa);
+            repo.save(usuarios);
             return "OK";
         }
         catch (Exception ex)
         {
-            return "Hubo un error insertando el estado de venta.";
+            return "Hubo un error insertando el usuario.";
         }
          
 }
      
                 
-               public String modify_estadoventa(estadoventa estadoventa){ 
+               public String modify_usuarios(usuarios usuarios){ 
          try {
-            repo.save(estadoventa);
+            repo.save(usuarios);
             return "OK";
         }
         catch (Exception ex)
         {
-            return "Hubo un error modificar el estado de venta.";
+            return "Hubo un error modificar el usuario.";
         }
          
 }
                
-       public String delete_estadoventa(Integer id){
+       public String delete_usuarios(Integer id){
          try {
             repo.deleteById(id);
             return "OK";
         }
         catch (Exception ex)
         {
-            return "Hubo un error eliminando el estado de venta.";
+            return "Hubo un error eliminando el usuario.";
         }
     }
     
-    
 }
+

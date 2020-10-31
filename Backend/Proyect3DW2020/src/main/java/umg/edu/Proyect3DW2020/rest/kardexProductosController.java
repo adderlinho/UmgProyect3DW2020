@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 import umg.edu.Proyect3DW2020.modelo.kardexProductos;
-import umg.edu.Proyect3DW2020.negocio.kardexProductosRepository;
+import umg.edu.Proyect3DW2020.service.kardexProductosServicio;
 
 /**
  *
@@ -27,57 +27,40 @@ import umg.edu.Proyect3DW2020.negocio.kardexProductosRepository;
 @RequestMapping("/kardex")
 public class kardexProductosController {
     @Autowired
-    private kardexProductosRepository repo;
+    private kardexProductosServicio servicio;
 
     @GetMapping
     public List <kardexProductos> listar(){
-        return repo.findAll();
+        return servicio.enlistAll_kardexProductos();
     }
 
     @GetMapping(value="/buscar/{id}")
     public kardexProductos buscarId(@PathVariable("id") final Integer id){
-        return  repo.findById(id).get();
+        return  servicio.findById_kardexProductos_buscarid(id);
     }
 
     //metodo para insertar detalleProductoFinal
     @PostMapping
     @ResponseStatus(HttpStatus.OK)
     public String  insertar(@RequestBody kardexProductos emp){
-        try {
-            repo.save(emp);
-            return "OK";
-        }
-        catch (Exception ex)
-        {
-            return "Hubo un error insertando el detalleProductoFinal.";
-        }
+            return servicio.create(emp);
+    
     }
 
     //metodo para modificar producto
     @PutMapping
     @ResponseStatus(HttpStatus.OK)
     public String modificar(@RequestBody kardexProductos emp){
-        try {
-            repo.save(emp);
-            return "OK";
-        }
-        catch (Exception ex)
-        {
-            return "Hubo un error modificando el detalleProductoFinal.";
-        }
+
+            return servicio.modify_kardexProductos(emp);
+        
     }
 
     //metoo para eliminar producto
     @DeleteMapping(value="/{id}")
     @ResponseStatus(HttpStatus.OK)
     public String eliminar(@PathVariable("id") Integer id){
-        try {
-            repo.deleteById(id);
-            return "OK";
-        }
-        catch (Exception ex)
-        {
-            return "Hubo un error eliminando el detalleProductoFinal.";
-        }
+            return servicio.delete_kardexProductos(id);
+       
     }
 }

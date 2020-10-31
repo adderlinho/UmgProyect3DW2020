@@ -16,7 +16,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import umg.edu.Proyect3DW2020.modelo.detalleProductoFinal;
-import umg.edu.Proyect3DW2020.negocio.detalleProductoFinalRepository;
 import umg.edu.Proyect3DW2020.service.detalleProductoFinalServicio;
 
 /**
@@ -25,7 +24,7 @@ import umg.edu.Proyect3DW2020.service.detalleProductoFinalServicio;
  */
 @CrossOrigin("*")
 @RestController
-@RequestMapping("/productos")
+@RequestMapping("/detalle_producto")
 public class detalleProductoFinalController {
     @Autowired
     private detalleProductoFinalServicio  servicio;

@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 import umg.edu.Proyect3DW2020.modelo.ingredientes;
-import umg.edu.Proyect3DW2020.negocio.ingredientesRepository;
+import umg.edu.Proyect3DW2020.service.ingredientesServicios;
 
 /**
  *
@@ -27,57 +27,38 @@ import umg.edu.Proyect3DW2020.negocio.ingredientesRepository;
 @RequestMapping("/ingredientes")
 public class ingredientesController {
     @Autowired
-    private ingredientesRepository repo;
+    private ingredientesServicios servicio;
 
     @GetMapping
     public List <ingredientes> listar(){
-        return repo.findAll();
+        return servicio.enlistAll_ingredientes();
     }
 
     @GetMapping(value="/buscar/{id}")
     public ingredientes buscarId(@PathVariable("id") final Integer id){
-        return  repo.findById(id).get();
+        return  servicio.findById_buscarid(id);
     }
 
-    //metodo para insertar detalleProductoFinal
+
     @PostMapping
     @ResponseStatus(HttpStatus.OK)
     public String  insertar(@RequestBody ingredientes emp){
-        try {
-            repo.save(emp);
-            return "OK";
-        }
-        catch (Exception ex)
-        {
-            return "Hubo un error insertando el ingrediente.";
-        }
+            return servicio.create(emp);
     }
 
-    //metodo para modificar producto
+   
     @PutMapping
     @ResponseStatus(HttpStatus.OK)
     public String modificar(@RequestBody ingredientes emp){
-        try {
-            repo.save(emp);
-            return "OK";
-        }
-        catch (Exception ex)
-        {
-            return "Hubo un error modificando el ingrediente.";
-        }
+            return servicio.modify_ingredientes(emp);
     }
 
     //metoo para eliminar producto
     @DeleteMapping(value="/{id}")
     @ResponseStatus(HttpStatus.OK)
     public String eliminar(@PathVariable("id") Integer id){
-        try {
-            repo.deleteById(id);
-            return "OK";
-        }
-        catch (Exception ex)
-        {
-            return "Hubo un error eliminando el ingrediente.";
-        }
+       
+            return servicio.delete_ingredientes(id);
+        
     }
 }

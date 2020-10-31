@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 import umg.edu.Proyect3DW2020.modelo.estadoventa;
-import umg.edu.Proyect3DW2020.negocio.estadoventaRepository;
 import umg.edu.Proyect3DW2020.service.estadoventaServicio;
 
 /**
