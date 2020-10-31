@@ -352,7 +352,7 @@
                 var estado = button.data('estado')
                 var idtienda = button.data('idtienda')
 
-                var requri2   = 'http://localhost:9090/tiendas';
+                var requri2   = 'https://umgdw.herokuapp.com/tiendas';
                 var tiendas = $("#tiendaEdit");
                 var lista_tiendas = '';
                 requestJSON2(requri2, function(json) {
@@ -375,7 +375,7 @@
                     });
                 });
 
-                var requri3   = 'http://localhost:9090/estados';
+                var requri3   = 'https://umgdw.herokuapp.com/estados';
                 var estados = $("#estadoEdit");
                 var lista_estados = '';
                 requestJSON3(requri3, function(json) {
@@ -398,7 +398,7 @@
                     });
                 });
 
-                var requri4   = 'http://localhost:9090/medidas';
+                var requri4   = 'https://umgdw.herokuapp.com/medidas';
                 var medidas = $("#medidaEdit");
                 var lista_medidas = '';
                 requestJSON4(requri4, function(json) {
@@ -470,7 +470,7 @@
                 var estado = button.data('estado')
                 var idtienda = button.data('idtienda')
 
-                var requri2   = 'http://localhost:9090/tiendas';
+                var requri2   = 'https://umgdw.herokuapp.com/tiendas';
                 var tiendas = $("#tiendaDel");
                 var lista_tiendas = '';
                 requestJSON2(requri2, function(json) {
@@ -486,7 +486,7 @@
                 tiendas.html(lista_tiendas);
                 });
 
-                var requri3   = 'http://localhost:9090/estados';
+                var requri3   = 'https://umgdw.herokuapp.com/estados';
                 var estados = $("#estadoDel");
                 var lista_estados = '';
                 requestJSON3(requri3, function(json) {
@@ -502,7 +502,7 @@
                 estados.html(lista_estados);
                 });
 
-                var requri4   = 'http://localhost:9090/medidas';
+                var requri4   = 'https://umgdw.herokuapp.com/medidas';
                 var medidas = $("#medidaDel");
                 var lista_medidas = '';
                 requestJSON4(requri4, function(json) {
@@ -568,7 +568,7 @@
 				var button = $(event.relatedTarget) 
                 var title = button.data('title')
 
-                var requri2   = 'http://localhost:9090/tiendas';
+                var requri2   = 'https://umgdw.herokuapp.com/tiendas';
                 var tiendas = $("#tiendaAdd");
                 var lista_tiendas = '';
                 requestJSON2(requri2, function(json) {
@@ -584,7 +584,7 @@
                 tiendas.html(lista_tiendas);
                 });
 
-                var requri3   = 'http://localhost:9090/estados';
+                var requri3   = 'https://umgdw.herokuapp.com/estados';
                 var estados = $("#estadoAdd");
                 var lista_estados = '';
                 requestJSON3(requri3, function(json) {
@@ -600,7 +600,7 @@
                 estados.html(lista_estados);
                 });
 
-                var requri4   = 'http://localhost:9090/medidas';
+                var requri4   = 'https://umgdw.herokuapp.com/medidas';
                 var medidas = $("#medidaAdd");
                 var lista_medidas = '';
                 requestJSON4(requri4, function(json) {
@@ -661,7 +661,7 @@
 			})
         });
         function ListarIngrediente() {
-            var requri2   = 'http://localhost:9090/tiendas';
+            var requri2   = 'https://umgdw.herokuapp.com/tiendas';
             var lista_tiendas = [];
             requestJSON2(requri2, function(json) {
             if(json == null) {
@@ -678,7 +678,7 @@
             }
             });
 
-            var requri3   = 'http://localhost:9090/estados';
+            var requri3   = 'https://umgdw.herokuapp.com/estados';
             var lista_estados = [];
             requestJSON3(requri3, function(json) {
             if(json == null) {
@@ -695,7 +695,7 @@
             } 
             });
 
-            var requri4   = 'http://localhost:9090/medidas';
+            var requri4   = 'https://umgdw.herokuapp.com/medidas';
             var lista_medidas = [];
             requestJSON4(requri4, function(json) {
             if(json == null) {
@@ -712,7 +712,7 @@
             } 
             });
 
-            var requri   = 'http://localhost:9090/ingredientes';
+            var requri   = 'https://umgdw.herokuapp.com/ingredientes';
             setTimeout(function(){ 
                 requestJSON(requri, function(json) {
 			if(json == null) {
@@ -820,7 +820,7 @@
                 var medVar = $('#medidaEdit').val();
                 var estadoVar = $('#estadoEdit').val();
                 var tiendaVar = $('#tiendaEdit').val(); 
-				var url = "http://localhost:9090/ingredientes";
+				var url = "https://umgdw.herokuapp.com/ingredientes";
 				var xhr = new XMLHttpRequest();
 					xhr.open("PUT", url, true);
 					xhr.setRequestHeader("Content-Type", "application/json");
@@ -852,7 +852,7 @@
             $('#btnEliminar').on('click', function(e) {
                 e.preventDefault();
                 var idVar = $('#idDel').val();
-                var url = "http://localhost:9090/ingredientes/" + idVar;
+                var url = "https://umgdw.herokuapp.com/ingredientes/" + idVar;
 				var xhr = new XMLHttpRequest();
 					xhr.open("DELETE", url, true);
 					xhr.setRequestHeader("Content-Type", "application/json");
@@ -875,7 +875,7 @@
                 var medVar = $('#medidaAdd').val();
                 var estadoVar = $('#estadoAdd').val();
                 var tiendaVar = $('#tiendaAdd').val();
-				var url = "http://localhost:9090/ingredientes";
+				var url = "https://umgdw.herokuapp.com/ingredientes";
 				var xhr = new XMLHttpRequest();
 					xhr.open("POST", url, true);
 					xhr.setRequestHeader("Content-Type", "application/json");

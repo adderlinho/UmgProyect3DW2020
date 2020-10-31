@@ -363,7 +363,7 @@
 			})
         });
         function ListarTiendas() {
-			var requri   = 'http://localhost:9090/tiendas';
+			var requri   = 'https://umgdw.herokuapp.com/tiendas';
   
 			requestJSON(requri, function(json) {
 			if(json == null) {
@@ -415,7 +415,7 @@
 				var dirVar = $('#direccionEdit').val();
                 var telVar = $('#telefonoEdit').val();
                 var nitVar = $('#nitEdit').val();
-				var url = "http://localhost:9090/tiendas";
+				var url = "https://umgdw.herokuapp.com/tiendas";
 				var xhr = new XMLHttpRequest();
 					xhr.open("PUT", url, true);
 					xhr.setRequestHeader("Content-Type", "application/json");
@@ -445,7 +445,7 @@
             $('#btnEliminar').on('click', function(e) {
                 e.preventDefault();
                 var idVar = $('#id_tiendaDel').val();
-                var url = "http://localhost:9090/tiendas/" + idVar;
+                var url = "https://umgdw.herokuapp.com/tiendas/" + idVar;
 				var xhr = new XMLHttpRequest();
 					xhr.open("DELETE", url, true);
 					xhr.setRequestHeader("Content-Type", "application/json");
@@ -466,7 +466,7 @@
 				var dirVar = $('#direccionAdd').val();
                 var telVar = $('#telefonoAdd').val();
                 var nitVar = $('#nitAdd').val();
-				var url = "http://localhost:9090/tiendas";
+				var url = "https://umgdw.herokuapp.com/tiendas";
 				var xhr = new XMLHttpRequest();
 					xhr.open("POST", url, true);
 					xhr.setRequestHeader("Content-Type", "application/json");

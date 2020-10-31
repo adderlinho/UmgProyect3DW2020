@@ -374,7 +374,7 @@
                 var idtienda = button.data('idtienda')
                 var img = button.data('imagen')
 
-                var requri2   = 'http://localhost:9090/tiendas';
+                var requri2   = 'https://umgdw.herokuapp.com/tiendas';
                 var tiendas = $("#tiendaEdit");
                 var lista_tiendas = '';
                 requestJSON2(requri2, function(json) {
@@ -397,7 +397,7 @@
                     });
                 });
 
-                var requri3   = 'http://localhost:9090/estados';
+                var requri3   = 'https://umgdw.herokuapp.com/estados';
                 var estados = $("#estadoEdit");
                 var lista_estados = '';
                 requestJSON3(requri3, function(json) {
@@ -461,7 +461,7 @@
                 var idtienda = button.data('idtienda')
                 var img = button.data('imagen')
 
-                var requri2   = 'http://localhost:9090/tiendas';
+                var requri2   = 'https://umgdw.herokuapp.com/tiendas';
                 var tiendas = $("#tiendaDel");
                 var lista_tiendas = '';
                 requestJSON2(requri2, function(json) {
@@ -477,7 +477,7 @@
                 tiendas.html(lista_tiendas);
                 });
 
-                var requri3   = 'http://localhost:9090/estados';
+                var requri3   = 'https://umgdw.herokuapp.com/estados';
                 var estados = $("#estadoDel");
                 var lista_estados = '';
                 requestJSON3(requri3, function(json) {
@@ -527,7 +527,7 @@
 				var button = $(event.relatedTarget) 
                 var title = button.data('title')
 
-                var requri2   = 'http://localhost:9090/tiendas';
+                var requri2   = 'https://umgdw.herokuapp.com/tiendas';
                 var tiendas = $("#tiendaAdd");
                 var lista_tiendas = '';
                 requestJSON2(requri2, function(json) {
@@ -543,7 +543,7 @@
                 tiendas.html(lista_tiendas);
                 });
 
-                var requri3   = 'http://localhost:9090/estados';
+                var requri3   = 'https://umgdw.herokuapp.com/estados';
                 var estados = $("#estadoAdd");
                 var lista_estados = '';
                 requestJSON3(requri3, function(json) {
@@ -586,7 +586,7 @@
 			})
         });
         function ListarCombos() {
-            var requri2   = 'http://localhost:9090/tiendas';
+            var requri2   = 'https://umgdw.herokuapp.com/tiendas';
             var lista_tiendas = [];
             requestJSON2(requri2, function(json) {
             if(json == null) {
@@ -603,7 +603,7 @@
             }
             });
 
-            var requri3   = 'http://localhost:9090/estados';
+            var requri3   = 'https://umgdw.herokuapp.com/estados';
             var lista_estados = [];
             requestJSON3(requri3, function(json) {
             if(json == null) {
@@ -620,7 +620,7 @@
             } 
             });
 
-            var requri   = 'http://localhost:9090/combos';
+            var requri   = 'https://umgdw.herokuapp.com/combos';
             setTimeout(function(){ 
                 requestJSON(requri, function(json) {
 			if(json == null) {
@@ -720,7 +720,7 @@
                 var estadoVar = $('#estadoEdit').val();
                 var tiendaVar = $('#tiendaEdit').val();
                 var imgVar = $('#imgEdit').val();
-				var url = "http://localhost:9090/combos";
+				var url = "https://umgdw.herokuapp.com/combos";
 				var xhr = new XMLHttpRequest();
 					xhr.open("PUT", url, true);
 					xhr.setRequestHeader("Content-Type", "application/json");
@@ -754,7 +754,7 @@
             $('#btnEliminar').on('click', function(e) {
                 e.preventDefault();
                 var idVar = $('#idDel').val();
-                var url = "http://localhost:9090/combos/" + idVar;
+                var url = "https://umgdw.herokuapp.com/combos/" + idVar;
 				var xhr = new XMLHttpRequest();
 					xhr.open("DELETE", url, true);
 					xhr.setRequestHeader("Content-Type", "application/json");
@@ -778,7 +778,7 @@
                 var estadoVar = $('#estadoAdd').val();
                 var tiendaVar = $('#tiendaAdd').val();
                 var imgVar = $('#imgAdd').val();
-				var url = "http://localhost:9090/combos";
+				var url = "https://umgdw.herokuapp.com/combos";
 				var xhr = new XMLHttpRequest();
 					xhr.open("POST", url, true);
 					xhr.setRequestHeader("Content-Type", "application/json");

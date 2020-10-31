@@ -330,7 +330,7 @@
                 var cant = button.data('cant')
                 var estado = button.data('estado')
 
-                var requri2   = 'http://localhost:9090/combos';
+                var requri2   = 'https://umgdw.herokuapp.com/combos';
                 var combos = $("#comboEdit");
                 var lista_combos = '';
                 requestJSON2(requri2, function(json) {
@@ -353,7 +353,7 @@
                     });
                 });
 
-                var requri3   = 'http://localhost:9090/estados';
+                var requri3   = 'https://umgdw.herokuapp.com/estados';
                 var estados = $("#estadoEdit");
                 var lista_estados = '';
                 requestJSON3(requri3, function(json) {
@@ -376,7 +376,7 @@
                     });
                 });
 
-                var requri4   = 'http://localhost:9090/ingredientes';
+                var requri4   = 'https://umgdw.herokuapp.com/ingredientes';
                 var ingredientes = $("#ingEdit");
                 var lista_ingredientes = '';
                 requestJSON4(requri4, function(json) {
@@ -446,7 +446,7 @@
                 var cant = button.data('cant')
                 var estado = button.data('estado')
 
-                var requri2   = 'http://localhost:9090/combos';
+                var requri2   = 'https://umgdw.herokuapp.com/combos';
                 var combos = $("#comboDel");
                 var lista_combos = '';
                 requestJSON2(requri2, function(json) {
@@ -462,7 +462,7 @@
                 combos.html(lista_combos);
                 });
 
-                var requri3   = 'http://localhost:9090/estados';
+                var requri3   = 'https://umgdw.herokuapp.com/estados';
                 var estados = $("#estadoDel");
                 var lista_estados = '';
                 requestJSON3(requri3, function(json) {
@@ -478,7 +478,7 @@
                 estados.html(lista_estados);
                 });
 
-                var requri4   = 'http://localhost:9090/ingredientes';
+                var requri4   = 'https://umgdw.herokuapp.com/ingredientes';
                 var ingredientes = $("#ingDel");
                 var lista_ingredientes = '';
                 requestJSON4(requri4, function(json) {
@@ -543,7 +543,7 @@
 				var button = $(event.relatedTarget) 
                 var title = button.data('title')
 
-                var requri2   = 'http://localhost:9090/combos';
+                var requri2   = 'https://umgdw.herokuapp.com/combos';
                 var combos = $("#comboAdd");
                 var lista_combos = '';
                 requestJSON2(requri2, function(json) {
@@ -559,7 +559,7 @@
                 combos.html(lista_combos);
                 });
 
-                var requri3   = 'http://localhost:9090/estados';
+                var requri3   = 'https://umgdw.herokuapp.com/estados';
                 var estados = $("#estadoAdd");
                 var lista_estados = '';
                 requestJSON3(requri3, function(json) {
@@ -576,7 +576,7 @@
                 });
 
 
-                var requri4   = 'http://localhost:9090/ingredientes';
+                var requri4   = 'https://umgdw.herokuapp.com/ingredientes';
                 var ingredientes = $("#ingAdd");
                 var lista_ingredientes = '';
                 requestJSON4(requri4, function(json) {
@@ -637,7 +637,7 @@
 			})
         });
         function ListarProductos() {
-            var requri2   = 'http://localhost:9090/combos';
+            var requri2   = 'https://umgdw.herokuapp.com/combos';
             var lista_combos = [];
             requestJSON2(requri2, function(json) {
             if(json == null) {
@@ -654,7 +654,7 @@
             }
             });
 
-            var requri3   = 'http://localhost:9090/estados';
+            var requri3   = 'https://umgdw.herokuapp.com/estados';
             var lista_estados = [];
             requestJSON3(requri3, function(json) {
             if(json == null) {
@@ -671,7 +671,7 @@
             } 
             });
 
-            var requri4   = 'http://localhost:9090/ingredientes';
+            var requri4   = 'https://umgdw.herokuapp.com/ingredientes';
             var lista_ingredientes = [];
             requestJSON4(requri4, function(json) {
             if(json == null) {
@@ -688,7 +688,7 @@
             } 
             });
 
-            var requri   = 'http://localhost:9090/productos';
+            var requri   = 'https://umgdw.herokuapp.com/productos';
             setTimeout(function(){ 
                 requestJSON(requri, function(json) {
 			if(json == null) {
@@ -798,7 +798,7 @@
 				var ingVar = $('#ingEdit').val();
                 var cantVar = $('#cantEdit').val();
                 var estadoVar = $('#estadoEdit').val();
-				var url = "http://localhost:9090/productos";
+				var url = "https://umgdw.herokuapp.com/productos";
 				var xhr = new XMLHttpRequest();
 					xhr.open("PUT", url, true);
 					xhr.setRequestHeader("Content-Type", "application/json");
@@ -828,7 +828,7 @@
             $('#btnEliminar').on('click', function(e) {
                 e.preventDefault();
                 var idVar = $('#idDel').val();
-                var url = "http://localhost:9090/productos/" + idVar;
+                var url = "https://umgdw.herokuapp.com/productos/" + idVar;
 				var xhr = new XMLHttpRequest();
 					xhr.open("DELETE", url, true);
 					xhr.setRequestHeader("Content-Type", "application/json");
@@ -850,7 +850,7 @@
 				var ingVar = $('#ingAdd').val();
                 var cantVar = $('#cantAdd').val();
                 var estadoVar = $('#estadoAdd').val();
-				var url = "http://localhost:9090/productos";
+				var url = "https://umgdw.herokuapp.com/productos";
 				var xhr = new XMLHttpRequest();
 					xhr.open("POST", url, true);
 					xhr.setRequestHeader("Content-Type", "application/json");
