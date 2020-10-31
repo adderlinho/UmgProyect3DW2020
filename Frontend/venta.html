@@ -46,7 +46,7 @@
                         <a href="usuarios.html"> <i class=" menu-icon fa fa-users"></i> Registro de usuarios</a>
                     </li>
                     <li>
-                        <a href="ingredientes.html"> <i class=" menu-icon fa fa-cutlery"></i> Registro de ingredientes</a>
+                        <a href="ingredientes.html"> <i class=" menu-icon fa fa-cutlery"></i> Registro de existencias</a>
                     </li>
                     <li>
                         <a href="combos.html"> <i class=" menu-icon fa fa-sitemap"></i> Registro de combos</a>
@@ -88,7 +88,7 @@
                            <label for="txttelefono" class="sr-only">Telefono</label>
                            <input type="text" class="form-control" id="txttelefono" placeholder="Teléfono de cliente">
                        </div>
-                       <button  id= "cmdguardar" class="btn btn-primary">Guardar</button>
+                       <button  id= "cmdguardarventa" class="btn btn-primary">Guardar</button>
                        <br/>
                     
                 </div>
@@ -286,6 +286,59 @@
               });
             }
            }
+
+           //////////////////////////////////// opcion de venta
+            $('#cmdguardarventa').on('click', function(e) {
+                e.preventDefault();
+               
+                $('#txtcliente').attr('readonly', true); 
+                $('#txttelefono').attr('readonly', true); 
+                
+                var clnombre = $('#txtcliente').val();
+                var cltelefono = $('#txttelefono').val();
+                var telVar = $('#telefonoAdd').val();
+                /*
+                    private int idventa;
+                    private String nombrecliente;
+                    private Date fechapedido;
+                    private int estado;
+                    private int idestado_estadoventa;
+                    private int usuario_crea;
+                    private int idusuario_usuarios;
+                    private int idtienda;
+
+                */
+                var url = "https://umgdw.herokuapp.com/venta";
+                var xhr = new XMLHttpRequest();
+                    xhr.open("POST", url, true);
+                    xhr.setRequestHeader("Content-Type", "application/json");
+                    var data = JSON.stringify({ "nombre": nomVar, "dpi": dpiVar, "telefono": telVar, "estado": estadoVar, "idtienda": tiendaVar, "administrador": adminVar });
+                    xhr.send(data);
+                    xhr.onload = function() {
+                        console.log(xhr.response);
+                        if(xhr.response == "OK") {
+                            $('#id_usuarioAdd').val("");
+                            $('#nombreAdd').val("");
+                            $('#dpiAdd').val("");
+                            $('#telefonoAdd').val("");
+                            $('#estadoAdd').val("");
+                            $('#tiendaAdd').val("");
+                            $('#adminAdd').val("");
+
+                            ListarUsuarios();
+                            alertify.success('El usuario fue ingresado correctamente.');
+                        } else {
+                            $('#id_usuarioAdd').val("");
+                            $('#nombreAdd').val("");
+                            $('#dpiAdd').val("");
+                            $('#telefonoAdd').val("");
+                            $('#estadoAdd').val("");
+                            $('#tiendaAdd').val("");
+                            $('#adminAdd').val("");
+                            alertify.error(xhr.response);
+                        }
+                    };
+            });
        
     </script>
 </body>
